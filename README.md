@@ -51,7 +51,7 @@ python3 tools/make_nav_images.py    # skärmdumpar av navigationens lägen (krä
 
 ### Publicering på GitHub Pages
 
-Vid varje push till `main` bygger [`.github/workflows/pages.yml`](.github/workflows/pages.yml) styleguiden och publicerar den på https://magello-group.github.io/design-guidelines/. Jobbet kör `make_shapes.py` och `build_styleguide.py` och fallerar om någon genererad fil skiljer sig från den committade, så kör båda och committa resultatet innan du pushar. Sedan sätter `tools/build_site.py` ihop webbplatsen i `_site/`: styleguiden, tokens, docs, ikoner, logotyper, former, Office-mallarna som nedladdningar och de foton styleguiden använder (inte hela fotobiblioteket). Det kan också köras manuellt under Actions (*Run workflow*).
+Vid varje push till `main` bygger [`.github/workflows/pages.yml`](.github/workflows/pages.yml) styleguiden och publicerar den på https://magello-group.github.io/design-guidelines/. Jobbet kör `make_shapes.py` och `build_styleguide.py` och fallerar om någon genererad fil skiljer sig från den committade, så kör båda och committa resultatet innan du pushar. Sedan sätter `tools/build_site.py` ihop webbplatsen i `_site/`: styleguiden, tokens, docs, ikoner, logotyper, former, Office-mallarna, howto-dokumenten och specialtypsnittet Kattux som nedladdningar och de foton styleguiden använder (inte hela fotobiblioteket). Det kan också köras manuellt under Actions (*Run workflow*).
 
 Testa lokalt:
 

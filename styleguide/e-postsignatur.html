@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-postsignatur — Magello styleguide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Condensed:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/magello.css">
+<link rel="stylesheet" href="css/styleguide.css">
+</head>
+<body>
+
+<!-- ═══ SIDOSPÅR ═══════════════════════════════════════════════ -->
+<div class="mg-side-nav" aria-label="Sidonavigering">
+  <a class="mg-side-nav__logo" href="index.html" aria-label="Magello">
+    <img src="../assets/logos/icon-logotype.svg" alt="Magello">
+  </a>
+  <ul class="mg-side-nav__links">
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="farg.html">Grunder</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+    </li>
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="komponenter.html">Byggstenar</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+    </li>
+    <li><a href="navigation.html">Navigation</a></li>
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="office.html" class="is-active">Mallar</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="office.html">Word &amp; PowerPoint</a></li><li><a href="e-postsignatur.html" class="is-active">E-postsignatur</a></li></ul>
+    </li>
+  </ul>
+  <a class="mg-side-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+</div>
+
+<!-- ═══ HEADER ═════════════════════════════════════════════════ -->
+<div class="mg-page-header mg-page-header--rotate">
+  <div class="mg-header-shape"></div>
+  <nav class="mg-nav">
+    <div class="mg-nav__inner">
+      <a class="mg-nav__logo" href="index.html" aria-label="Magello">
+        <svg viewBox="0 0 1298 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>Magello</title>
+          <rect x="114" y="41" width="1096" height="251" fill="white"/>
+          <path d="M383.475 127.758L378.345 171.487L398.438 170.63L397.583 126.043L383.475 127.758Z" fill="#EC008C"/>
+          <path d="M1040.56 171.916L1084.16 180.49L1096.99 227.221L1147.86 177.918L1151.28 131.616L1088.44 120.47L1040.56 171.916Z" fill="#EC008C"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M138.513 0L50.0185 22.7221L1.71003 95.1756L0 290.243L47.026 318.109L97.472 322.825L320.632 332.686L1226.09 325.826L1295.78 257.66L1297.06 24.8657L1267.56 6.43078L138.513 0ZM293.271 258.946L244.535 266.234L241.115 197.639L212.899 216.932L190.241 197.639L188.104 267.521H138.94L135.093 210.93L139.795 93.4607H176.989L218.884 152.195L255.65 93.8894H293.698L293.271 258.946ZM410.408 260.232L401.003 190.351H376.635L369.795 256.374H321.487L340.297 135.046C340.297 135.046 353.55 80.5992 356.115 81.4566C358.68 82.314 420.241 85.3151 420.241 85.3151L443.327 138.476L462.564 265.377L410.408 260.232ZM604.925 256.803L576.282 262.805L510.018 257.66L483.94 222.076L482.23 187.35L481.802 150.909L492.062 119.613L514.72 92.1746L558.754 85.3151L585.687 89.6022L613.047 93.4607L612.192 107.18L604.497 141.049L557.044 128.187L531.821 146.193L528.401 190.78L548.494 214.359L567.732 210.072V187.35C560.891 186.493 560.036 186.493 560.036 186.493C559.181 186.064 560.036 167.2 560.036 167.2L613.902 171.059V192.924L614.33 214.788L604.925 256.803ZM752.843 135.046L695.984 135.904V154.339L743.438 152.195L743.01 192.495L692.992 195.925L696.412 213.502L752.415 218.218L751.988 260.661L647.248 260.232L648.103 93.4607L752.843 96.4618V135.046ZM893.493 259.804L787.899 259.375L788.754 80.5992L834.497 81.0279L835.779 213.931L894.348 212.216L893.493 259.804ZM909.739 247.371L905.891 116.612L910.594 72.0248L952.917 74.5971L952.062 203.213L989.255 203.641L1008.92 205.356L1009.35 252.944L909.739 247.371ZM1180.35 225.935L1135.04 262.805L1040.98 242.655L1019.61 165.486L1034.14 96.8905C1034.14 96.8905 1091 79.7417 1099.98 78.8843L1140.59 84.4576L1187.19 133.76L1180.35 225.935Z" fill="#EC008C"/>
+        </svg>
+      </a>
+      <ul class="mg-nav__links">
+        <li class="mg-nav__has-sub">
+          <a href="farg.html">Grunder</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Grunder"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+        </li>
+        <li class="mg-nav__has-sub">
+          <a href="komponenter.html">Byggstenar</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Byggstenar"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+        </li>
+        <li><a href="navigation.html">Navigation</a></li>
+        <li class="mg-nav__has-sub">
+          <a href="office.html" class="is-active">Mallar</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Mallar"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="office.html">Word &amp; PowerPoint</a></li><li><a href="e-postsignatur.html" class="is-active">E-postsignatur</a></li></ul>
+        </li>
+      </ul>
+      <a class="mg-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+      <button class="mg-nav__burger" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" aria-hidden="true">
+          <rect width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="8" width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="16" width="24" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<!-- ═══ MOBILMENY ══════════════════════════════════════════════ -->
+<div class="mg-mobile-menu" id="mobile-menu" aria-hidden="true" aria-label="Mobilnavigering">
+  <div class="mg-mobile-menu__head">
+    <a href="index.html" class="mg-nav__logo" aria-label="Magello">
+      <svg style="height:32px;width:auto" viewBox="0 0 1298 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>Magello</title>
+          <rect x="114" y="41" width="1096" height="251" fill="white"/>
+          <path d="M383.475 127.758L378.345 171.487L398.438 170.63L397.583 126.043L383.475 127.758Z" fill="#EC008C"/>
+          <path d="M1040.56 171.916L1084.16 180.49L1096.99 227.221L1147.86 177.918L1151.28 131.616L1088.44 120.47L1040.56 171.916Z" fill="#EC008C"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M138.513 0L50.0185 22.7221L1.71003 95.1756L0 290.243L47.026 318.109L97.472 322.825L320.632 332.686L1226.09 325.826L1295.78 257.66L1297.06 24.8657L1267.56 6.43078L138.513 0ZM293.271 258.946L244.535 266.234L241.115 197.639L212.899 216.932L190.241 197.639L188.104 267.521H138.94L135.093 210.93L139.795 93.4607H176.989L218.884 152.195L255.65 93.8894H293.698L293.271 258.946ZM410.408 260.232L401.003 190.351H376.635L369.795 256.374H321.487L340.297 135.046C340.297 135.046 353.55 80.5992 356.115 81.4566C358.68 82.314 420.241 85.3151 420.241 85.3151L443.327 138.476L462.564 265.377L410.408 260.232ZM604.925 256.803L576.282 262.805L510.018 257.66L483.94 222.076L482.23 187.35L481.802 150.909L492.062 119.613L514.72 92.1746L558.754 85.3151L585.687 89.6022L613.047 93.4607L612.192 107.18L604.497 141.049L557.044 128.187L531.821 146.193L528.401 190.78L548.494 214.359L567.732 210.072V187.35C560.891 186.493 560.036 186.493 560.036 186.493C559.181 186.064 560.036 167.2 560.036 167.2L613.902 171.059V192.924L614.33 214.788L604.925 256.803ZM752.843 135.046L695.984 135.904V154.339L743.438 152.195L743.01 192.495L692.992 195.925L696.412 213.502L752.415 218.218L751.988 260.661L647.248 260.232L648.103 93.4607L752.843 96.4618V135.046ZM893.493 259.804L787.899 259.375L788.754 80.5992L834.497 81.0279L835.779 213.931L894.348 212.216L893.493 259.804ZM909.739 247.371L905.891 116.612L910.594 72.0248L952.917 74.5971L952.062 203.213L989.255 203.641L1008.92 205.356L1009.35 252.944L909.739 247.371ZM1180.35 225.935L1135.04 262.805L1040.98 242.655L1019.61 165.486L1034.14 96.8905C1034.14 96.8905 1091 79.7417 1099.98 78.8843L1140.59 84.4576L1187.19 133.76L1180.35 225.935Z" fill="#EC008C"/>
+        </svg>
+    </a>
+    <button class="mg-mobile-menu__close" aria-label="Stäng meny">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <ul class="mg-mobile-menu__links">
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="farg.html">Grunder</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+    </li>
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="komponenter.html">Byggstenar</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+    </li>
+    <li><a href="navigation.html">Navigation</a></li>
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="office.html" class="is-active">Mallar</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="office.html">Word &amp; PowerPoint</a></li><li><a href="e-postsignatur.html" class="is-active">E-postsignatur</a></li></ul>
+    </li>
+  </ul>
+  <a class="mg-mobile-menu__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+</div>
+
+<!-- ═══ SIDHUVUD ═══════════════════════════════════════════════ -->
+<div class="mg-ingang-hero">
+  <div class="mg-ingang-col">
+    <nav class="mg-breadcrumb" aria-label="Brödsmula">
+      <a href="index.html">Hem</a>
+      <span class="mg-breadcrumb__sep">/</span>
+      <span aria-current="page">E-postsignatur</span>
+    </nav>
+    <p class="mg-kicker">Mallar</p>
+    <h1 class="mg-ingang-title">E-postsignatur</h1>
+    <p class="mg-ingang-sub">Alla på Magello har samma e-postsignatur. Kopiera signaturen nedan, klistra in den i Outlook och byt till dina egna uppgifter.</p>
+    
+  </div>
+</div>
+
+<main id="main-content">
+<section class="mg-section--rose sg-block sg-block--rose" id="signatur" aria-labelledby="h-signatur">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Outlook</p>
+    <h2 id="h-signatur">Signaturen</h2>
+    <p>Markera hela signaturen i rutan, från namnet till momsnumret, och kopiera (Cmd/Ctrl + C). Formatering, logotyp och länkar följer med.</p>
+  </div>
+<div class="sg-demo sg-demo--white">
+<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;font-family:Roboto,Arial,sans-serif;font-size:14px;line-height:1.5;color:#000000;">
+  <tr>
+    <td style="padding:0 0 16px 0;">
+      <strong>Förnamn Efternamn</strong>, Senior Consultant<br>
+      <a href="https://www.linkedin.com/in/your-username/" style="color:#000000;text-decoration:none;">https://www.linkedin.com/in/your-username/</a><br>
+      <a href="tel:+46768123465" style="color:#000000;text-decoration:none;">+46 768 123 465</a>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:0 0 16px 0;">
+      <a href="https://magello.se"><img src="https://magello-group.github.io/design-guidelines/assets/logos/magello-email.png" width="85" height="22" alt="Magello" style="display:block;border:0;width:85px;height:22px;"></a>
+    </td>
+  </tr>
+  <tr>
+    <td style="font-size:13px;line-height:1.5;color:#4C4A4A;">
+      <span style="color:#EC008C;">Magello</span><br>
+      Västgötagatan 2<br>
+      118 27 Stockholm<br>
+      Sweden<br>
+      <br>
+      <a href="tel:+4686331300" style="color:#4C4A4A;text-decoration:none;">+46 8 633 13 00</a><br>
+      <a href="mailto:info@magello.se" style="color:#4C4A4A;text-decoration:none;">info@magello.se</a><br>
+      <a href="https://magello.se" style="color:#4C4A4A;text-decoration:none;">magello.se</a><br>
+      <br>
+      Org no: 556531-7129<br>
+      VAT: SE556531712901
+    </td>
+  </tr>
+</table>
+</div><h3 class="sg-sub">Så lägger du in den</h3><ol class="sg-text"><li>Kopiera signaturen ovan.</li><li>Öppna signaturinställningarna i Outlook (se tabellen) och skapa en ny signatur.</li><li>Klistra in och byt namn, titel, LinkedIn och mobilnummer till dina egna.</li><li>Välj signaturen som standard för nya meddelanden och svar, för varje inkorg du har.</li></ol><div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Program</th><th>Hitta signaturerna</th></tr></thead><tbody><tr><td>Nya Outlook och Outlook på webben</td><td>Inställningar → Konto → Signaturer</td></tr><tr><td>Klassiska Outlook (Windows)</td><td>Arkiv → Alternativ → E-post → Signaturer</td></tr><tr><td>Outlook för Mac</td><td>Outlook → Inställningar → Signaturer</td></tr><tr><td>Outlook i mobilen</td><td>Inställningar → ditt konto → Signatur. Använd versionen utan HTML</td></tr></tbody></table></div>
+</div>
+</section>
+<section class="sg-block" id="falt" aria-labelledby="h-falt">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Fyll i</p>
+    <h2 id="h-falt">Det här byter du</h2>
+    <p>Allt annat i signaturen är gemensamt och ska se likadant ut för alla.</p>
+  </div>
+<div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Fält</th><th>Gör så här</th></tr></thead><tbody><tr><td>Namn och titel</td><td>Ditt namn i fetstil, titeln efter ett kommatecken. Titeln på engelska, som på LinkedIn</td></tr><tr><td>LinkedIn</td><td>Byt <code>your-username</code> mot ditt användarnamn, både i texten och i länken</td></tr><tr><td>Mobilnummer</td><td>Byt både den synliga texten och länken (<code>tel:+46…</code>, utan mellanslag)</td></tr><tr><td>Logotyp och adress</td><td>Ändra inte. Uppgifterna är desamma för alla</td></tr></tbody></table></div><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Byt telefonlänken, inte bara den synliga texten</li><li>Testa genom att skicka ett mejl till dig själv och klicka på länkarna</li><li>Använd versionen utan HTML i mobilen och i program som inte visar bilder</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Lägga till citat, bilder, banners eller egna färger</li><li>Byta typsnitt eller storlek</li><li>Klistra in logotypen som en bifogad bild. Den ska hämtas från länken</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--loading">Tänk på</span><ul><li>Signaturen är en kolumn, så den fungerar också på smala skärmar</li><li>Logotypen hämtas från styleguidens webbplats. Mottagare som blockerar bilder ser texten ”Magello”</li></ul></div></div>
+</div>
+</section>
+<section class="mg-section--rose sg-block sg-block--rose" id="utan-html" aria-labelledby="h-utan-html">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Utan HTML</p>
+    <h2 id="h-utan-html">Signatur i ren text</h2>
+    <p>För mobilen, för program som bara skickar ren text och för den som vill ha en enkel signatur.</p>
+  </div>
+<pre class="sg-code"><code>Förnamn Efternamn, Senior Consultant
+https://www.linkedin.com/in/your-username/
++46 768 123 465
+
+Magello
+Västgötagatan 2
+118 27 Stockholm
+Sweden
+
++46 8 633 13 00
+info@magello.se
+magello.se
+
+Org no: 556531-7129
+VAT: SE556531712901</code></pre>
+</div>
+</section>
+<section class="sg-block" id="html" aria-labelledby="h-html">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">För IT</p>
+    <h2 id="h-html">Signaturens HTML</h2>
+    <p>Används när signaturen läggs ut centralt, till exempel med en signaturtjänst i Microsoft 365. Tabell med inline-stilar, eftersom e-postprogram inte läser CSS-filer. Färgerna är magenta <code>#EC008C</code> och textgrå <code>#4C4A4A</code> från tokens.</p>
+  </div>
+<pre class="sg-code"><code>&lt;table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;font-family:Roboto,Arial,sans-serif;font-size:14px;line-height:1.5;color:#000000;"&gt;
+  &lt;tr&gt;
+    &lt;td style="padding:0 0 16px 0;"&gt;
+      &lt;strong&gt;Förnamn Efternamn&lt;/strong&gt;, Senior Consultant&lt;br&gt;
+      &lt;a href="https://www.linkedin.com/in/your-username/" style="color:#000000;text-decoration:none;"&gt;https://www.linkedin.com/in/your-username/&lt;/a&gt;&lt;br&gt;
+      &lt;a href="tel:+46768123465" style="color:#000000;text-decoration:none;"&gt;+46 768 123 465&lt;/a&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style="padding:0 0 16px 0;"&gt;
+      &lt;a href="https://magello.se"&gt;&lt;img src="https://magello-group.github.io/design-guidelines/assets/logos/magello-email.png" width="85" height="22" alt="Magello" style="display:block;border:0;width:85px;height:22px;"&gt;&lt;/a&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td style="font-size:13px;line-height:1.5;color:#4C4A4A;"&gt;
+      &lt;span style="color:#EC008C;"&gt;Magello&lt;/span&gt;&lt;br&gt;
+      Västgötagatan 2&lt;br&gt;
+      118 27 Stockholm&lt;br&gt;
+      Sweden&lt;br&gt;
+      &lt;br&gt;
+      &lt;a href="tel:+4686331300" style="color:#4C4A4A;text-decoration:none;"&gt;+46 8 633 13 00&lt;/a&gt;&lt;br&gt;
+      &lt;a href="mailto:info@magello.se" style="color:#4C4A4A;text-decoration:none;"&gt;info@magello.se&lt;/a&gt;&lt;br&gt;
+      &lt;a href="https://magello.se" style="color:#4C4A4A;text-decoration:none;"&gt;magello.se&lt;/a&gt;&lt;br&gt;
+      &lt;br&gt;
+      Org no: 556531-7129&lt;br&gt;
+      VAT: SE556531712901
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+</div>
+</section>
+
+</main>
+
+
+<!-- ═══ FOOTER ═════════════════════════════════════════════════ -->
+<footer class="mg-footer">
+  <div class="mg-wrap">
+    <div class="mg-footer__inner">
+      <div class="mg-footer__col"><span class="mg-footer__brand">Magello styleguide</span>Version 0.1<br>Formspråk för webb, dokument<br>och sociala medier</div>
+      <div class="mg-footer__col">
+        <a href="../tokens/tokens.json">tokens.json</a><br>
+        <a href="../docs/design-language.md">design-language.md</a><br>
+        <a href="../docs/design-guidelines-web.md">design-guidelines-web.md</a>
+      </div>
+      <div class="mg-footer__col" style="text-align:right">Västgötagatan 2<br>118 27 Stockholm<br>info@magello.se</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/magello.js"></script>
+</body>
+</html>

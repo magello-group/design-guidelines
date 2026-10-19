@@ -37,12 +37,16 @@ NAV = [
         ("Markdown", "markdown.html"),
     ]),
     ("Navigation", "navigation.html", []),
-    ("Word &amp; PowerPoint", "office.html", []),
+    ("Mallar", "office.html", [
+        ("Word &amp; PowerPoint", "office.html"),
+        ("E-postsignatur", "e-postsignatur.html"),
+    ]),
 ]
 FEATURED = ("Tokens (JSON)", "../tokens/tokens.json")
 
 PAGES = ["index", "farg", "form", "typografi", "typsnitt", "bilder-ikoner", "avstand-rorelse",
-         "komponenter", "sektioner", "formular-feedback", "navigation", "markdown", "office"]
+         "komponenter", "sektioner", "formular-feedback", "navigation", "markdown", "office",
+         "e-postsignatur"]
 
 
 def is_active(slug, url):

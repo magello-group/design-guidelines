@@ -11,6 +11,7 @@ Du ska skapa eller ändra grafisk kommunikation för Magello: webb, dokument, pr
 | **Word, PowerPoint** | `docs/design-language.md`, `docs/office-mallar.md`, `styleguide/office.html`, `styleguide/typsnitt.html` (Kattux), och mallarna `assets/templates/Word-mall.dotx` och `assets/templates/Powerpoint-mall.potx` |
 | **PDF** | `docs/design-language.md`, `tokens/tokens.json` (typ i pt), formerna i `assets/shapes/`. Skapas PDF:en från Word eller PowerPoint gäller raden ovan |
 | **Bilder, SVG, sociala medier** | `docs/design-language.md` (avsnittet Bilder och Bildverktyget), `tokens/tokens.json` (färg, former), `assets/shapes/`, `assets/logos/`, `assets/images/black-and-white/` |
+| **E-postsignatur** | `styleguide/e-postsignatur.html` (signaturen, HTML och textversion). Ändra inte innehållet, byt bara namn, titel, LinkedIn och mobilnummer |
 | **Profilbilder, LinkedIn-bilder, svartvita miljöbilder, kundlogotyper** | Bildverktyget https://linkedin-profile-image.magello.se och avsnittet Bildverktyget i `docs/design-language.md` |
 | **Ny komponent eller ändring av formspråket** | `DECISIONS.md`, `styleguide/`, och avsnittet [Utveckla formspråket](#6-utveckla-formspråket) nedan |
 

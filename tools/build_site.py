@@ -18,7 +18,9 @@ out = root / "_site"
 dirs = ["styleguide", "tokens", "docs", "assets/graphics", "assets/logos", "assets/shapes"]
 # Office-mallarna och howto-dokumenten, som nedladdningar
 files = ["assets/templates/Powerpoint-mall.potx", "assets/templates/Word-mall.dotx",
-         "assets/templates/Powerpoint-mall-howto.pptx", "assets/templates/Word-mall-howto.docx"]
+         "assets/templates/Powerpoint-mall-howto.pptx", "assets/templates/Word-mall-howto.docx",
+         # Specialtypsnittet Kattux (Magellos eget), för nedladdning och sidans prov
+         *(f"assets/fonts/KattuxAbc-Regular.{ext}" for ext in ("otf", "ttf", "woff2", "woff"))]
 
 if out.exists():
     shutil.rmtree(out)
@@ -27,10 +29,6 @@ for d in dirs:
 for f in files:
     (out / f).parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(root / f, out / f)
-
-# Publiceras inte. Specialtypsnittet saknar licenstext, så det tas med först när
-# användningsrätten är klarlagd. Sidan faller då tillbaka på Roboto Condensed.
-exclude = ["assets/fonts/"]
 
 # Filer utanför styleguide/ som sidorna, CSS:en eller JS:en pekar på
 missing = []
@@ -46,8 +44,6 @@ for src in sources:
         if not target.is_relative_to(root):
             continue
         rel = target.relative_to(root)
-        if any(rel.as_posix().startswith(e) for e in exclude):
-            continue
         dest = out / rel
         if target.is_file() and not dest.exists():
             dest.parent.mkdir(parents=True, exist_ok=True)

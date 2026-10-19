@@ -32,7 +32,13 @@
       <ul class="mg-side-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
     </li>
     <li><a href="navigation.html">Navigation</a></li>
-    <li><a href="office.html">Word &amp; PowerPoint</a></li>
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="office.html">Mallar</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="office.html">Word &amp; PowerPoint</a></li><li><a href="e-postsignatur.html">E-postsignatur</a></li></ul>
+    </li>
   </ul>
   <a class="mg-side-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
 </div>
@@ -63,7 +69,11 @@
           <ul class="mg-nav__sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
         </li>
         <li><a href="navigation.html">Navigation</a></li>
-        <li><a href="office.html">Word &amp; PowerPoint</a></li>
+        <li class="mg-nav__has-sub">
+          <a href="office.html">Mallar</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Mallar"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="office.html">Word &amp; PowerPoint</a></li><li><a href="e-postsignatur.html">E-postsignatur</a></li></ul>
+        </li>
       </ul>
       <a class="mg-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
       <button class="mg-nav__burger" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-menu">
@@ -111,7 +121,13 @@
       <ul class="mg-mob-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
     </li>
     <li><a href="navigation.html">Navigation</a></li>
-    <li><a href="office.html">Word &amp; PowerPoint</a></li>
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="office.html">Mallar</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="office.html">Word &amp; PowerPoint</a></li><li><a href="e-postsignatur.html">E-postsignatur</a></li></ul>
+    </li>
   </ul>
   <a class="mg-mobile-menu__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
 </div>
@@ -163,13 +179,14 @@
   <div class="mg-section-head">
     <p class="mg-label">AI-agenter</p>
     <h2 id="h-agenter">Använd styleguiden som underlag</h2>
-    <p>Styleguiden är gjord för att läsas av både människor och agenter. Börja med <code>AGENTS.md</code>, hämta värden ur <code>tokens/tokens.json</code> och rita former med SVG-filerna i <code>assets/shapes/</code>.</p>
+    <p>Styleguiden är gjord för att läsas av både människor och agenter. Börja med <a href='https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md'><code>AGENTS.md</code></a> i <a href='https://github.com/magello-group/design-guidelines'>repot på GitHub</a>, hämta värden ur <code>tokens/tokens.json</code> och rita former med SVG-filerna i <code>assets/shapes/</code>.</p>
   </div>
 <pre class="sg-code"><code># Exempel på uppdrag till en agent
-Läs AGENTS.md och docs/design-language.md. Skapa en presentation (16:9) om vårt
+Läs https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md
+och docs/design-language.md i samma repo. Skapa en presentation (16:9) om vårt
 erbjudande inom Cloud. Använd tokens/tokens.json för färger och typsnitt, formerna
 i assets/shapes/ och mallen assets/templates/Powerpoint-mall.potx. Följ checklistan
-i AGENTS.md innan du levererar.</code></pre><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Be agenten läsa <code>AGENTS.md</code> först</li><li>Hänvisa till tokens och former i stället för att beskriva dem</li><li>Be om en självgranskning mot checklistan</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Be agenten ”göra det snyggt” utan underlag</li><li>Låta agenten uppfinna egna färger eller former</li></ul></div></div>
+i AGENTS.md innan du levererar.</code></pre><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Be agenten läsa <a href='https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md'><code>AGENTS.md</code></a> först</li><li>Hänvisa till tokens och former i stället för att beskriva dem</li><li>Be om en självgranskning mot checklistan</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Be agenten ”göra det snyggt” utan underlag</li><li>Låta agenten uppfinna egna färger eller former</li></ul></div></div>
 </div>
 </section>
 

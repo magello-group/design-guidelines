@@ -105,7 +105,7 @@ All CSS och JavaScript som behövs ligger färdig i repot:
 
 ### Använd katalogen som referens i andra projekt
 
-Lägg ett par rader i det andra projektets `CLAUDE.md` eller `AGENTS.md` (byt sökväg till där katalogen ligger, eller till dess repo-URL):
+Lägg ett par rader i det andra projektets `CLAUDE.md` eller `AGENTS.md` (byt sökväg till där katalogen ligger, eller använd repo-URL:en https://github.com/magello-group/design-guidelines):
 
 ```markdown
 ## Design

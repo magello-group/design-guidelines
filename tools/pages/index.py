@@ -34,12 +34,13 @@ def body(sg):
             ("arrow-up-right.svg", "Bygga menyer", "Header, dropdown, sidospår, mobilmeny och brödsmula.", "navigation.html", "Till navigation"),
         ]))
     agents = sg.block("agenter", "AI-agenter", "Använd styleguiden som underlag",
-        "Styleguiden är gjord för att läsas av både människor och agenter. Börja med <code>AGENTS.md</code>, hämta värden ur <code>tokens/tokens.json</code> och rita former med SVG-filerna i <code>assets/shapes/</code>.",
+        "Styleguiden är gjord för att läsas av både människor och agenter. Börja med <a href='https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md'><code>AGENTS.md</code></a> i <a href='https://github.com/magello-group/design-guidelines'>repot på GitHub</a>, hämta värden ur <code>tokens/tokens.json</code> och rita former med SVG-filerna i <code>assets/shapes/</code>.",
         sg.code("""# Exempel på uppdrag till en agent
-Läs AGENTS.md och docs/design-language.md. Skapa en presentation (16:9) om vårt
+Läs https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md
+och docs/design-language.md i samma repo. Skapa en presentation (16:9) om vårt
 erbjudande inom Cloud. Använd tokens/tokens.json för färger och typsnitt, formerna
 i assets/shapes/ och mallen assets/templates/Powerpoint-mall.potx. Följ checklistan
 i AGENTS.md innan du levererar.""")
-        + sg.use(do=["Be agenten läsa <code>AGENTS.md</code> först", "Hänvisa till tokens och former i stället för att beskriva dem", "Be om en självgranskning mot checklistan"],
+        + sg.use(do=["Be agenten läsa <a href='https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md'><code>AGENTS.md</code></a> först", "Hänvisa till tokens och former i stället för att beskriva dem", "Be om en självgranskning mot checklistan"],
                  dont=["Be agenten ”göra det snyggt” utan underlag", "Låta agenten uppfinna egna färger eller former"]))
     return intro + principles + nav + agents

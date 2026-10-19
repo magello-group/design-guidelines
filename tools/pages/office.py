@@ -79,10 +79,10 @@ def body(sg):
         sg.spec(["Formatmall", "Använd till"], STYLES), rose=True)
 
     agent = sg.block("agent", "Med agent", "Låt en agent göra dokumentet",
-        "Be agenten läsa <code>AGENTS.md</code>. Agenten skapar själv ett dokument ur mallen, använder layouterna och formatmallarna och lämnar en vanlig .pptx eller .docx. Du behöver inte köra något.",
-        sg.code("""Läs AGENTS.md. Gör en presentation om vårt erbjudande inom moln
-utifrån Magellos PowerPoint-mall. Börja med Förstasida och avsluta
+        "Be agenten läsa <a href='https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md'><code>AGENTS.md</code></a>. Agenten skapar själv ett dokument ur mallen, använder layouterna och formatmallarna och lämnar en vanlig .pptx eller .docx. Du behöver inte köra något.",
+        sg.code("""Läs https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md.
+Gör en presentation om vårt erbjudande inom moln utifrån Magellos PowerPoint-mall. Börja med Förstasida och avsluta
 med Fokus - Rubrik vänster på bild. Använd svartvita foton.""") +
-        sg.text("Detaljerna för agenter, och var mallarna avviker från tokens, står i <code>docs/office-mallar.md</code>."))
+        sg.text("Detaljerna för agenter, och var mallarna avviker från tokens, står i <a href='https://github.com/magello-group/design-guidelines/blob/main/docs/office-mallar.md'><code>docs/office-mallar.md</code></a>."))
 
     return manual + howto + layouts + styles + agent
