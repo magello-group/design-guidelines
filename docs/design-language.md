@@ -208,7 +208,7 @@ Där formerna är klickbara (digitalt material) blir de lite mer rektangulära n
 - **Personbilder är runda** och svartvita. Det är det enda stället där cirkelformen används.
 - **Bildmotiv**: kontor, möten, skärmar, whiteboards, händelser. Verkliga människor och miljöer, helst inte stockkänsla. Lugna kompositioner med plats för text.
 - **Bildtext och alt-text**: beskriv vad bilden visar, inte att det är en bild.
-- Bildbiblioteket ligger i `assets/images/black-and-white/`.
+- Bildbiblioteket ligger i `assets/images/black-and-white/`. Alla foton visas och kan laddas ned i styleguidens [Bildbank](https://magello-group.github.io/design-guidelines/styleguide/bildbank.html).
 
 ### Bildverktyget
 
@@ -350,7 +350,7 @@ Ställ frågorna i ordning. Föreslå standardvalet (markerat med ★) om använ
 ### Om innehållet
 6. **Vilket är det enda budskap mottagaren ska minnas?** Det styr rubrik och struktur.
 7. **Finns texten redan, eller ska den skrivas?** Om den ska skrivas: ton enligt avsnittet Känsla och ton. Svenska.
-8. **Vilka bilder finns?** ★ Använd `assets/images/black-and-white/`. Nya foton görs svartvita och klipps i polygonform.
+8. **Vilka bilder finns?** ★ Använd `assets/images/black-and-white/` (visas i Bildbanken). Egna foton görs om i bildverktyget. Nya foton görs svartvita och klipps i polygonform.
 9. **Finns siffror, citat, tidslinjer, processer eller jämförelser?** Då används de matchande mönstren i avsnittet Innehållsmönster.
 10. **Ska något få en tydlig handling?** (Kontakta oss, läs mer, sök tjänsten.) Max en primär handling.
 

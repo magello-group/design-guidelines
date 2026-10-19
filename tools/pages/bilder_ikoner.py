@@ -23,7 +23,7 @@ def body(sg):
 .mg-poly-img--a { clip-path: polygon(7% 0%, 94% 2%, 100% 10%, 98% 90%, 93% 100%, 5% 97%, 0% 88%, 2% 8%); }''') +
         sg.use(do=["Använd verkliga människor och miljöer: kontor, möten, skärmar, whiteboards, händelser", "Välj lugna kompositioner med plats för text", "Växla polygon A/B/C mellan bilder på samma sida", "Skriv en alt-text som beskriver vad bilden visar"],
                dont=["Färgfoton, färgfilter eller dubbeltoner", "Stockkänsla: leende modeller vid skrivbord", "Perfekt rektangulära beskärningar", "Text direkt på ett livligt foto"],
-               note=["Ladda gärna upp färgfoton i ett CMS. Svartvitt och polygonbeskärning läggs på av CSS", "Bildbiblioteket ligger i <code>assets/images/black-and-white/</code>"]))
+               note=["Ladda gärna upp färgfoton i ett CMS. Svartvitt och polygonbeskärning läggs på av CSS", "Alla foton finns i <a href=\"bildbank.html\">Bildbanken</a>, där de kan laddas ned"]))
 
     plate = sg.block("platta", "Text på foto", "Vit platta över bilden",
         "Text läggs aldrig direkt på fotot. Den ligger på en vit polygonplatta med åtta hörn, som en pappersflik ovanpå bilden.",

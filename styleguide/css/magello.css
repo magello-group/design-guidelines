@@ -471,6 +471,9 @@ img {
   color: var(--mg-text-2);
 }
 .mg-nav__links li { position: relative; }
+/* Alla toppnivåer är flex, så att länkar utan undermeny hamnar på samma linje
+   som länkar med chevron (en vanlig li ärver brödtextens radhöjd). */
+.mg-nav__links > li { display: flex; align-items: center; }
 .mg-nav__has-sub {
   display: inline-flex;
   align-items: center;

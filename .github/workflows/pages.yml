@@ -34,7 +34,9 @@ jobs:
           python3 tools/build_styleguide.py
 
       - name: Sätt ihop webbplatsen
-        run: python3 tools/build_site.py
+        run: |
+          pip install Pillow
+          python3 tools/build_site.py
 
       - uses: actions/configure-pages@v5
 

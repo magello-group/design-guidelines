@@ -48,8 +48,12 @@
   /* ── Dropdown i headern (desktop) ──────────────────────────────────────
      Synligheten styrs bara av .is-open, aldrig av CSS :hover.
      220 ms stängningsfördröjning per listpunkt, och lyssnare på själva
-     undermenyn, så att musen hinner från länk till meny. */
+     undermenyn, så att musen hinner från länk till meny. När en meny redan
+     är öppen byter hover till grannen först efter 150 ms, så att musen kan
+     gå snett ned över grannlänken utan att menyn byts. Scroll flyttar menyn
+     i stället för att stänga den, och stänger bara när headern inte syns. */
   var closeTimers = new WeakMap();
+  var openTimers  = new WeakMap();
   function positionSub(item) {
     var sub = $('.mg-nav__sub', item);
     if (!sub) return;
@@ -63,6 +67,7 @@
   }
   function openDrop(item) {
     clearTimeout(closeTimers.get(item));
+    clearTimeout(openTimers.get(item));
     positionSub(item);
     $$('.mg-nav__has-sub.is-open').forEach(function (o) {
       if (o !== item) { clearTimeout(closeTimers.get(o)); setDrop(o, false); }
@@ -77,8 +82,15 @@
   }
   $$('.mg-nav__has-sub').forEach(function (item) {
     var sub = $('.mg-nav__sub', item);
-    item.addEventListener('mouseenter', function () { openDrop(item); });
-    item.addEventListener('mouseleave', function () { scheduleClose(item); });
+    item.addEventListener('mouseenter', function () {
+      var other = $$('.mg-nav__has-sub.is-open').some(function (o) { return o !== item; });
+      if (other) openTimers.set(item, setTimeout(function () { openDrop(item); }, 150));
+      else openDrop(item);
+    });
+    item.addEventListener('mouseleave', function () {
+      clearTimeout(openTimers.get(item));
+      scheduleClose(item);
+    });
     if (sub) {
       sub.addEventListener('mouseenter', function () { clearTimeout(closeTimers.get(item)); });
       sub.addEventListener('mouseleave', function () { scheduleClose(item); });
@@ -92,7 +104,13 @@
     });
   });
   document.addEventListener('click', closeAllDrops);
-  window.addEventListener('scroll', closeAllDrops, { passive: true });
+  window.addEventListener('scroll', function () {
+    var rotated = header && header.matches('.mg-page-header--rotate.is-scrolled');
+    $$('.mg-nav__has-sub.is-open').forEach(function (o) {
+      var r = o.getBoundingClientRect();
+      if (rotated || r.bottom <= 0) setDrop(o, false); else positionSub(o);
+    });
+  }, { passive: true });
 
   /* ── Undermenyer i mobilmeny och sidospår (accordion) ──────────────────
      Chevron-knappen fäller ut/in. I sidospåret fäller även ett klick på

@@ -16,7 +16,8 @@ Styleguiden finns på **https://magello-group.github.io/design-guidelines/**: en
 | [`tokens/tokens.json`](tokens/tokens.json) | Färg, typografi (web, tryck, presentation), avstånd, layout, rörelse, former (polygoner) och regler som maskinläsbara värden |
 | [`docs/office-mallar.md`](docs/office-mallar.md) + [`styleguide/office.html`](styleguide/office.html) | Magellos officiella Word- och PowerPoint-mallar, med agent eller för hand: hur ett nytt dokument skapas, layouter, formatmallar och kända avvikelser |
 | [`assets/templates/`](assets/templates/) | **Officiella mallar**: [`Powerpoint-mall.potx`](assets/templates/Powerpoint-mall.potx) och [`Word-mall.dotx`](assets/templates/Word-mall.dotx) och howto-dokumenten [`Powerpoint-mall-howto.pptx`](assets/templates/Powerpoint-mall-howto.pptx) och [`Word-mall-howto.docx`](assets/templates/Word-mall-howto.docx) |
-| [`assets/`](assets/) | Logotyper, ikoner, svartvita foton (urval), SVG-former (`shapes/`) |
+| [`assets/`](assets/) | Logotyper, ikoner, svartvita foton, SVG-former (`shapes/`) |
+| [Bildbanken](https://magello-group.github.io/design-guidelines/styleguide/bildbank.html) | Alla svartvita foton att titta på och ladda ned, och en översikt över bildverktygets tjänster |
 | [`assets/fonts/`](assets/fonts/) + [`styleguide/typsnitt.html`](styleguide/typsnitt.html) | Specialtypsnittet Kattux för speciella tillfällen, främst i PowerPoint: regler och installation på Mac och PC |
 | [Bildverktyget](https://linkedin-profile-image.magello.se) | Profilbilder, LinkedIn-banners och -inlägg, svartvita miljöbilder och kundlogotyper för CV. Används i stället för att göra sådana bilder för hand |
 | [`DECISIONS.md`](DECISIONS.md) | Beslutslogg med datum och motivering |
@@ -53,4 +54,4 @@ Följ avsnitt 6 i [`AGENTS.md`](AGENTS.md): härled från principerna, lägg nya
 
 ## Ursprung
 
-Katalogen bygger på `magello-design` (referenssajten, riktlinjerna och mallarna) och är gjord för att kunna lyftas ut och utvecklas vidare på egen hand. Fotobiblioteket här är ett urval (de nio foton som styleguiden använder). Hela biblioteket finns i `magello-design/web/images/black-and-white/`.
+Katalogen bygger på `magello-design` (referenssajten, riktlinjerna och mallarna) och är gjord för att kunna lyftas ut och utvecklas vidare på egen hand. Hela fotobiblioteket finns i `assets/images/black-and-white/` och visas i Bildbanken.

@@ -171,3 +171,16 @@
 }
 .sg-kattux { font-family: "Kattux Abc 20", var(--mg-font-head); font-weight: 400; line-height: 1.15; }
 .sg-kattux--alphabet { font-size: clamp(1.5rem, 1rem + 2vw, 2.25rem); overflow-wrap: anywhere; }
+
+/* Bildbank: rutnät med polygonbeskurna foton och nedladdningslänk */
+.sg-photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--mg-space-6) var(--mg-space-5); margin: var(--mg-space-4) 0 var(--mg-space-7); }
+.sg-photo { margin: 0; }
+.sg-photo > a { display: block; }
+.sg-photo img { display: block; background: var(--mg-rose-100); }
+.sg-photo figcaption { display: flex; flex-direction: column; gap: 2px; margin-top: var(--mg-space-3); }
+.sg-photo__name { font: 700 .875rem/1.3 var(--mg-font-head); color: var(--mg-black); }
+.sg-photo__dl { font-size: .8125rem; line-height: 1.4; color: var(--mg-magenta); text-decoration: none; }
+.sg-photo__dl:hover { color: var(--mg-black); }
+.sg-photo__count { font: 400 .875rem/1 var(--mg-font-body); color: var(--mg-text-2); margin-left: var(--mg-space-2); }
+.sg-tool__title { font: 700 1rem/1.3 var(--mg-font-head); margin: 0 0 var(--mg-space-2); }
+@media (max-width: 599px) { .sg-photos { grid-template-columns: repeat(2, 1fr); gap: var(--mg-space-5) var(--mg-space-4); } }

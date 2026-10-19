@@ -3,11 +3,9 @@
 
 Webbplatsen speglar repots katalogstruktur, så att styleguidens relativa länkar
 (../assets/, ../tokens/, ../docs/) fungerar även under en undermapp som
-https://magello-group.github.io/design-guidelines/. Tunga filer tas inte med:
-av fotobiblioteket kopieras bara de foton som styleguiden använder. Kör:
-
-    python3 tools/build_site.py
-    python3 -m http.server 8000 -d _site     # öppna http://localhost:8000/
+https://magello-group.github.io/design-guidelines/. Hela fotobiblioteket kopieras,
+för bildbanken, och för varje foto skapas en förhandsbild i assets/images/thumbs/
+(kräver Pillow). Körs av GitHub Pages-workflowen.
 """
 import pathlib, re, shutil
 from urllib.parse import unquote
@@ -15,7 +13,8 @@ from urllib.parse import unquote
 root = pathlib.Path(__file__).resolve().parent.parent
 out = root / "_site"
 # Kopieras alltid, i sin helhet
-dirs = ["styleguide", "tokens", "docs", "assets/graphics", "assets/logos", "assets/shapes"]
+dirs = ["styleguide", "tokens", "docs", "assets/graphics", "assets/logos", "assets/shapes",
+        "assets/images/black-and-white"]
 # Office-mallarna och howto-dokumenten, som nedladdningar
 files = ["assets/templates/Powerpoint-mall.potx", "assets/templates/Word-mall.dotx",
          "assets/templates/Powerpoint-mall-howto.pptx", "assets/templates/Word-mall-howto.docx",
@@ -29,6 +28,18 @@ for d in dirs:
 for f in files:
     (out / f).parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(root / f, out / f)
+
+# Förhandsbilder till bildbanken: 800 px breda JPEG, så att sidan inte laddar fullstora foton
+from PIL import Image, ImageOps
+thumbs = out / "assets" / "images" / "thumbs"
+thumbs.mkdir(parents=True, exist_ok=True)
+for photo in sorted((root / "assets/images/black-and-white").iterdir()):
+    if photo.suffix.lower() not in (".jpg", ".jpeg", ".png"):
+        continue
+    with Image.open(photo) as im:
+        im = ImageOps.exif_transpose(im).convert("L")
+        im.thumbnail((800, 800))
+        im.save(thumbs / f"{photo.stem}-{photo.suffix[1:].lower()}.jpg", quality=78, optimize=True, progressive=True)
 
 # Filer utanför styleguide/ som sidorna, CSS:en eller JS:en pekar på
 missing = []
@@ -45,7 +56,9 @@ for src in sources:
             continue
         rel = target.relative_to(root)
         dest = out / rel
-        if target.is_file() and not dest.exists():
+        if dest.exists():   # redan kopierad eller skapad här (t.ex. förhandsbilder)
+            continue
+        if target.is_file():
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(target, dest)
         elif not target.exists():

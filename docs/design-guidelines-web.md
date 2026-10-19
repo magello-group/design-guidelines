@@ -1300,14 +1300,15 @@ Se `styleguide/js/magello.js`, avsnittet *Dropdown i headern*. Funktioner: `posi
 
 #### Regler som gör att menyn inte försvinner
 
-Fyra saker ska alla vara på plats. Saknas en av dem stänger menyn när användaren rör musen från huvudlänken mot undermenyn.
+Fem saker ska alla vara på plats. Saknas en av dem stänger menyn när användaren rör musen från huvudlänken mot undermenyn.
 
 1. **Ingen CSS `:hover` styr synligheten.** `:hover` på listpunkten släcker menyn i samma ögonblick som pekaren lämnar den. Bara `.is-open` får visa menyn.
 2. **Ingen lucka.** Menyns överkant ligger exakt vid länkens underkant (`rect.bottom`, inte `rect.bottom + 8`).
 3. **Fördröjd stängning (220 ms)** med en timer per listpunkt (`WeakMap`), så att musen hinner nå menyn.
 4. **Lyssnare på själva undermenyn.** `mouseenter` avbryter timern, `mouseleave` startar den på nytt.
+5. **Fördröjt byte till grannen (150 ms).** När en meny redan är öppen öppnas grannens meny först efter 150 ms hover, så att musen kan gå snett ned över grannlänken utan att menyn byts.
 
-Dessutom: stäng alla menyer vid scroll, klick utanför och `Escape`. Chevron-knappens `aria-expanded` ska spegla läget.
+Dessutom: vid scroll flyttas öppna menyer med headern och stängs bara när headern roterat bort eller lämnat skärmen. Stäng vid klick utanför och `Escape`. Chevron-knappens `aria-expanded` ska spegla läget.
 
 #### Varför `position: fixed`?
 
