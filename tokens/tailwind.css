@@ -1,0 +1,38 @@
+/* Genererad av tools/make_tailwind.py från tokens/tokens.json. Ändra inte för hand. */
+@theme {
+  /* Färger: bg-mg-rose-100, text-mg-magenta … */
+  --color-mg-black: #000000;
+  --color-mg-white: #FFFFFF;
+  --color-mg-text-2: #4C4A4A;
+  --color-mg-rose-50: #F7F3F3;
+  --color-mg-rose-100: #F4EBEB;
+  --color-mg-rose-200: #E3D6D6;
+  --color-mg-rose-300: #DED4D4;
+  --color-mg-grey-300: #BFBFBF;
+  --color-mg-magenta: #EC008C;
+  --color-mg-blue: #31ABE2;
+  --color-mg-orange: #F9B804;
+  --color-mg-red: #E3012F;
+  --color-mg-yellow: #FFDC00;
+  --color-mg-green: #1BA660;
+  /* Typsnitt: font-head, font-body, font-code */
+  --font-head: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+  --font-body: Roboto, system-ui, Arial, sans-serif;
+  --font-code: Consolas, ui-monospace, Menlo, monospace;
+  /* Avstånd: p-mg-5, gap-mg-6, mt-mg-8 … */
+  --spacing-mg-2: 8px;
+  --spacing-mg-3: 12px;
+  --spacing-mg-4: 16px;
+  --spacing-mg-5: 24px;
+  --spacing-mg-6: 36px;
+  --spacing-mg-7: 48px;
+  --spacing-mg-8: 64px;
+  --spacing-mg-9: 96px;
+  /* Containerbredd: max-w-mg (inklusive gutter), max-w-mg-text (löptext) */
+  --container-mg: 1280px;
+  --container-mg-text: 680px;
+  /* Brytpunkter: tablet: (600), nav: (769, ovanför hamburgerläget), desktop: (1024) */
+  --breakpoint-tablet: 600px;
+  --breakpoint-nav: 769px;
+  --breakpoint-desktop: 1024px;
+}

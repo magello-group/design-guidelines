@@ -49,8 +49,11 @@
   --mg-space-9: 96px;
   /* Layout */
   --mg-gutter: 20px;
-  --mg-wide: 1024px;
+  --mg-gutter-end: var(--mg-gutter);  /* Höger sidomarginal. Växer på sidor med sidospår */
+  --mg-wide: 1280px;                  /* 1200 px innehåll + 2 × 40 px gutter */
+  --mg-side-w: 192px;                 /* Sidospårets bredd */
   --mg-nav-h: 72px;
+  --mg-nav-h-compact: 56px;           /* Headern i hamburgerläge efter scroll */
   --mg-hext: 48px;
   --mg-header-h: calc(var(--mg-nav-h) + var(--mg-hext));
   --mg-text-w: 680px;
@@ -76,8 +79,14 @@
 @media (min-width: 600px) {
   :root { --mg-gutter: 40px; }
 }
-@media (min-width: 1024px) {
-  :root { --mg-gutter: 64px; }
+/* Plats för sidospåret. På sidor med sidospår (> 768 px) får containrarna
+   så mycket högermarginal att innehållet aldrig hamnar under spåret.
+   Vänsterkanten (logotypens linje) påverkas inte. */
+@media (min-width: 769px) {
+  body:has(.mg-side-nav) {
+    --mg-gutter-end: max(var(--mg-gutter),
+      calc(var(--mg-side-w) + var(--mg-space-5) - max(0px, (100vw - var(--mg-wide)) / 2)));
+  }
 }
 
 /* ── RESET & BAS ──────────────────────────────────────────────── */
@@ -113,7 +122,7 @@ img {
 .mg-wrap {
   max-width: var(--mg-wide);
   margin-inline: auto;
-  padding-inline: var(--mg-gutter);
+  padding-inline: var(--mg-gutter) var(--mg-gutter-end);
 }
 .mg-kicker {
   display: inline-block;
@@ -234,8 +243,6 @@ img {
   .mg-page-header, .mg-side-nav { transition: none; }
 }
 @media (max-width: 768px) {
-  .mg-page-header { transform-origin: 50% 0 !important; }
-  .mg-page-header.is-scrolled { transform: translateY(-100%) !important; }
   .mg-side-nav { display: none !important; }
 }
 .mg-header-shape {
@@ -251,9 +258,10 @@ img {
 .mg-nav {
   position: relative;
   z-index: 2;
-  height: 72px;
+  height: var(--mg-nav-h);
   display: flex;
   align-items: center;
+  transition: height 0.3s ease;
 }
 .mg-nav__inner {
   display: flex;
@@ -273,6 +281,7 @@ img {
 .mg-nav__logo svg {
   height: 38px;
   width: auto;
+  transition: height 0.3s ease;
 }
 .mg-nav__links {
   display: flex;
@@ -613,6 +622,19 @@ img {
   transform: rotate(90deg);
   pointer-events: none;
 }
+/* Hamburgerläge: headern ligger kvar efter scroll men blir lägre.
+   Ingen rotation och inget sidospår. */
+@media (max-width: 768px) {
+  .mg-page-header.is-scrolled {
+    transform: none;
+    pointer-events: auto;
+  }
+  .mg-page-header.is-scrolled .mg-nav { height: var(--mg-nav-h-compact); }
+  .mg-page-header.is-scrolled .mg-nav__logo svg { height: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mg-nav, .mg-nav__logo svg { transition: none; }
+}
 
 /* ── FOOTER ───────────────────────────────────────────────────── */
 .mg-footer { padding: var(--mg-space-7) 0; }
@@ -772,7 +794,7 @@ img {
 .mg-page-title__inner {
   max-width: var(--mg-wide);
   margin-inline: auto;
-  padding-inline: var(--mg-gutter);
+  padding-inline: var(--mg-gutter) var(--mg-gutter-end);
 }
 .mg-hero {
   position: relative;
@@ -813,8 +835,7 @@ img {
   width: min(var(--mg-wide), 100%);
   margin-inline: auto;
   background: var(--mg-white);
-  padding: var(--mg-space-6) var(--mg-gutter);
-  padding-bottom: var(--mg-space-9);
+  padding: var(--mg-space-6) var(--mg-gutter-end) var(--mg-space-9) var(--mg-gutter);
 }
 .mg-hero__title {
   font: 500 3rem/1.05 var(--mg-font-head);
@@ -949,7 +970,7 @@ img {
 .mg-subpages__inner {
   max-width: var(--mg-wide);
   margin-inline: auto;
-  padding-inline: var(--mg-gutter);
+  padding-inline: var(--mg-gutter) var(--mg-gutter-end);
 }
 .mg-subpages__grid {
   display: grid;
@@ -1474,7 +1495,7 @@ img {
 .mg-img-block {
   max-width: var(--mg-wide);
   margin-inline: auto;
-  padding-inline: var(--mg-gutter);
+  padding-inline: var(--mg-gutter) var(--mg-gutter-end);
   padding-block: 0 var(--mg-space-9);
 }
 .mg-img-block__frame {
@@ -1563,7 +1584,7 @@ img {
 .mg-cta__inner {
   max-width: var(--mg-wide);
   margin-inline: auto;
-  padding-inline: var(--mg-gutter);
+  padding-inline: var(--mg-gutter) var(--mg-gutter-end);
   display: flex;
   flex-direction: column;
   align-items: flex-start;

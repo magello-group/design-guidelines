@@ -27,21 +27,24 @@ def body(sg):
         "Allt innehåll delar vänsterkant med logotypen. Navigationen och innehållet använder samma container, samma bredd och samma sidomarginal.",
         sg.spec(["Token", "Värde", "Anmärkning"],
                 [["<code>--mg-wide</code>", f'{L["contentWidth"]} px', "Max innehållsbredd, samma för navigation och innehåll"],
-                 ["<code>--mg-gutter</code>", "20 / 40 / 64 px", "Sidomarginal: mobil, 600 px+, 1024 px+"],
+                 ["<code>--mg-gutter</code>", "20 / 40 px", "Sidomarginal: mobil, 600 px+"],
+                 ["<code>--mg-gutter-end</code>", "minst <code>--mg-gutter</code>", "Högermarginal. Växer på sidor med sidospår så att innehållet aldrig hamnar under spåret"],
+                 ["<code>--mg-side-w</code>", f'{L["sideNavWidth"]} px', "Sidospårets bredd"],
+                 ["<code>--mg-nav-h-compact</code>", f'{L["navHeightCompact"]} px', "Headerns höjd i hamburgerläge efter scroll"],
                  ["<code>--mg-nav-h</code>", f'{L["navHeight"]} px', "Navigationens höjd"],
                  ["<code>--mg-hext</code>", f'{L["headerExtension"]} px', "Polygonens förlängning under navigationen"],
                  ["<code>--mg-header-h</code>", f'{L["headerHeight"]} px', "Navigation + förlängning. Innehållet på undersidor börjar här"]]) +
         sg.code('''.mg-wrap {
-  max-width: var(--mg-wide);      /* 1024 px */
+  max-width: var(--mg-wide);      /* 1280 px = 1200 px innehåll + 2 × 40 px */
   margin-inline: auto;
-  padding-inline: var(--mg-gutter);
+  padding-inline: var(--mg-gutter) var(--mg-gutter-end);
 }''') +
         sg.sub("Brytpunkter") +
         sg.spec(["Bredd", "Händer"],
-                [["≤ 599 px", "En kolumn, gutter 20 px, footer staplad"], ["600–1023 px", "Gutter 40 px"], ["≥ 1024 px", "Gutter 64 px, container 1024 px"],
-                 ["≤ 768 px", "Hamburgermeny ersätter navlänkar. Sidospåret döljs. Headern glider uppåt i stället för att rotera"], ["≤ 900 px", "Tvåkolumnslayouter faller till en kolumn"]]) +
+                [["≤ 599 px", "En kolumn, gutter 20 px, footer staplad"], ["≥ 600 px", "Gutter 40 px, container max 1280 px (1200 px innehåll)"], ["> 768 px med sidospår", "Högermarginalen växer så att innehållet håller 24 px avstånd till sidospåret"],
+                 ["≤ 768 px", "Hamburgermeny ersätter navlänkar. Sidospåret döljs. Headern ligger kvar efter scroll och blir lägre (56 px)"], ["≤ 900 px", "Tvåkolumnslayouter faller till en kolumn"]]) +
         sg.use(do=["Använd <code>.mg-wrap</code> för allt innehåll", "Mät att logotyp, brödsmula och rubrik har samma vänsterkant"],
-               dont=["Egna <code>max-width</code> (960, 1080, 1200) på containrar som ska linjera", "Egna <code>clamp()</code>-värden för sidopadding"]), rose=True)
+               dont=["Egna <code>max-width</code> (960, 1080, 1140) på containrar som ska linjera", "Egna <code>clamp()</code>-värden för sidopadding"]), rose=True)
 
     m = TOK["motion"]
     rows = [[k, v.get("property", "—"), v.get("duration", "—"), v.get("easing", "—")] for k, v in m.items() if isinstance(v, dict)]

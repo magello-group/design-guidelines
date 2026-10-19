@@ -26,6 +26,7 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', function () {
       if (sideNav && isMobile()) sideNav.classList.remove('is-visible');
+      else onScroll();
     });
     onScroll();
   }

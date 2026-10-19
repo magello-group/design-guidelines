@@ -35,7 +35,7 @@ def body(sg):
   </div></nav>
 </div>''') +
         sg.use(do=["Innehållet på undersidor börjar under headern: <code>padding-top: var(--mg-header-h)</code>", "Logotypens vänsterkant är sidans linje: innehållet linjerar mot den", "Headern har <code>pointer-events: none</code> när den roterat bort"],
-               dont=["Rotera headern på mobil (där glider den uppåt)", "Ändra headerns polygon utan att behålla den lutande kanten"]))
+               dont=["Rotera eller dölja headern på mobil (där ligger den kvar och blir lägre)", "Ändra headerns polygon utan att behålla den lutande kanten"]))
 
     drop = sg.block("dropdown", "Dropdown", "Undermeny under huvudlänken",
         "Menyn öppnas vid hover eller klick på chevron och ligger direkt under länken. Den är <code>position: fixed</code> och placeras av JavaScript.",

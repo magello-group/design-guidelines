@@ -154,7 +154,7 @@ Ställ frågorna i ordning. De första sju är generella och gäller alla Magell
    - **Applikationsmeny** — fast mörk rosagrå topbar (`#3D2535`) med logotyp och primär handling.
    - **Ingen meny** — single-page eller stegvis flöde.
 10. **Hur många menynivåer?** ★ Två: huvudlänkar med högst en undernivå. Avgör om dropdown och accordion behövs.
-11. **Ska innehållet ta upp hela bredden?** ★ Blandat: hero och bildytor går ut mot kanten, text och komponenter i en container på `1024px`. Verktyg: full bredd.
+11. **Ska innehållet ta upp hela bredden?** ★ Blandat: hero och bildytor går ut mot kanten, text och komponenter i en container på `1280px` (1200 px innehåll). Verktyg: full bredd.
 12. **Finns formulär eller inmatningsfält?** Om ja: realtidsvalidering vid blur eller bara vid submit? ★ Vid blur. Se [Formulär](#31-formulärkomponenter).
 13. **Finns feedback till användaren (bekräftelser, fel, laddning)?** ★ Toast för kort feedback, spinner under 3 s, progressbar eller overlay över 3 s.
 
@@ -211,12 +211,21 @@ Mål: samma funktion och innehåll, nytt utseende. Arbeta lager för lager så a
 | Färgfoton | `filter: grayscale(1) contrast(1.05)` | Ikoner är undantaget |
 | Gradient | Platt färg | |
 | Mörkt läge | Ta bort | Verktygens mörka topbar är undantaget |
-| Container 1140/1200/1280 | `--mg-wide: 1024px` | |
+| Container 960/1024/1080/1140 | `--mg-wide: 1280px` (1200 px innehåll) | Se D-47 |
 | Hover med färgbyte | Hover som öppnar formen (`clip-path`) | Se [Polygonspråket](#7-polygonspråket--hur-du-skapar-nya-former) |
 
 ### Steg 2 — Fundament först
 
 Kopiera `styleguide/css/magello.css` och `styleguide/js/magello.js` till projektet och länka dem **före** projektets egen CSS. Då finns tokens, reset, typografi och alla komponenter på plats. Välj typografiprofil på `<body>` (standard, `mg-type-editorial` eller `mg-type-showcase`). Utan detta blir allt senare arbete osäkert. Kör token-kontrollen.
+
+**Med Tailwind (v4):** länka `magello.css` och `magello.js` som ovan och importera temat efter Tailwind:
+
+```css
+@import "tailwindcss";
+@import "../design-guidelines/tokens/tailwind.css";
+```
+
+Då finns tokens som utilities: `bg-mg-rose-100`, `text-mg-magenta`, `font-head`, `p-mg-5`, `max-w-mg`, `max-w-mg-text` och brytpunkterna `tablet:`, `nav:` (över hamburgerläget) och `desktop:`. Använd ändå `.mg-wrap` som container, eftersom den har högermarginalen för sidospåret. Bygg inte om komponenterna (knappar, kort, navigation) med utilities, utan använd klasserna i `magello.css`. Temat genereras med `python3 tools/make_tailwind.py` och ändras aldrig för hand.
 
 ### Steg 3 — Container och linjering
 
@@ -297,7 +306,7 @@ Beslut som tagits under bygget av referenssajten (styleguiden i `styleguide/`). 
 
 | # | Beslut | Varför |
 |---|---|---|
-| 11 | Maxbredd för innehåll och navigation är **1024 px** (`--mg-wide`) | Tidigare 1080. 1024 ger bättre radlängd och linjerar med nav |
+| 11 | Maxbredd för innehåll och navigation är **1280 px** (`--mg-wide`), 1200 px innehåll | Ersätter 1024 px, se D-47 i `DECISIONS.md` |
 | 12 | Brödtext är **18 px** (`--mg-fs-body: 1.125rem`, rad 1.6) | Tidigare 16 px. Texterna ska vara 2 px större för läsbarhet |
 | 13 | **Allt innehåll delar vänsterkant med logotypen.** Alla containers använder samma bredd och gutter som navigationen | Logotypens vänsterkant är sidans fasta linje. Mätt: logotyp och brödsmula båda på 473 px vid 1842 px skärm |
 | 14 | **Brödsmulan sitter på samma höjd på alla undersidor:** `--mg-header-h + --mg-space-6` från sidtopp (156 px) | Tidigare hoppade den mellan sidtyper |
@@ -781,8 +790,11 @@ Tokens definieras en gång, i `:root` i `styleguide/css/magello.css`. Blocket ne
   --mg-space-9: 96px;
   /* Layout */
   --mg-gutter: 20px;
-  --mg-wide: 1024px;
+  --mg-gutter-end: var(--mg-gutter);
+  --mg-wide: 1280px;
+  --mg-side-w: 192px;
   --mg-nav-h: 72px;
+  --mg-nav-h-compact: 56px;
   --mg-hext: 48px;
   --mg-header-h: calc(var(--mg-nav-h) + var(--mg-hext));
   --mg-text-w: 680px;
@@ -791,8 +803,11 @@ Tokens definieras en gång, i `:root` i `styleguide/css/magello.css`. Blocket ne
 @media (min-width: 600px) {
   :root { --mg-gutter: 40px; }
 }
-@media (min-width: 1024px) {
-  :root { --mg-gutter: 64px; }
+@media (min-width: 769px) {
+  body:has(.mg-side-nav) {
+    --mg-gutter-end: max(var(--mg-gutter),
+      calc(var(--mg-side-w) + var(--mg-space-5) - max(0px, (100vw - var(--mg-wide)) / 2)));
+  }
 }
 
 /* Typografiprofiler (klass på <body>) */
@@ -832,13 +847,15 @@ img { max-width: 100%; display: block; }
 
 ```css
 .mg-wrap {
-  max-width: var(--mg-wide);        /* 1024 px */
+  max-width: var(--mg-wide);        /* 1280 px = 1200 px innehåll */
   margin-inline: auto;
-  padding-inline: var(--mg-gutter); /* 20 / 40 / 64 px */
+  padding-inline: var(--mg-gutter) var(--mg-gutter-end); /* 20 / 40 px */
 }
 ```
 
-Navigationens `.mg-nav__inner` använder exakt samma tre deklarationer. Det är därför logotypen och innehållet hamnar på samma vänsterkant.
+Navigationens `.mg-nav__inner` använder samma bredd och samma vänstermarginal. Det är därför logotypen och innehållet hamnar på samma vänsterkant.
+
+**Plats för sidospåret.** På sidor med sidospår (över 768 px) växer högermarginalen `--mg-gutter-end` så att innehållet alltid håller `--mg-space-5` (24 px) avstånd till spåret. Vänsterkanten flyttas inte, innehållet blir bara smalare på höger sida i de bredder där spåret annars skulle ligga över texten (ungefär 769 till 1630 px). Containrar ska därför alltid skriva `padding-inline: var(--mg-gutter) var(--mg-gutter-end)`, aldrig bara `var(--mg-gutter)`.
 
 ### Linjering — regeln
 
@@ -846,8 +863,8 @@ Navigationens `.mg-nav__inner` använder exakt samma tre deklarationer. Det är 
 
 Så gör du:
 
-- Alla innehållscontainrar är `.mg-wrap` eller har samma `max-width: var(--mg-wide)` och `padding-inline: var(--mg-gutter)`.
-- Container med egen bakgrund (till exempel `.mg-ingang-col`, vit platta ovanpå ett hero-foto) skriver `width: min(var(--mg-wide), 100%)`, `margin-inline: auto`, `padding-inline: var(--mg-gutter)`.
+- Alla innehållscontainrar är `.mg-wrap` eller har samma `max-width: var(--mg-wide)` och `padding-inline: var(--mg-gutter) var(--mg-gutter-end)`.
+- Container med egen bakgrund (till exempel `.mg-ingang-col`, vit platta ovanpå ett hero-foto) skriver `width: min(var(--mg-wide), 100%)`, `margin-inline: auto`, `padding-inline: var(--mg-gutter) var(--mg-gutter-end)`.
 - Använd **aldrig** egna `max-width` som 960 eller 1080 för en container som ska linjera med logotypen. Det var orsaken till en förskjutning på 32 px.
 - Använd inte `clamp()` med egna värden för sidopadding. Använd `--mg-gutter`.
 
@@ -886,9 +903,9 @@ Math.round(document.querySelector('.mg-breadcrumb').getBoundingClientRect().top 
 | Brytpunkt | Beteende |
 |---|---|
 | `max-width: 599px` | En kolumn, gutter 20 px, footer staplad |
-| `600–1023 px` | Gutter 40 px |
-| `≥ 1024 px` | Gutter 64 px, container 1024 px |
-| `max-width: 768px` | Hamburgermeny ersätter navlänkar. Header rör sig uppåt i stället för att rotera. Sidospåret döljs |
+| `≥ 600 px` | Gutter 40 px, container max 1280 px (1200 px innehåll) |
+| `> 768 px` med sidospår | Högermarginalen `--mg-gutter-end` växer så att innehållet inte hamnar under sidospåret |
+| `max-width: 768px` | Hamburgermeny ersätter navlänkar. Headern ligger kvar efter scroll och blir lägre (56 px) i stället för att rotera. Sidospåret döljs |
 | `max-width: 900px` | Tvåkolumnslayouter (till exempel kort) faller till en kolumn |
 
 ### Avstånd i innehåll
@@ -1186,24 +1203,24 @@ Se `styleguide/js/magello.js`. Den sköter scroll-tröskeln (80 px för `--rotat
 
 ### Mobil-override (undersidor)
 
-På mobil ska headern **aldrig** rotera — den ska dra sig uppåt (translateY) precis som på startsidan. Sidospåret döljs helt.
+På mobil (hamburgerläge) ska headern **aldrig** rotera eller försvinna. Den ligger kvar efter scroll och blir lägre: navigationen går från 72 till 56 px och logotypen från 38 till 32 px. Polygonens förlängning försvinner som på desktop. Sidospåret döljs helt. Se D-48.
 
 ```css
 @media (max-width: 768px) {
-  /* Ändra transform-origin till topp-mitten för att translateY ska fungera */
-  .mg-page-header {
-    transform-origin: 50% 0 !important;
-  }
-  /* Åsidosätt rotation med vertikal slide-upp */
-  .mg-page-header.is-scrolled {
-    transform: translateY(-100%) !important;
-  }
-  /* Sidospåret visas aldrig på mobil */
   .mg-side-nav { display: none !important; }
+}
+/* Måste ligga efter .mg-page-header--rotate.is-scrolled */
+@media (max-width: 768px) {
+  .mg-page-header.is-scrolled {
+    transform: none;
+    pointer-events: auto;
+  }
+  .mg-page-header.is-scrolled .mg-nav { height: var(--mg-nav-h-compact); }
+  .mg-page-header.is-scrolled .mg-nav__logo svg { height: 32px; }
 }
 ```
 
-**Kritisk detalj:** `transform-origin: 50% 0 !important` måste åsidosätta `right top` annars gör `translateY` konstiga sidorörelser när origin är i hörnet.
+`.mg-nav` och logotypen har `transition: height 0.3s ease`, som stängs av vid `prefers-reduced-motion`.
 
 > **Undermenyer** i sidospåret öppnas vid hover och klick på huvudlänk. Se [Dropdown-meny och undermenyer](#14-dropdown-meny-och-undermenyer).
 ---
@@ -1533,7 +1550,7 @@ Mobilmenyns rosa hårlinjer (`--mg-rose-200` och `--mg-rose-100`) är funktionel
 |---|---|---|---|
 | Header shape (startsida) | scroll > 8px | `clip-path` kollapsar | `0.4s ease` |
 | Header rotation (undersida) | scroll > 80px | `rotate(90deg)` från `right top` | `0.6s cubic-bezier(0.4, 0, 0.6, 1)` |
-| Header slide-upp (mobil undersida) | scroll > 80px | `translateY(-100%)` | `0.6s cubic-bezier(0.4, 0, 0.6, 1)` |
+| Header blir lägre (mobil) | scroll > 80px (undersida), 8px (startsida) | `height` 72 → 56 px | `0.3s ease` |
 | Sidospår slide-in | scroll > 80px (desktop) | `translateX(0)` + `opacity: 1` | `0.42s cubic-bezier(0, 0, 0.2, 1)` med `0.18s delay` |
 | Mobilmeny drawer | hamburgare-klick | `translateX(0)` | `0.38s cubic-bezier(0, 0, 0.2, 1)` |
 | Knapp hover | hover | `clip-path` öppnas | `0.35s ease` |
@@ -3220,7 +3237,8 @@ Kopiera `styleguide/css/magello.css`, `styleguide/js/magello.js`, `assets/logos/
 - [ ] **Alla** `var(--mg-…)` som projektets egen CSS använder är definierade (kör token-kontrollen i avsnitt 4)
 
 ### Layout
-- [ ] Innehållet använder `.mg-wrap` (1024 px, gutter 20/40/64 px)
+- [ ] Innehållet använder `.mg-wrap` (1280 px, gutter 20/40 px, högermarginal `--mg-gutter-end`)
+- [ ] Inget innehåll hamnar under sidospåret i 769–1630 px
 - [ ] Logotyp och innehåll delar vänsterkant (mät med skriptet i avsnitt 11)
 - [ ] Brödsmulan ligger på 156 px från sidtopp på alla undersidor
 - [ ] Inga högerställda informationsrutor. Infoblock ligger efter varandra i full bredd
