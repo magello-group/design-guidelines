@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Färg — Magello styleguide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Condensed:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/magello.css">
+<link rel="stylesheet" href="css/styleguide.css">
+</head>
+<body>
+
+<!-- ═══ SIDOSPÅR ═══════════════════════════════════════════════ -->
+<div class="mg-side-nav" aria-label="Sidonavigering">
+  <a class="mg-side-nav__logo" href="index.html" aria-label="Magello">
+    <img src="../assets/logos/icon-logotype.svg" alt="Magello">
+  </a>
+  <ul class="mg-side-nav__links">
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="farg.html" class="is-active">Grunder</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="farg.html" class="is-active">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+    </li>
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="komponenter.html">Byggstenar</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+    </li>
+    <li><a href="navigation.html">Navigation</a></li>
+    <li><a href="office.html">Word &amp; PowerPoint</a></li>
+  </ul>
+  <a class="mg-side-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+</div>
+
+<!-- ═══ HEADER ═════════════════════════════════════════════════ -->
+<div class="mg-page-header mg-page-header--rotate">
+  <div class="mg-header-shape"></div>
+  <nav class="mg-nav">
+    <div class="mg-nav__inner">
+      <a class="mg-nav__logo" href="index.html" aria-label="Magello">
+        <svg viewBox="0 0 1298 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>Magello</title>
+          <rect x="114" y="41" width="1096" height="251" fill="white"/>
+          <path d="M383.475 127.758L378.345 171.487L398.438 170.63L397.583 126.043L383.475 127.758Z" fill="#EC008C"/>
+          <path d="M1040.56 171.916L1084.16 180.49L1096.99 227.221L1147.86 177.918L1151.28 131.616L1088.44 120.47L1040.56 171.916Z" fill="#EC008C"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M138.513 0L50.0185 22.7221L1.71003 95.1756L0 290.243L47.026 318.109L97.472 322.825L320.632 332.686L1226.09 325.826L1295.78 257.66L1297.06 24.8657L1267.56 6.43078L138.513 0ZM293.271 258.946L244.535 266.234L241.115 197.639L212.899 216.932L190.241 197.639L188.104 267.521H138.94L135.093 210.93L139.795 93.4607H176.989L218.884 152.195L255.65 93.8894H293.698L293.271 258.946ZM410.408 260.232L401.003 190.351H376.635L369.795 256.374H321.487L340.297 135.046C340.297 135.046 353.55 80.5992 356.115 81.4566C358.68 82.314 420.241 85.3151 420.241 85.3151L443.327 138.476L462.564 265.377L410.408 260.232ZM604.925 256.803L576.282 262.805L510.018 257.66L483.94 222.076L482.23 187.35L481.802 150.909L492.062 119.613L514.72 92.1746L558.754 85.3151L585.687 89.6022L613.047 93.4607L612.192 107.18L604.497 141.049L557.044 128.187L531.821 146.193L528.401 190.78L548.494 214.359L567.732 210.072V187.35C560.891 186.493 560.036 186.493 560.036 186.493C559.181 186.064 560.036 167.2 560.036 167.2L613.902 171.059V192.924L614.33 214.788L604.925 256.803ZM752.843 135.046L695.984 135.904V154.339L743.438 152.195L743.01 192.495L692.992 195.925L696.412 213.502L752.415 218.218L751.988 260.661L647.248 260.232L648.103 93.4607L752.843 96.4618V135.046ZM893.493 259.804L787.899 259.375L788.754 80.5992L834.497 81.0279L835.779 213.931L894.348 212.216L893.493 259.804ZM909.739 247.371L905.891 116.612L910.594 72.0248L952.917 74.5971L952.062 203.213L989.255 203.641L1008.92 205.356L1009.35 252.944L909.739 247.371ZM1180.35 225.935L1135.04 262.805L1040.98 242.655L1019.61 165.486L1034.14 96.8905C1034.14 96.8905 1091 79.7417 1099.98 78.8843L1140.59 84.4576L1187.19 133.76L1180.35 225.935Z" fill="#EC008C"/>
+        </svg>
+      </a>
+      <ul class="mg-nav__links">
+        <li class="mg-nav__has-sub">
+          <a href="farg.html" class="is-active">Grunder</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Grunder"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="farg.html" class="is-active">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+        </li>
+        <li class="mg-nav__has-sub">
+          <a href="komponenter.html">Byggstenar</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Byggstenar"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+        </li>
+        <li><a href="navigation.html">Navigation</a></li>
+        <li><a href="office.html">Word &amp; PowerPoint</a></li>
+      </ul>
+      <a class="mg-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+      <button class="mg-nav__burger" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" aria-hidden="true">
+          <rect width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="8" width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="16" width="24" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<!-- ═══ MOBILMENY ══════════════════════════════════════════════ -->
+<div class="mg-mobile-menu" id="mobile-menu" aria-hidden="true" aria-label="Mobilnavigering">
+  <div class="mg-mobile-menu__head">
+    <a href="index.html" class="mg-nav__logo" aria-label="Magello">
+      <svg style="height:32px;width:auto" viewBox="0 0 1298 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>Magello</title>
+          <rect x="114" y="41" width="1096" height="251" fill="white"/>
+          <path d="M383.475 127.758L378.345 171.487L398.438 170.63L397.583 126.043L383.475 127.758Z" fill="#EC008C"/>
+          <path d="M1040.56 171.916L1084.16 180.49L1096.99 227.221L1147.86 177.918L1151.28 131.616L1088.44 120.47L1040.56 171.916Z" fill="#EC008C"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M138.513 0L50.0185 22.7221L1.71003 95.1756L0 290.243L47.026 318.109L97.472 322.825L320.632 332.686L1226.09 325.826L1295.78 257.66L1297.06 24.8657L1267.56 6.43078L138.513 0ZM293.271 258.946L244.535 266.234L241.115 197.639L212.899 216.932L190.241 197.639L188.104 267.521H138.94L135.093 210.93L139.795 93.4607H176.989L218.884 152.195L255.65 93.8894H293.698L293.271 258.946ZM410.408 260.232L401.003 190.351H376.635L369.795 256.374H321.487L340.297 135.046C340.297 135.046 353.55 80.5992 356.115 81.4566C358.68 82.314 420.241 85.3151 420.241 85.3151L443.327 138.476L462.564 265.377L410.408 260.232ZM604.925 256.803L576.282 262.805L510.018 257.66L483.94 222.076L482.23 187.35L481.802 150.909L492.062 119.613L514.72 92.1746L558.754 85.3151L585.687 89.6022L613.047 93.4607L612.192 107.18L604.497 141.049L557.044 128.187L531.821 146.193L528.401 190.78L548.494 214.359L567.732 210.072V187.35C560.891 186.493 560.036 186.493 560.036 186.493C559.181 186.064 560.036 167.2 560.036 167.2L613.902 171.059V192.924L614.33 214.788L604.925 256.803ZM752.843 135.046L695.984 135.904V154.339L743.438 152.195L743.01 192.495L692.992 195.925L696.412 213.502L752.415 218.218L751.988 260.661L647.248 260.232L648.103 93.4607L752.843 96.4618V135.046ZM893.493 259.804L787.899 259.375L788.754 80.5992L834.497 81.0279L835.779 213.931L894.348 212.216L893.493 259.804ZM909.739 247.371L905.891 116.612L910.594 72.0248L952.917 74.5971L952.062 203.213L989.255 203.641L1008.92 205.356L1009.35 252.944L909.739 247.371ZM1180.35 225.935L1135.04 262.805L1040.98 242.655L1019.61 165.486L1034.14 96.8905C1034.14 96.8905 1091 79.7417 1099.98 78.8843L1140.59 84.4576L1187.19 133.76L1180.35 225.935Z" fill="#EC008C"/>
+        </svg>
+    </a>
+    <button class="mg-mobile-menu__close" aria-label="Stäng meny">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <ul class="mg-mobile-menu__links">
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="farg.html" class="is-active">Grunder</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="farg.html" class="is-active">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+    </li>
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="komponenter.html">Byggstenar</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+    </li>
+    <li><a href="navigation.html">Navigation</a></li>
+    <li><a href="office.html">Word &amp; PowerPoint</a></li>
+  </ul>
+  <a class="mg-mobile-menu__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+</div>
+
+<!-- ═══ SIDHUVUD ═══════════════════════════════════════════════ -->
+<div class="mg-ingang-hero">
+  <div class="mg-ingang-col">
+    <nav class="mg-breadcrumb" aria-label="Brödsmula">
+      <a href="index.html">Hem</a>
+      <span class="mg-breadcrumb__sep">/</span>
+      <span aria-current="page">Färg</span>
+    </nav>
+    <p class="mg-kicker">Grunder</p>
+    <h1 class="mg-ingang-title">Färg</h1>
+    <p class="mg-ingang-sub">Sidan ska i huvudsak vara svart, vit och rosagrå. Magenta är den enda accent som får synas stort. Övriga accenter lever i ikoner, steg och status.</p>
+    
+  </div>
+</div>
+
+<main id="main-content">
+<section class="sg-block" id="palett" aria-labelledby="h-palett">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Paletten</p>
+    <h2 id="h-palett">Neutraler och accenter</h2>
+    <p>Färgerna finns som tokens (<code>--mg-*</code>) i <code>css/magello.css</code> och som värden i <code>tokens/tokens.json</code>. Använd alltid token eller hex från tabellen. Hitta inte på mellanvärden.</p>
+  </div>
+<h3 class="sg-sub">Neutraler</h3><p class="sg-text">Det här är sidans grund: text, ytor och struktur.</p><div class="sg-swatches"><div class="sg-swatch"><div class="sg-swatch__chip" style="background:#000000;color:#fff">#000000</div><div class="sg-swatch__body"><div class="sg-swatch__name">black</div><div class="sg-swatch__meta"><code>--mg-black</code></div><div class="sg-swatch__role">Brödtext och rubriker i löpande innehåll</div></div></div><div class="sg-swatch"><div class="sg-swatch__chip sg-swatch__chip--white" style="background:#FFFFFF;color:#000">#FFFFFF</div><div class="sg-swatch__body"><div class="sg-swatch__name">white</div><div class="sg-swatch__meta"><code>--mg-white</code></div><div class="sg-swatch__role">Bakgrund, ytor ovanpå foto</div></div></div><div class="sg-swatch"><div class="sg-swatch__chip" style="background:#4C4A4A;color:#fff">#4C4A4A</div><div class="sg-swatch__body"><div class="sg-swatch__name">text-2</div><div class="sg-swatch__meta"><code>--mg-text-2</code></div><div class="sg-swatch__role">Underrubriker, ingresser och sekundär text</div></div></div><div class="sg-swatch"><div class="sg-swatch__chip" style="background:#F7F3F3;color:#000">#F7F3F3</div><div class="sg-swatch__body"><div class="sg-swatch__name">rose-50</div><div class="sg-swatch__meta"><code>--mg-rose-50</code></div><div class="sg-swatch__role">Ljusaste bakgrund, faktarutor, tabellband</div></div></div><div class="sg-swatch"><div class="sg-swatch__chip" style="background:#F4EBEB;color:#000">#F4EBEB</div><div class="sg-swatch__body"><div class="sg-swatch__name">rose-100</div><div class="sg-swatch__meta"><code>--mg-rose-100</code></div><div class="sg-swatch__role">Signaturytan (header), sektionsbakgrund, textrutor</div></div></div><div class="sg-swatch"><div class="sg-swatch__chip" style="background:#E3D6D6;color:#000">#E3D6D6</div><div class="sg-swatch__body"><div class="sg-swatch__name">rose-200</div><div class="sg-swatch__meta"><code>--mg-rose-200</code></div><div class="sg-swatch__role">Sekundär knapp, tabellrubrik, ljusa fyllnader</div></div></div><div class="sg-swatch"><div class="sg-swatch__chip" style="background:#DED4D4;color:#000">#DED4D4</div><div class="sg-swatch__body"><div class="sg-swatch__name">rose-300</div><div class="sg-swatch__meta"><code>--mg-rose-300</code></div><div class="sg-swatch__role">Hover på sekundär knapp, tabellsummering</div></div></div><div class="sg-swatch"><div class="sg-swatch__chip" style="background:#BFBFBF;color:#000">#BFBFBF</div><div class="sg-swatch__body"><div class="sg-swatch__name">grey-300</div><div class="sg-swatch__meta"><code>--mg-grey-300</code></div><div class="sg-swatch__role">Diskreta etiketter, årtal, brödsmula. Inte för brödtext</div></div></div></div><h3 class="sg-sub">Accenter</h3><p class="sg-text">Magenta är primär. De övriga används i ikoner, processteg och status, aldrig som textfärg eller stor yta.</p><div class="sg-swatches"><div class="sg-swatch"><div class="sg-swatch__chip" style="background:#EC008C;color:#fff">#EC008C</div><div class="sg-swatch__body"><div class="sg-swatch__name">magenta</div><div class="sg-swatch__meta"><code>--mg-magenta</code></div><div class="sg-swatch__role">Primär accent: logotyp, primär knapp, H2, länkar, utvalda ord</div></div></div><div class="sg-swatch"><div class="sg-swatch__chip" style="background:#31ABE2;color:#000">#31ABE2</div><div class="sg-swatch__body"><div class="sg-swatch__name">blue</div><div class="sg-swatch__meta"><code>--mg-blue</code></div><div class="sg-swatch__role">Ikoner, processteg, info</div></div></div><div class="sg-swatch"><div class="sg-swatch__chip" style="background:#F9B804;color:#000">#F9B804</div><div class="sg-swatch__body"><div class="sg-swatch__name">orange</div><div class="sg-swatch__meta"><code>--mg-orange</code></div><div class="sg-swatch__role">Ikoner, processteg</div></div></div><div class="sg-swatch"><div class="sg-swatch__chip" style="background:#E3012F;color:#fff">#E3012F</div><div class="sg-swatch__body"><div class="sg-swatch__name">red</div><div class="sg-swatch__meta"><code>--mg-red</code></div><div class="sg-swatch__role">Ikoner, processteg, fel</div></div></div><div class="sg-swatch"><div class="sg-swatch__chip" style="background:#FFDC00;color:#000">#FFDC00</div><div class="sg-swatch__body"><div class="sg-swatch__name">yellow</div><div class="sg-swatch__meta"><code>--mg-yellow</code></div><div class="sg-swatch__role">Ikoner, processteg, varning</div></div></div><div class="sg-swatch"><div class="sg-swatch__chip" style="background:#1BA660;color:#fff">#1BA660</div><div class="sg-swatch__body"><div class="sg-swatch__name">green</div><div class="sg-swatch__meta"><code>--mg-green</code></div><div class="sg-swatch__role">Ikoner, processteg, klart/lyckat</div></div></div></div><p class="sg-text">Den vita rutan har en ram i rosagrått enbart för att den ska synas här. Vit yta på vit sida har ingen kant i designen.</p>
+</div>
+</section>
+<section class="sg-block" id="proportioner" aria-labelledby="h-proportioner">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Proportioner</p>
+    <h2 id="h-proportioner">Så mycket av varje</h2>
+    <p>Rosagrått ger värme, svart ger tydlighet och magenta pekar ut det viktigaste. Ju mindre magenta, desto starkare blir den.</p>
+  </div>
+<div class="sg-demo">
+<div class="sg-ratio"><span style="flex:55;background:#FFFFFF"></span><span style="flex:24;background:#F4EBEB"></span><span style="flex:13;background:#000000"></span><span style="flex:5;background:#EC008C"></span><span style="flex:3;background:#31ABE2"></span></div><div class="sg-ratio-legend"><span>Vitt · ca 55 %</span><span>Rosagrått · ca 24 %</span><span>Text (svart, grått) · ca 13 %</span><span>Magenta · ca 5 %</span><span>Övriga accenter · ca 3 %</span></div>
+</div><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Låt vitt och rosagrått bära ytorna</li><li>Använd magenta för en sak i taget: primär knapp, sektionsrubrik, länk eller utvalt ord</li><li>Låt ikoner och processteg bära de övriga accenterna</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Fylla stora ytor med magenta och lägga brödtext ovanpå</li><li>Använda två accenter som textfärg bredvid varandra</li><li>Göra sektioner svarta, mörkgrå eller starkt färgade</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--loading">Tänk på</span><ul><li>Mörka ytor används inte i marknadsmaterial. Verktyg och appar har en mörk rosagrå topbar (<code>#3D2535</code>) som enda undantag</li></ul></div></div>
+</div>
+</section>
+<section class="sg-block" id="fyllnad" aria-labelledby="h-fyllnad">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Regel</p>
+    <h2 id="h-fyllnad">Accentfärger är fyllnad, aldrig kant</h2>
+    <p>Magenta och de andra accenterna fyller former, ikoner, knappar och text. De ritas aldrig som streck, understrykning eller kantlinje.</p>
+  </div>
+<div class="sg-demo">
+<div class="sg-two"><div><span class="sg-demo-label">Rätt</span><div class="sg-row sg-row--top"><a class="mg-btn mg-btn--primary" href="#fyllnad">Magenta fyllnad</a><span class="mg-pill mg-pill--success">Klar</span><span class="mg-pill mg-pill--loading">Bearbetar</span></div></div><div><span class="sg-demo-label">Fel</span><div style="padding:14px 18px;border-left:3px solid var(--mg-magenta);background:#fff;color:var(--mg-text-2);font-size:.9375rem">Accentfärg som kantlinje bryter principen.</div></div></div>
+</div><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Fyll knappar, etiketter, ikoner och former</li><li>Använd magenta som textfärg för H2, länkar och enstaka ord</li><li>Behöver du en understrykning: gör den som en skev polygon (som i ”Lediga jobb”)</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li><code>border-left: 3px solid magenta</code> som accentlinje</li><li>Färgade streck som avgränsare mellan sektioner</li><li>Understrukna rubriker i accentfärg</li></ul></div></div><p class="sg-text">Undantag: ett fokus- och statusmarkerat formulärfält byter kantfärg (blå, röd, grön). Det är funktionellt och beskrivs under <a href="formular-feedback.html">Formulär &amp; feedback</a>.</p>
+</div>
+</section>
+<section class="sg-block" id="kontrast" aria-labelledby="h-kontrast">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Tillgänglighet</p>
+    <h2 id="h-kontrast">Kontrast</h2>
+    <p>Brödtext ska ha minst 4,5 : 1 mot bakgrunden (WCAG AA). Stor text (från 24 px, eller 19 px fet) klarar 3 : 1. Värdena nedan är beräknade från tokens.</p>
+  </div>
+<div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Kombination</th><th>Prov</th><th>Kvot</th><th>Klarar AA för brödtext</th></tr></thead><tbody><tr><td>Brödtext</td><td><span class="sg-ratio-chip" style="background:#FFFFFF;color:#000000">Aa Magello</span></td><td>21.0 : 1</td><td><span class="sg-pass">Ja</span></td></tr><tr><td>Sekundär text</td><td><span class="sg-ratio-chip" style="background:#FFFFFF;color:#4C4A4A">Aa Magello</span></td><td>8.8 : 1</td><td><span class="sg-pass">Ja</span></td></tr><tr><td>Brödtext på rosa</td><td><span class="sg-ratio-chip" style="background:#F4EBEB;color:#000000">Aa Magello</span></td><td>17.9 : 1</td><td><span class="sg-pass">Ja</span></td></tr><tr><td>Sekundär text på rosa</td><td><span class="sg-ratio-chip" style="background:#F4EBEB;color:#4C4A4A">Aa Magello</span></td><td>7.5 : 1</td><td><span class="sg-pass">Ja</span></td></tr><tr><td>Magenta text på vitt</td><td><span class="sg-ratio-chip" style="background:#FFFFFF;color:#EC008C">Aa Magello</span></td><td>4.2 : 1</td><td><span class="">Endast stor text</span></td></tr><tr><td>Vit text på magenta (knapp)</td><td><span class="sg-ratio-chip" style="background:#EC008C;color:#FFFFFF">Aa Magello</span></td><td>4.2 : 1</td><td><span class="">Endast stor text</span></td></tr><tr><td>Svart text på rose-200 (sekundär knapp)</td><td><span class="sg-ratio-chip" style="background:#E3D6D6;color:#000000">Aa Magello</span></td><td>14.9 : 1</td><td><span class="sg-pass">Ja</span></td></tr><tr><td>Grå 300 text på vitt</td><td><span class="sg-ratio-chip" style="background:#FFFFFF;color:#BFBFBF">Aa Magello</span></td><td>1.8 : 1</td><td><span class="sg-fail">Nej</span></td></tr><tr><td>Vit text på blå</td><td><span class="sg-ratio-chip" style="background:#31ABE2;color:#FFFFFF">Aa Magello</span></td><td>2.6 : 1</td><td><span class="sg-fail">Nej</span></td></tr><tr><td>Svart text på gul</td><td><span class="sg-ratio-chip" style="background:#FFDC00;color:#000000">Aa Magello</span></td><td>15.5 : 1</td><td><span class="sg-pass">Ja</span></td></tr><tr><td>Vit text på grön</td><td><span class="sg-ratio-chip" style="background:#1BA660;color:#FFFFFF">Aa Magello</span></td><td>3.1 : 1</td><td><span class="">Endast stor text</span></td></tr><tr><td>Vit text på röd</td><td><span class="sg-ratio-chip" style="background:#E3012F;color:#FFFFFF">Aa Magello</span></td><td>4.9 : 1</td><td><span class="sg-pass">Ja</span></td></tr></tbody></table></div><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Använd svart eller <code>--mg-text-2</code> för brödtext</li><li>Använd magenta på vitt för rubriker och länkar (stor eller fet text)</li><li>Kontrollera nya kombinationer innan du använder dem</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Grå 300 som brödtext. Den är bara till diskreta etiketter, årtal och brödsmula</li><li>Vit liten text på gul eller blå yta</li></ul></div></div>
+</div>
+</section>
+<section class="mg-section--rose sg-block sg-block--rose" id="status" aria-labelledby="h-status">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Status</p>
+    <h2 id="h-status">Färger med betydelse</h2>
+    <p>Accentfärgerna får också en semantisk roll i gränssnitt. Roll och färg hänger ihop. Använd aldrig röd för något positivt.</p>
+  </div>
+<div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Roll</th><th>Färg</th><th>Betyder</th></tr></thead><tbody><tr><td><span class="mg-pill mg-pill--error">Fel</span></td><td><code>#E3012F</code></td><td>Något gick fel eller är ogiltigt</td></tr><tr><td><span class="mg-pill mg-pill--success">Klart</span></td><td><code>#1BA660</code></td><td>Lyckades, giltigt, godkänt</td></tr><tr><td><span class="mg-pill mg-pill--loading">Info / bearbetar</span></td><td><code>#31ABE2</code></td><td>Pågår eller neutral information</td></tr><tr><td><span class="mg-pill mg-pill--warning">Varning</span></td><td><code>#FFDC00</code></td><td>Kan bli ett problem (svart text)</td></tr></tbody></table></div>
+</div>
+</section>
+
+</main>
+
+
+<!-- ═══ FOOTER ═════════════════════════════════════════════════ -->
+<footer class="mg-footer">
+  <div class="mg-wrap">
+    <div class="mg-footer__inner">
+      <div class="mg-footer__col"><span class="mg-footer__brand">Magello styleguide</span>Version 0.1<br>Formspråk för webb, dokument<br>och sociala medier</div>
+      <div class="mg-footer__col">
+        <a href="../tokens/tokens.json">tokens.json</a><br>
+        <a href="../docs/design-language.md">design-language.md</a><br>
+        <a href="../docs/design-guidelines-web.md">design-guidelines-web.md</a>
+      </div>
+      <div class="mg-footer__col" style="text-align:right">Västgötagatan 2<br>118 27 Stockholm<br>info@magello.se</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/magello.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+/* ==========================================================================
+   Magello styleguide — dokumentationselement (styleguide.css)
+   Läggs efter magello.css. Följer samma regler som övriga designen:
+   polygoner, inga linjer som avgränsare, accentfärger som fyllnad.
+   ========================================================================== */
+
+/* Citattecknets sökväg är relativ CSS-filen i magello.css (../graphics/).
+   I styleguiden ligger grafiken i ../assets/graphics/. */
+.mg-pullquote::before,
+.mg-prose blockquote::before { background-image: url('../../assets/graphics/citation.svg'); }
+
+/* ── Block ───────────────────────────────────────────────── */
+.sg-block { padding-block: var(--mg-space-8); }
+.sg-block .mg-section-head { margin-bottom: var(--mg-space-6); }
+.sg-block .mg-section-head p:not(.mg-label) { max-width: 68ch; }
+.sg-sub {
+  font: 700 var(--mg-fs-h3)/1.2 var(--mg-font-head);
+  margin: var(--mg-space-7) 0 var(--mg-space-3);
+  color: var(--mg-black);
+}
+.sg-text { color: var(--mg-text-2); max-width: 70ch; margin-bottom: var(--mg-space-4); }
+.sg-text a { color: var(--mg-magenta); }
+.sg-text code, .sg-use code, .mg-table code, .sg-props code {
+  font-family: var(--mg-font-code); font-size: .875em;
+  background: var(--mg-rose-50); padding: 1px 6px;
+}
+
+/* ── Levande exempel ─────────────────────────────────────── */
+.sg-demo {
+  background: var(--mg-rose-50);
+  clip-path: polygon(0% 1%, 100% 0%, 99% 99%, 1% 100%);
+  padding: var(--mg-space-6);
+  margin: var(--mg-space-5) 0;
+}
+.sg-demo--white { background: var(--mg-white); }
+.sg-demo--plain { background: none; clip-path: none; padding: 0; }
+.sg-demo .mg-section--rose { margin-block: 0; }
+.sg-demo-label {
+  font: 700 .6875rem/1 var(--mg-font-head);
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--mg-text-2); margin-bottom: var(--mg-space-4); display: block;
+}
+.sg-row { display: flex; flex-wrap: wrap; gap: var(--mg-space-4); align-items: center; }
+.sg-row--top { align-items: flex-start; }
+.sg-two { display: grid; grid-template-columns: 1fr 1fr; gap: var(--mg-space-5); }
+.sg-three { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--mg-space-5); }
+@media (max-width: 800px) { .sg-two, .sg-three { grid-template-columns: 1fr; } }
+
+/* ── Gör / Gör inte / Tänk på ────────────────────────────── */
+.sg-use { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--mg-space-4); margin: var(--mg-space-5) 0; }
+.sg-use__card {
+  background: var(--mg-rose-50);
+  padding: var(--mg-space-5);
+  clip-path: polygon(0% 0%, 100% 1%, 99% 99%, 0% 100%);
+}
+.sg-use__card .mg-pill { margin-bottom: var(--mg-space-3); }
+.sg-use__card ul { padding-left: var(--mg-space-5); color: var(--mg-text-2); font-size: .9375rem; line-height: 1.55; }
+.sg-use__card li { margin-bottom: var(--mg-space-2); }
+.sg-use__card li:last-child { margin-bottom: 0; }
+
+/* ── Kod ─────────────────────────────────────────────────── */
+.sg-code {
+  font: 400 .8125rem/1.6 var(--mg-font-code);
+  background: var(--mg-rose-50);
+  color: var(--mg-text-2);
+  padding: var(--mg-space-4) var(--mg-space-5);
+  margin: var(--mg-space-4) 0;
+  overflow-x: auto;
+  white-space: pre;
+  clip-path: polygon(0% 0%, 100% 2%, 99% 98%, 1% 100%);
+}
+
+/* ── Egenskapslista ──────────────────────────────────────── */
+.sg-props { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--mg-space-3); margin: var(--mg-space-4) 0; }
+.sg-props div { background: var(--mg-rose-50); padding: var(--mg-space-3) var(--mg-space-4); clip-path: polygon(0% 0%, 100% 3%, 98% 100%, 1% 97%); }
+.sg-props dt { font: 700 .6875rem/1 var(--mg-font-head); letter-spacing: .12em; text-transform: uppercase; color: var(--mg-magenta); margin-bottom: var(--mg-space-2); }
+.sg-props dd { font-size: .9375rem; color: var(--mg-text-2); }
+
+/* ── Färgrutor ───────────────────────────────────────────── */
+.sg-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: var(--mg-space-4); margin: var(--mg-space-5) 0; }
+.sg-swatch { display: flex; flex-direction: column; }
+.sg-swatch__chip {
+  height: 96px;
+  clip-path: polygon(0% 3%, 98% 0%, 100% 96%, 2% 100%);
+  display: flex; align-items: flex-end; padding: var(--mg-space-3);
+  font: 700 .75rem/1 var(--mg-font-head); letter-spacing: .06em;
+}
+.sg-swatch--lightborder .sg-swatch__chip { background-image: none; }
+.sg-swatch__body { padding: var(--mg-space-3) 0 0; }
+.sg-swatch__name { font: 700 .9375rem/1.2 var(--mg-font-head); color: var(--mg-black); }
+.sg-swatch__meta { font-size: .8125rem; color: var(--mg-text-2); margin-top: 2px; }
+.sg-swatch__role { font-size: .8125rem; color: var(--mg-text-2); margin-top: var(--mg-space-2); line-height: 1.45; }
+
+/* Proportionsstapel */
+.sg-ratio { display: flex; height: 64px; margin: var(--mg-space-5) 0 var(--mg-space-2); gap: 3px; }
+.sg-ratio > span { display: block; clip-path: polygon(0% 6%, 98% 0%, 100% 94%, 2% 100%); }
+.sg-ratio-legend { display: flex; flex-wrap: wrap; gap: var(--mg-space-4); font-size: .8125rem; color: var(--mg-text-2); }
+
+/* Kontrasttabell */
+.sg-ratio-chip { display: inline-block; padding: 4px 12px; font: 700 .875rem/1.2 var(--mg-font-head); clip-path: polygon(2% 5%, 99% 0%, 100% 88%, 97% 100%, 0% 95%); }
+.sg-pass { color: var(--mg-green); font-weight: 700; }
+.sg-fail { color: var(--mg-red); font-weight: 700; }
+
+/* ── Formkatalog ─────────────────────────────────────────── */
+.sg-shapes { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: var(--mg-space-5); margin: var(--mg-space-5) 0; }
+.sg-shape__fig { height: 120px; margin-bottom: var(--mg-space-3); transition: clip-path .35s ease; }
+.sg-shape__name { font: 700 1rem/1.2 var(--mg-font-head); color: var(--mg-black); }
+.sg-shape__use { font-size: .8125rem; color: var(--mg-text-2); margin: 2px 0 var(--mg-space-2); }
+.sg-shape__pts { font: 400 .6875rem/1.5 var(--mg-font-code); color: var(--mg-text-2); word-break: break-word; }
+@media (prefers-reduced-motion: reduce) { .sg-shape__fig { transition: none; } }
+.sg-compare { display: grid; grid-template-columns: 1fr 1fr; gap: var(--mg-space-5); margin: var(--mg-space-5) 0; }
+.sg-compare__fig { height: 140px; display: flex; align-items: center; justify-content: center; font: 700 1rem/1 var(--mg-font-head); text-align: center; padding: var(--mg-space-4); }
+.sg-compare__fig--bad { background: var(--mg-rose-200); color: var(--mg-text-2); }
+.sg-compare__fig--good { background: var(--mg-magenta); color: #fff; clip-path: polygon(2% 5%, 99% 0%, 100% 88%, 97% 100%, 0% 95%); }
+.sg-steps-list { counter-reset: s; list-style: none; padding: 0; margin: var(--mg-space-5) 0; display: grid; gap: var(--mg-space-3); }
+.sg-steps-list li { counter-increment: s; background: var(--mg-rose-50); padding: var(--mg-space-4) var(--mg-space-5) var(--mg-space-4) var(--mg-space-8); position: relative; clip-path: polygon(0% 0%, 100% 2%, 99% 98%, 1% 100%); color: var(--mg-text-2); }
+.sg-steps-list li::before { content: counter(s); position: absolute; left: var(--mg-space-5); top: var(--mg-space-4); font: 700 1.25rem/1 var(--mg-font-head); color: var(--mg-magenta); }
+
+/* ── Typografiprover ─────────────────────────────────────── */
+.sg-type { display: grid; grid-template-columns: 180px 1fr; gap: var(--mg-space-5); padding: var(--mg-space-5) 0; align-items: baseline; }
+.sg-type__meta { font: 700 .6875rem/1.5 var(--mg-font-head); letter-spacing: .1em; text-transform: uppercase; color: var(--mg-magenta); }
+.sg-type__meta span { display: block; font: 400 .75rem/1.5 var(--mg-font-body); letter-spacing: 0; text-transform: none; color: var(--mg-text-2); }
+@media (max-width: 700px) { .sg-type { grid-template-columns: 1fr; gap: var(--mg-space-2); } }
+.sg-specimen { font: 700 clamp(5rem, 14vw, 9rem)/1 var(--mg-font-head); color: var(--mg-black); }
+.sg-specimen--body { font-family: var(--mg-font-body); font-weight: 400; color: var(--mg-text-2); }
+
+/* ── Avstånd & rörelse ───────────────────────────────────── */
+.sg-space { display: flex; gap: var(--mg-space-4); align-items: center; margin-bottom: var(--mg-space-3); }
+.sg-space__name { flex: 0 0 120px; }
+.sg-space__px { flex: 0 0 auto; }
+.sg-space__bar { height: 22px; background: var(--mg-magenta); clip-path: polygon(0% 8%, 98% 0%, 100% 92%, 1% 100%); }
+.sg-space__name { font: 700 .875rem/1 var(--mg-font-head); }
+.sg-space__px { font-size: .8125rem; color: var(--mg-text-2); }
+.sg-motion-btn { cursor: pointer; }
+
+/* ── Bilder och ikoner ───────────────────────────────────── */
+.sg-icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: var(--mg-space-5); margin: var(--mg-space-5) 0; }
+.sg-icon { text-align: left; }
+.sg-icon img { width: 56px; height: 56px; object-fit: contain; margin-bottom: var(--mg-space-3); }
+.sg-icon__name { font: 700 .875rem/1.2 var(--mg-font-head); color: var(--mg-black); }
+.sg-icon__meaning { font-size: .75rem; color: var(--mg-text-2); line-height: 1.4; }
+.sg-avatar { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; filter: grayscale(1) contrast(1.05); }
+
+/* ── Navigationsbilder ───────────────────────────────────── */
+.sg-figure { margin: var(--mg-space-5) 0; }
+.sg-figure img { width: 100%; height: auto; clip-path: polygon(0% 1%, 100% 0%, 99% 100%, 1% 99%); }
+.sg-figure figcaption { font-size: .8125rem; color: var(--mg-text-2); margin-top: var(--mg-space-3); }
+.sg-figure--narrow img { max-width: 360px; }
+
+.sg-block--rose { padding-block: calc(var(--mg-space-8) + 24px); }
+
+.sg-swatch__chip--white { position: relative; isolation: isolate; background: var(--mg-rose-200) !important; }
+.sg-swatch__chip--white::before { content: ''; position: absolute; inset: 2px; background: var(--mg-white); z-index: -1; clip-path: polygon(0% 3%, 98% 0%, 100% 96%, 2% 100%); }
+
+/* Formkatalog: polygonen kommer från --p (vila) och --ph (hover) */
+.sg-shape__fig { clip-path: var(--p); background: var(--mg-rose-200); }
+.sg-shape:hover .sg-shape__fig, .sg-shape:focus-within .sg-shape__fig { clip-path: var(--ph, var(--p)); }
+.sg-hover-demo { display: inline-block; padding: var(--mg-space-6) var(--mg-space-7); background: var(--mg-rose-200); font: 700 1rem/1 var(--mg-font-head); clip-path: polygon(2% 5%, 99% 0%, 100% 88%, 97% 100%, 0% 95%); transition: clip-path .35s ease; }
+.sg-hover-demo:hover { clip-path: polygon(0% 2%, 100% 0%, 99% 93%, 96% 100%, 1% 98%); }
+@media (prefers-reduced-motion: reduce) { .sg-hover-demo { transition: none; } }
+
+.sg-md .sg-code { margin-top: 0; }
+.sg-md .mg-prose > * + * { margin-top: var(--mg-space-3); }
+
+/* Specialtypsnittet Kattux, bara för proven på typsnitt.html. Inte en del av magello.css */
+@font-face {
+  font-family: "Kattux Abc 20";
+  src: url("../../assets/fonts/KattuxAbc-Regular.woff2") format("woff2"),
+       url("../../assets/fonts/KattuxAbc-Regular.woff") format("woff");
+  font-display: swap;
+}
+.sg-kattux { font-family: "Kattux Abc 20", var(--mg-font-head); font-weight: 400; line-height: 1.15; }
+.sg-kattux--alphabet { font-size: clamp(1.5rem, 1rem + 2vw, 2.25rem); overflow-wrap: anywhere; }

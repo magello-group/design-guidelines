@@ -1,0 +1,60 @@
+# Bygger styleguiden och publicerar den på GitHub Pages vid push till main.
+# Adress: https://magello-group.github.io/design-guidelines/
+# Kräver att Settings → Pages → Source är satt till "GitHub Actions".
+name: Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generera former och styleguide
+        run: |
+          python3 tools/make_shapes.py
+          python3 tools/build_styleguide.py
+
+      - name: Kontrollera att genererade filer är committade
+        run: |
+          git status --porcelain -- assets/shapes styleguide
+          if ! git diff --exit-code -- assets/shapes styleguide || [ -n "$(git status --porcelain -- assets/shapes styleguide)" ]; then
+            echo "::error::Genererade filer skiljer sig från de committade. Kör make_shapes.py och build_styleguide.py och committa resultatet."
+            exit 1
+          fi
+
+      - name: Sätt ihop webbplatsen
+        run: python3 tools/build_site.py
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navigation — Magello styleguide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Condensed:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/magello.css">
+<link rel="stylesheet" href="css/styleguide.css">
+</head>
+<body>
+
+<!-- ═══ SIDOSPÅR ═══════════════════════════════════════════════ -->
+<div class="mg-side-nav" aria-label="Sidonavigering">
+  <a class="mg-side-nav__logo" href="index.html" aria-label="Magello">
+    <img src="../assets/logos/icon-logotype.svg" alt="Magello">
+  </a>
+  <ul class="mg-side-nav__links">
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="farg.html">Grunder</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+    </li>
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="komponenter.html">Byggstenar</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+    </li>
+    <li><a href="navigation.html" class="is-active">Navigation</a></li>
+    <li><a href="office.html">Word &amp; PowerPoint</a></li>
+  </ul>
+  <a class="mg-side-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+</div>
+
+<!-- ═══ HEADER ═════════════════════════════════════════════════ -->
+<div class="mg-page-header mg-page-header--rotate">
+  <div class="mg-header-shape"></div>
+  <nav class="mg-nav">
+    <div class="mg-nav__inner">
+      <a class="mg-nav__logo" href="index.html" aria-label="Magello">
+        <svg viewBox="0 0 1298 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>Magello</title>
+          <rect x="114" y="41" width="1096" height="251" fill="white"/>
+          <path d="M383.475 127.758L378.345 171.487L398.438 170.63L397.583 126.043L383.475 127.758Z" fill="#EC008C"/>
+          <path d="M1040.56 171.916L1084.16 180.49L1096.99 227.221L1147.86 177.918L1151.28 131.616L1088.44 120.47L1040.56 171.916Z" fill="#EC008C"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M138.513 0L50.0185 22.7221L1.71003 95.1756L0 290.243L47.026 318.109L97.472 322.825L320.632 332.686L1226.09 325.826L1295.78 257.66L1297.06 24.8657L1267.56 6.43078L138.513 0ZM293.271 258.946L244.535 266.234L241.115 197.639L212.899 216.932L190.241 197.639L188.104 267.521H138.94L135.093 210.93L139.795 93.4607H176.989L218.884 152.195L255.65 93.8894H293.698L293.271 258.946ZM410.408 260.232L401.003 190.351H376.635L369.795 256.374H321.487L340.297 135.046C340.297 135.046 353.55 80.5992 356.115 81.4566C358.68 82.314 420.241 85.3151 420.241 85.3151L443.327 138.476L462.564 265.377L410.408 260.232ZM604.925 256.803L576.282 262.805L510.018 257.66L483.94 222.076L482.23 187.35L481.802 150.909L492.062 119.613L514.72 92.1746L558.754 85.3151L585.687 89.6022L613.047 93.4607L612.192 107.18L604.497 141.049L557.044 128.187L531.821 146.193L528.401 190.78L548.494 214.359L567.732 210.072V187.35C560.891 186.493 560.036 186.493 560.036 186.493C559.181 186.064 560.036 167.2 560.036 167.2L613.902 171.059V192.924L614.33 214.788L604.925 256.803ZM752.843 135.046L695.984 135.904V154.339L743.438 152.195L743.01 192.495L692.992 195.925L696.412 213.502L752.415 218.218L751.988 260.661L647.248 260.232L648.103 93.4607L752.843 96.4618V135.046ZM893.493 259.804L787.899 259.375L788.754 80.5992L834.497 81.0279L835.779 213.931L894.348 212.216L893.493 259.804ZM909.739 247.371L905.891 116.612L910.594 72.0248L952.917 74.5971L952.062 203.213L989.255 203.641L1008.92 205.356L1009.35 252.944L909.739 247.371ZM1180.35 225.935L1135.04 262.805L1040.98 242.655L1019.61 165.486L1034.14 96.8905C1034.14 96.8905 1091 79.7417 1099.98 78.8843L1140.59 84.4576L1187.19 133.76L1180.35 225.935Z" fill="#EC008C"/>
+        </svg>
+      </a>
+      <ul class="mg-nav__links">
+        <li class="mg-nav__has-sub">
+          <a href="farg.html">Grunder</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Grunder"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+        </li>
+        <li class="mg-nav__has-sub">
+          <a href="komponenter.html">Byggstenar</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Byggstenar"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+        </li>
+        <li><a href="navigation.html" class="is-active">Navigation</a></li>
+        <li><a href="office.html">Word &amp; PowerPoint</a></li>
+      </ul>
+      <a class="mg-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+      <button class="mg-nav__burger" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" aria-hidden="true">
+          <rect width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="8" width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="16" width="24" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<!-- ═══ MOBILMENY ══════════════════════════════════════════════ -->
+<div class="mg-mobile-menu" id="mobile-menu" aria-hidden="true" aria-label="Mobilnavigering">
+  <div class="mg-mobile-menu__head">
+    <a href="index.html" class="mg-nav__logo" aria-label="Magello">
+      <svg style="height:32px;width:auto" viewBox="0 0 1298 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>Magello</title>
+          <rect x="114" y="41" width="1096" height="251" fill="white"/>
+          <path d="M383.475 127.758L378.345 171.487L398.438 170.63L397.583 126.043L383.475 127.758Z" fill="#EC008C"/>
+          <path d="M1040.56 171.916L1084.16 180.49L1096.99 227.221L1147.86 177.918L1151.28 131.616L1088.44 120.47L1040.56 171.916Z" fill="#EC008C"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M138.513 0L50.0185 22.7221L1.71003 95.1756L0 290.243L47.026 318.109L97.472 322.825L320.632 332.686L1226.09 325.826L1295.78 257.66L1297.06 24.8657L1267.56 6.43078L138.513 0ZM293.271 258.946L244.535 266.234L241.115 197.639L212.899 216.932L190.241 197.639L188.104 267.521H138.94L135.093 210.93L139.795 93.4607H176.989L218.884 152.195L255.65 93.8894H293.698L293.271 258.946ZM410.408 260.232L401.003 190.351H376.635L369.795 256.374H321.487L340.297 135.046C340.297 135.046 353.55 80.5992 356.115 81.4566C358.68 82.314 420.241 85.3151 420.241 85.3151L443.327 138.476L462.564 265.377L410.408 260.232ZM604.925 256.803L576.282 262.805L510.018 257.66L483.94 222.076L482.23 187.35L481.802 150.909L492.062 119.613L514.72 92.1746L558.754 85.3151L585.687 89.6022L613.047 93.4607L612.192 107.18L604.497 141.049L557.044 128.187L531.821 146.193L528.401 190.78L548.494 214.359L567.732 210.072V187.35C560.891 186.493 560.036 186.493 560.036 186.493C559.181 186.064 560.036 167.2 560.036 167.2L613.902 171.059V192.924L614.33 214.788L604.925 256.803ZM752.843 135.046L695.984 135.904V154.339L743.438 152.195L743.01 192.495L692.992 195.925L696.412 213.502L752.415 218.218L751.988 260.661L647.248 260.232L648.103 93.4607L752.843 96.4618V135.046ZM893.493 259.804L787.899 259.375L788.754 80.5992L834.497 81.0279L835.779 213.931L894.348 212.216L893.493 259.804ZM909.739 247.371L905.891 116.612L910.594 72.0248L952.917 74.5971L952.062 203.213L989.255 203.641L1008.92 205.356L1009.35 252.944L909.739 247.371ZM1180.35 225.935L1135.04 262.805L1040.98 242.655L1019.61 165.486L1034.14 96.8905C1034.14 96.8905 1091 79.7417 1099.98 78.8843L1140.59 84.4576L1187.19 133.76L1180.35 225.935Z" fill="#EC008C"/>
+        </svg>
+    </a>
+    <button class="mg-mobile-menu__close" aria-label="Stäng meny">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <ul class="mg-mobile-menu__links">
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="farg.html">Grunder</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+    </li>
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="komponenter.html">Byggstenar</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+    </li>
+    <li><a href="navigation.html" class="is-active">Navigation</a></li>
+    <li><a href="office.html">Word &amp; PowerPoint</a></li>
+  </ul>
+  <a class="mg-mobile-menu__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+</div>
+
+<!-- ═══ SIDHUVUD ═══════════════════════════════════════════════ -->
+<div class="mg-ingang-hero">
+  <div class="mg-ingang-col">
+    <nav class="mg-breadcrumb" aria-label="Brödsmula">
+      <a href="index.html">Hem</a>
+      <span class="mg-breadcrumb__sep">/</span>
+      <span aria-current="page">Navigation</span>
+    </nav>
+    <p class="mg-kicker">Byggstenar</p>
+    <h1 class="mg-ingang-title">Navigation</h1>
+    <p class="mg-ingang-sub">Header, dropdown, sidospår, mobilmeny och brödsmula. Samma menystruktur renderas på tre ställen och ska hållas synkad. Den här styleguiden är byggd med mönstret, så prova det direkt.</p>
+    
+  </div>
+</div>
+
+<main id="main-content">
+<section class="sg-block" id="oversikt" aria-labelledby="h-oversikt">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Översikt</p>
+    <h2 id="h-oversikt">Tre uttryck för samma meny</h2>
+    <p>Navigationen har högst två nivåer: huvudlänkar med högst en undernivå. Menyn finns i header (desktop), sidospår (desktop efter scroll) och hamburgermeny (mobil).</p>
+  </div>
+<div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Plats</th><th>När</th><th>Klassprefix</th><th>Öppnas med</th></tr></thead><tbody><tr><td>Header med dropdown</td><td>Desktop (över 768 px), överst på sidan</td><td><code>mg-nav__</code></td><td>Hover, chevron-klick</td></tr><tr><td>Sidospår</td><td>Desktop efter 80 px scroll</td><td><code>mg-side-</code></td><td>Hover, klick på huvudlänk, chevron</td></tr><tr><td>Mobilmeny</td><td>768 px och smalare</td><td><code>mg-mob-</code></td><td>Chevron (accordion)</td></tr></tbody></table></div><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Prova själv: håll musen över ”Grunder”, scrolla ner och se sidospåret, smalna av fönstret och öppna hamburgaren</li><li>Hamburgermeny på <strong>alla</strong> sidor under 768 px</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Fler än två nivåer</li><li>Olika menyinnehåll i header, sidospår och mobilmeny</li></ul></div></div>
+</div>
+</section>
+<section class="sg-block" id="header" aria-labelledby="h-header">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Header</p>
+    <h2 id="h-header">Signaturytan som header</h2>
+    <p>Headern är den rosagrå signaturpolygonen med logotyp, länkar och en utvald länk (”Lediga jobb”) med skev understrykning. Det finns två varianter.</p>
+  </div>
+<figure class="sg-figure"><img src="img/nav-header.png" alt="Header överst på sidan: logotyp, huvudlänkar med chevron och utvald länk."><figcaption>Header överst på sidan: logotyp, huvudlänkar med chevron och utvald länk.</figcaption></figure><div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Variant</th><th>Klass</th><th>Beteende</th><th>Tröskel</th></tr></thead><tbody><tr><td>Startsida</td><td><code>.mg-page-header</code></td><td><code>position: sticky</code>. Polygonen kollapsar till en rektangel vid scroll</td><td>8 px</td></tr><tr><td>Undersida</td><td><code>.mg-page-header.mg-page-header--rotate</code></td><td><code>position: fixed</code>. Roterar 90° ut ur bild och lämnar plats åt sidospåret</td><td>80 px</td></tr></tbody></table></div><pre class="sg-code"><code>&lt;div class="mg-page-header mg-page-header--rotate"&gt;
+  &lt;div class="mg-header-shape"&gt;&lt;/div&gt;
+  &lt;nav class="mg-nav"&gt;&lt;div class="mg-nav__inner"&gt;
+    &lt;a class="mg-nav__logo" href="/"&gt;&lt;!-- logotyp --&gt;&lt;/a&gt;
+    &lt;ul class="mg-nav__links"&gt;…&lt;/ul&gt;
+    &lt;a class="mg-nav__featured" href="#"&gt;Lediga jobb&lt;/a&gt;
+    &lt;button class="mg-nav__burger" aria-label="Öppna meny"&gt;…&lt;/button&gt;
+  &lt;/div&gt;&lt;/nav&gt;
+&lt;/div&gt;</code></pre><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Innehållet på undersidor börjar under headern: <code>padding-top: var(--mg-header-h)</code></li><li>Logotypens vänsterkant är sidans linje: innehållet linjerar mot den</li><li>Headern har <code>pointer-events: none</code> när den roterat bort</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Rotera headern på mobil (där glider den uppåt)</li><li>Ändra headerns polygon utan att behålla den lutande kanten</li></ul></div></div>
+</div>
+</section>
+<section class="mg-section--rose sg-block sg-block--rose" id="dropdown" aria-labelledby="h-dropdown">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Dropdown</p>
+    <h2 id="h-dropdown">Undermeny under huvudlänken</h2>
+    <p>Menyn öppnas vid hover eller klick på chevron och ligger direkt under länken. Den är <code>position: fixed</code> och placeras av JavaScript.</p>
+  </div>
+<figure class="sg-figure"><img src="img/nav-dropdown.png" alt="Dropdown öppen under ”Grunder”. Chevron vänd uppåt."><figcaption>Dropdown öppen under ”Grunder”. Chevron vänd uppåt.</figcaption></figure><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Synlighet styrs bara av klassen <code>.is-open</code></li><li>Ingen lucka mellan länk och meny</li><li>220 ms stängningsfördröjning och lyssnare på själva menyn</li><li>Stäng vid scroll, klick utanför och <code>Escape</code></li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>CSS <code>:hover</code> som styr synlighet. Menyn stängs när pekaren passerar luckan</li><li><code>position: absolute</code>. Headern har <code>transform</code> och menyn hamnar i vänstra hörnet</li><li>Meny som öppnar åt fel håll</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--loading">Tänk på</span><ul><li>All logik finns i <code>js/magello.js</code>. Kopiera filen, skriv inte om den</li></ul></div></div>
+</div>
+</section>
+<section class="sg-block" id="sidospar" aria-labelledby="h-sidospar">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Sidospår</p>
+    <h2 id="h-sidospar">Navigationen följer med</h2>
+    <p>När headern rotat bort glider ett vitt sidospår in från höger med ikonlogotyp och samma länkar. Ett klick på en huvudlänk fäller ut undermenyn i stället för att navigera.</p>
+  </div>
+<figure class="sg-figure sg-figure--narrow"><img src="img/nav-sidespar.png" alt="Sidospåret efter scroll: ikonlogotyp, länkar, utfälld undermeny och utvald länk."><figcaption>Sidospåret efter scroll: ikonlogotyp, länkar, utfälld undermeny och utvald länk.</figcaption></figure><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Visa undermenyn vid hover och vid klick på huvudlänken</li><li>Ge huvudlänken en egen första punkt (”Översikt”) i undermenyn om den har en egen sida</li><li>Mörk text (<code>--mg-text-2</code>, magenta vid aktiv/hover): sidospåret har vit bakgrund</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Visa sidospåret på mobil</li><li>Vit text på vit bakgrund</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--loading">Tänk på</span><ul><li>Sidospåret visas först när headern rotat (<code>.is-visible</code>), efter 80 px scroll</li></ul></div></div>
+</div>
+</section>
+<section class="mg-section--rose sg-block sg-block--rose" id="mobil" aria-labelledby="h-mobil">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Mobilmeny</p>
+    <h2 id="h-mobil">Hamburgermeny och drawer</h2>
+    <p>Under 768 px ersätts navlänkarna av en hamburgare som öppnar en helskärmsdrawer från höger. Bakgrunden är rosagrå 100 och undermenyer fälls ut som accordion.</p>
+  </div>
+<div class="sg-two"><figure class="sg-figure sg-figure--narrow"><img src="img/nav-mobil.png" alt="Mobil: logotyp och hamburgare."><figcaption>Mobil: logotyp och hamburgare.</figcaption></figure><figure class="sg-figure sg-figure--narrow"><img src="img/nav-mobilmeny.png" alt="Mobilmenyn öppen med utfälld undermeny."><figcaption>Mobilmenyn öppen med utfälld undermeny.</figcaption></figure></div><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Stäng med kryss och <code>Escape</code></li><li>Lås sidans scroll medan menyn är öppen</li><li>Stora tryckytor: länkarna är 1.1 rem och har 16 px luft ovan och under</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Dölja den utvalda länken (”Lediga jobb”). Den ligger längst ned i drawern</li><li>Fler än ett nivåsteg</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--loading">Tänk på</span><ul><li>Mobilmenyns listor har rosa hårlinjer. Det är ett av få tillåtna linjeundantag (funktionella listavgränsare)</li></ul></div></div>
+</div>
+</section>
+<section class="sg-block" id="brodsmula" aria-labelledby="h-brodsmula">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Brödsmula</p>
+    <h2 id="h-brodsmula">Var är jag?</h2>
+    <p>Brödsmulan sitter över sidans kicker eller rubrik, i liten grå text. Den sitter på samma höjd på alla undersidor: <strong>156 px</strong> från sidtopp (120 px header + 36 px luft).</p>
+  </div>
+<div class="sg-demo">
+<nav class="mg-breadcrumb" aria-label="Brödsmula"><a href="#brodsmula">Hem</a><span class="mg-breadcrumb__sep">/</span><a href="#brodsmula">Byggstenar</a><span class="mg-breadcrumb__sep">/</span><span aria-current="page">Navigation</span></nav>
+</div><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Sista nivån är aktuell sida (<code>aria-current="page"</code>), inte länkad</li><li>Avståndet under brödsmulan sätts av containern (<code>.mg-ingang-col</code>, <code>.mg-page-title</code>)</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Brödsmula skymd av headern</li><li>Olika höjd på olika sidor</li><li>Brödsmula på startsidan</li></ul></div></div>
+</div>
+</section>
+<section class="mg-section--rose sg-block sg-block--rose" id="tillganglighet" aria-labelledby="h-tillganglighet">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Tillgänglighet</p>
+    <h2 id="h-tillganglighet">Tangentbord och skärmläsare</h2>
+    <p>Menyerna ska fungera utan mus.</p>
+  </div>
+<div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Behov</th><th>Så här</th></tr></thead><tbody><tr><td>Chevron-knappar</td><td><code>aria-expanded</code> och <code>aria-label</code>. Enter/Space öppnar</td></tr><tr><td>Stänga</td><td><code>Escape</code> stänger meny och dropdown</td></tr><tr><td>Fokus</td><td>Synlig 2 px magenta kontur (<code>:focus-visible</code>)</td></tr><tr><td>Dolda menyer</td><td><code>pointer-events: none</code>, och <code>visibility: hidden</code> om innehållet inte ska nås</td></tr><tr><td>Rörelse</td><td><code>prefers-reduced-motion</code> stänger av rotation och glidning</td></tr></tbody></table></div>
+</div>
+</section>
+
+</main>
+
+
+<!-- ═══ FOOTER ═════════════════════════════════════════════════ -->
+<footer class="mg-footer">
+  <div class="mg-wrap">
+    <div class="mg-footer__inner">
+      <div class="mg-footer__col"><span class="mg-footer__brand">Magello styleguide</span>Version 0.1<br>Formspråk för webb, dokument<br>och sociala medier</div>
+      <div class="mg-footer__col">
+        <a href="../tokens/tokens.json">tokens.json</a><br>
+        <a href="../docs/design-language.md">design-language.md</a><br>
+        <a href="../docs/design-guidelines-web.md">design-guidelines-web.md</a>
+      </div>
+      <div class="mg-footer__col" style="text-align:right">Västgötagatan 2<br>118 27 Stockholm<br>info@magello.se</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/magello.js"></script>
+</body>
+</html>

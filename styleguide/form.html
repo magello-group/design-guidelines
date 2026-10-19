@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Form — Magello styleguide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Condensed:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/magello.css">
+<link rel="stylesheet" href="css/styleguide.css">
+</head>
+<body>
+
+<!-- ═══ SIDOSPÅR ═══════════════════════════════════════════════ -->
+<div class="mg-side-nav" aria-label="Sidonavigering">
+  <a class="mg-side-nav__logo" href="index.html" aria-label="Magello">
+    <img src="../assets/logos/icon-logotype.svg" alt="Magello">
+  </a>
+  <ul class="mg-side-nav__links">
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="farg.html" class="is-active">Grunder</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html" class="is-active">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+    </li>
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="komponenter.html">Byggstenar</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+    </li>
+    <li><a href="navigation.html">Navigation</a></li>
+    <li><a href="office.html">Word &amp; PowerPoint</a></li>
+  </ul>
+  <a class="mg-side-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+</div>
+
+<!-- ═══ HEADER ═════════════════════════════════════════════════ -->
+<div class="mg-page-header mg-page-header--rotate">
+  <div class="mg-header-shape"></div>
+  <nav class="mg-nav">
+    <div class="mg-nav__inner">
+      <a class="mg-nav__logo" href="index.html" aria-label="Magello">
+        <svg viewBox="0 0 1298 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>Magello</title>
+          <rect x="114" y="41" width="1096" height="251" fill="white"/>
+          <path d="M383.475 127.758L378.345 171.487L398.438 170.63L397.583 126.043L383.475 127.758Z" fill="#EC008C"/>
+          <path d="M1040.56 171.916L1084.16 180.49L1096.99 227.221L1147.86 177.918L1151.28 131.616L1088.44 120.47L1040.56 171.916Z" fill="#EC008C"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M138.513 0L50.0185 22.7221L1.71003 95.1756L0 290.243L47.026 318.109L97.472 322.825L320.632 332.686L1226.09 325.826L1295.78 257.66L1297.06 24.8657L1267.56 6.43078L138.513 0ZM293.271 258.946L244.535 266.234L241.115 197.639L212.899 216.932L190.241 197.639L188.104 267.521H138.94L135.093 210.93L139.795 93.4607H176.989L218.884 152.195L255.65 93.8894H293.698L293.271 258.946ZM410.408 260.232L401.003 190.351H376.635L369.795 256.374H321.487L340.297 135.046C340.297 135.046 353.55 80.5992 356.115 81.4566C358.68 82.314 420.241 85.3151 420.241 85.3151L443.327 138.476L462.564 265.377L410.408 260.232ZM604.925 256.803L576.282 262.805L510.018 257.66L483.94 222.076L482.23 187.35L481.802 150.909L492.062 119.613L514.72 92.1746L558.754 85.3151L585.687 89.6022L613.047 93.4607L612.192 107.18L604.497 141.049L557.044 128.187L531.821 146.193L528.401 190.78L548.494 214.359L567.732 210.072V187.35C560.891 186.493 560.036 186.493 560.036 186.493C559.181 186.064 560.036 167.2 560.036 167.2L613.902 171.059V192.924L614.33 214.788L604.925 256.803ZM752.843 135.046L695.984 135.904V154.339L743.438 152.195L743.01 192.495L692.992 195.925L696.412 213.502L752.415 218.218L751.988 260.661L647.248 260.232L648.103 93.4607L752.843 96.4618V135.046ZM893.493 259.804L787.899 259.375L788.754 80.5992L834.497 81.0279L835.779 213.931L894.348 212.216L893.493 259.804ZM909.739 247.371L905.891 116.612L910.594 72.0248L952.917 74.5971L952.062 203.213L989.255 203.641L1008.92 205.356L1009.35 252.944L909.739 247.371ZM1180.35 225.935L1135.04 262.805L1040.98 242.655L1019.61 165.486L1034.14 96.8905C1034.14 96.8905 1091 79.7417 1099.98 78.8843L1140.59 84.4576L1187.19 133.76L1180.35 225.935Z" fill="#EC008C"/>
+        </svg>
+      </a>
+      <ul class="mg-nav__links">
+        <li class="mg-nav__has-sub">
+          <a href="farg.html" class="is-active">Grunder</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Grunder"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html" class="is-active">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+        </li>
+        <li class="mg-nav__has-sub">
+          <a href="komponenter.html">Byggstenar</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Byggstenar"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+        </li>
+        <li><a href="navigation.html">Navigation</a></li>
+        <li><a href="office.html">Word &amp; PowerPoint</a></li>
+      </ul>
+      <a class="mg-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+      <button class="mg-nav__burger" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" aria-hidden="true">
+          <rect width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="8" width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="16" width="24" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<!-- ═══ MOBILMENY ══════════════════════════════════════════════ -->
+<div class="mg-mobile-menu" id="mobile-menu" aria-hidden="true" aria-label="Mobilnavigering">
+  <div class="mg-mobile-menu__head">
+    <a href="index.html" class="mg-nav__logo" aria-label="Magello">
+      <svg style="height:32px;width:auto" viewBox="0 0 1298 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>Magello</title>
+          <rect x="114" y="41" width="1096" height="251" fill="white"/>
+          <path d="M383.475 127.758L378.345 171.487L398.438 170.63L397.583 126.043L383.475 127.758Z" fill="#EC008C"/>
+          <path d="M1040.56 171.916L1084.16 180.49L1096.99 227.221L1147.86 177.918L1151.28 131.616L1088.44 120.47L1040.56 171.916Z" fill="#EC008C"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M138.513 0L50.0185 22.7221L1.71003 95.1756L0 290.243L47.026 318.109L97.472 322.825L320.632 332.686L1226.09 325.826L1295.78 257.66L1297.06 24.8657L1267.56 6.43078L138.513 0ZM293.271 258.946L244.535 266.234L241.115 197.639L212.899 216.932L190.241 197.639L188.104 267.521H138.94L135.093 210.93L139.795 93.4607H176.989L218.884 152.195L255.65 93.8894H293.698L293.271 258.946ZM410.408 260.232L401.003 190.351H376.635L369.795 256.374H321.487L340.297 135.046C340.297 135.046 353.55 80.5992 356.115 81.4566C358.68 82.314 420.241 85.3151 420.241 85.3151L443.327 138.476L462.564 265.377L410.408 260.232ZM604.925 256.803L576.282 262.805L510.018 257.66L483.94 222.076L482.23 187.35L481.802 150.909L492.062 119.613L514.72 92.1746L558.754 85.3151L585.687 89.6022L613.047 93.4607L612.192 107.18L604.497 141.049L557.044 128.187L531.821 146.193L528.401 190.78L548.494 214.359L567.732 210.072V187.35C560.891 186.493 560.036 186.493 560.036 186.493C559.181 186.064 560.036 167.2 560.036 167.2L613.902 171.059V192.924L614.33 214.788L604.925 256.803ZM752.843 135.046L695.984 135.904V154.339L743.438 152.195L743.01 192.495L692.992 195.925L696.412 213.502L752.415 218.218L751.988 260.661L647.248 260.232L648.103 93.4607L752.843 96.4618V135.046ZM893.493 259.804L787.899 259.375L788.754 80.5992L834.497 81.0279L835.779 213.931L894.348 212.216L893.493 259.804ZM909.739 247.371L905.891 116.612L910.594 72.0248L952.917 74.5971L952.062 203.213L989.255 203.641L1008.92 205.356L1009.35 252.944L909.739 247.371ZM1180.35 225.935L1135.04 262.805L1040.98 242.655L1019.61 165.486L1034.14 96.8905C1034.14 96.8905 1091 79.7417 1099.98 78.8843L1140.59 84.4576L1187.19 133.76L1180.35 225.935Z" fill="#EC008C"/>
+        </svg>
+    </a>
+    <button class="mg-mobile-menu__close" aria-label="Stäng meny">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <ul class="mg-mobile-menu__links">
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="farg.html" class="is-active">Grunder</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html" class="is-active">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+    </li>
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="komponenter.html">Byggstenar</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+    </li>
+    <li><a href="navigation.html">Navigation</a></li>
+    <li><a href="office.html">Word &amp; PowerPoint</a></li>
+  </ul>
+  <a class="mg-mobile-menu__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+</div>
+
+<!-- ═══ SIDHUVUD ═══════════════════════════════════════════════ -->
+<div class="mg-ingang-hero">
+  <div class="mg-ingang-col">
+    <nav class="mg-breadcrumb" aria-label="Brödsmula">
+      <a href="index.html">Hem</a>
+      <span class="mg-breadcrumb__sep">/</span>
+      <span aria-current="page">Form</span>
+    </nav>
+    <p class="mg-kicker">Grunder</p>
+    <h1 class="mg-ingang-title">Form</h1>
+    <p class="mg-ingang-sub">Magello ritar sina former som polygoner där inget är exakt rakt. Formen ger rörelse och skiljer Magello från alla som använder rundade eller perfekt rektangulära rutor.</p>
+    
+  </div>
+</div>
+
+<main id="main-content">
+<section class="sg-block" id="princip" aria-labelledby="h-princip">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Princip</p>
+    <h2 id="h-princip">Inga exakta kanter</h2>
+    <p>Hörnen avviker några procent från ett perfekt rätblock. Avvikelserna är medvetna och konsekventa, aldrig slumpmässiga.</p>
+  </div>
+<div class="sg-demo sg-demo--plain">
+<div class="sg-compare"><div><span class="sg-demo-label">Fel — perfekt rektangel</span><div class="sg-compare__fig sg-compare__fig--bad">Rak, industriell, anonym</div></div><div><span class="sg-demo-label">Rätt — Magello-polygon</span><div class="sg-compare__fig sg-compare__fig--good">Levande, handgjord, igenkännbar</div></div></div>
+</div><h3 class="sg-sub">Så ritar du en ny form</h3><ol class="sg-steps-list"><li><strong>Börja med en rektangel.</strong> Den som innehållet skulle få utan formspråk.</li><li><strong>Flytta varje hörn 2–7 %</strong> bort från sin exakta plats, i olika riktningar. Övre vänster kan sjunka 3 %, övre höger flytta 2 % in från kanten.</li><li><strong>Lägg gärna till en femte eller sjätte punkt</strong> (ett avfasat hörn) för att ge formen riktning.</li><li><strong>Kontrollera att ingen kant blev exakt vågrät eller lodrät.</strong> Då är den klar.</li></ol><h3 class="sg-sub">Hur mycket ska formen avvika?</h3><div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Storlek</th><th>Exempel</th><th>Avvikelse per hörn</th></tr></thead><tbody><tr><td>Liten</td><td>Etiketter, pills, ikonramar</td><td>2–4 %</td></tr><tr><td>Medel</td><td>Knappar, kort, infoblock</td><td>2–6 %</td></tr><tr><td>Stor</td><td>Sektioner, hero-plattor, bildytor</td><td>3–8 %, gärna fler punkter</td></tr></tbody></table></div><pre class="sg-code"><code>/* 5-hörnig knapp: inget hörn är 0% eller 100% på båda axlarna */
+clip-path: polygon(2% 5%, 99% 0%, 100% 88%, 97% 100%, 0% 95%);
+
+/* Fel: perfekt rektangel */
+clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);</code></pre>
+</div>
+</section>
+<section class="mg-section--rose sg-block sg-block--rose" id="familj" aria-labelledby="h-familj">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Formfamiljen</p>
+    <h2 id="h-familj">Namngivna former</h2>
+    <p>Varje form har ett namn, ett användningsområde och koordinater i procent. Formerna finns som SVG i <code>assets/shapes/</code> och som värden i <code>tokens/tokens.json</code>. Håll muspekaren över en form som har hover-läge.</p>
+  </div>
+<div class="sg-demo sg-demo--white">
+<div class="sg-shapes"><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(2% 5%, 99% 0%, 100% 88%, 97% 100%, 0% 95%);--ph:polygon(0% 2%, 100% 0%, 99% 93%, 96% 100%, 1% 98%);"></div><div class="sg-shape__name">button</div><div class="sg-shape__use">Knappar, filterflikar · hover öppnar formen</div><div class="sg-shape__pts">2,5 99,0 100,88 97,100 0,95</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(0% 0%, 100% 2%, 98% 96%, 95% 100%, 3% 98%, 0% 4%);"></div><div class="sg-shape__name">card</div><div class="sg-shape__use">Text-, bild- och kompakta kort</div><div class="sg-shape__pts">0,0 100,2 98,96 95,100 3,98 0,4</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(0% 0%, 97% 1%, 100% 98%, 2% 100%);--ph:polygon(1% 1%, 99% 0%, 98% 99%, 0% 100%);"></div><div class="sg-shape__name">offer-card</div><div class="sg-shape__use">Erbjudandekort · hover öppnar formen</div><div class="sg-shape__pts">0,0 97,1 100,98 2,100</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(0% 0%, 100% 2%, 98% 98%, 95% 100%, 2% 99%, 0% 3%);"></div><div class="sg-shape__name">value-card</div><div class="sg-shape__use">Värdekort</div><div class="sg-shape__pts">0,0 100,2 98,98 95,100 2,99 0,3</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(2% 2%, 99% 0%, 100% 95%, 97% 100%, 0% 98%);"></div><div class="sg-shape__name">sub-card</div><div class="sg-shape__use">Ingångskort till undersidor</div><div class="sg-shape__pts">2,2 99,0 100,95 97,100 0,98</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(0% 0%, 100% 1%, 99% 99%, 0% 100%);"></div><div class="sg-shape__name">infoblock</div><div class="sg-shape__use">Faktaruta i textflödet</div><div class="sg-shape__pts">0,0 100,1 99,99 0,100</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(0% 6%, 5% 0%, 92% 2%, 100% 9%, 97% 100%, 3% 96%);"></div><div class="sg-shape__name">callout</div><div class="sg-shape__use">Textruta med pappersflik</div><div class="sg-shape__pts">0,6 5,0 92,2 100,9 97,100 3,96</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(0% 3%, 4% 0%, 97% 2%, 100% 6%, 98% 94%, 94% 100%, 2% 97%, 0% 93%);"></div><div class="sg-shape__name">plate</div><div class="sg-shape__use">Vit platta med rubrik ovanpå foto; kontaktkort (rosa)</div><div class="sg-shape__pts">0,3 4,0 97,2 100,6 98,94 94,100 2,97 0,93</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(0% 3%, 62% 0%, 100% 2%, 100% 97%, 38% 100%, 0% 98%);"></div><div class="sg-shape__name">section-rose</div><div class="sg-shape__use">Rosagrå sektion med polygonkanter</div><div class="sg-shape__pts">0,3 62,0 100,2 100,97 38,100 0,98</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(7% 0%, 94% 2%, 100% 10%, 98% 90%, 93% 100%, 5% 97%, 0% 88%, 2% 8%);"></div><div class="sg-shape__name">image-a</div><div class="sg-shape__use">Bildbeskärning 4:3</div><div class="sg-shape__pts">7,0 94,2 100,10 98,90 93,100 5,97 0,88 2,8</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(6% 0%, 97% 3%, 100% 15%, 96% 96%, 88% 100%, 2% 98%, 0% 84%, 4% 4%);"></div><div class="sg-shape__name">image-b</div><div class="sg-shape__use">Bildbeskärning 3:4</div><div class="sg-shape__pts">6,0 97,3 100,15 96,96 88,100 2,98 0,84 4,4</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(0% 5%, 4% 0%, 98% 2%, 100% 12%, 96% 100%, 2% 96%);"></div><div class="sg-shape__name">image-c</div><div class="sg-shape__use">Bildbeskärning 4:3</div><div class="sg-shape__pts">0,5 4,0 98,2 100,12 96,100 2,96</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(0% 0%, 97% 2%, 100% 8%, 99% 100%, 0% 98%);"></div><div class="sg-shape__name">case-image</div><div class="sg-shape__use">Bild i case-kort</div><div class="sg-shape__pts">0,0 97,2 100,8 99,100 0,98</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(6% 0%, 94% 0%, 100% 50%, 94% 100%, 6% 100%, 0% 50%);"></div><div class="sg-shape__name">pill</div><div class="sg-shape__use">Statusetikett</div><div class="sg-shape__pts">6,0 94,0 100,50 94,100 6,100 0,50</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"></div><div class="sg-shape__name">diamond</div><div class="sg-shape__use">Markör i tidslinje</div><div class="sg-shape__pts">50,0 100,50 50,100 0,50</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);"></div><div class="sg-shape__name">hexagon</div><div class="sg-shape__use">Märke, avatar-ram</div><div class="sg-shape__pts">50,0 100,25 100,75 50,100 0,75 0,25</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(16% 0%, 100% 0%, 100% 100%, 16% 100%, 0% 50%);"></div><div class="sg-shape__name">side-nav</div><div class="sg-shape__use">Sidospår (pil åt vänster)</div><div class="sg-shape__pts">16,0 100,0 100,100 16,100 0,50</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(0% 0%, 100% 0%, 100% 55%, 6% 100%, 0% 82%);"></div><div class="sg-shape__name">header</div><div class="sg-shape__use">Signaturytan (header). Sista punkten följer innehållets vänsterkant</div><div class="sg-shape__pts">0,0 100,0 100,55 6,100 0,82</div></div><div class="sg-shape" tabindex="0"><div class="sg-shape__fig" style="--p:polygon(1% 4%, 92% 1%, 100% 50%, 92% 96%, 2% 100%, 6% 50%);"></div><div class="sg-shape__name">chevron</div><div class="sg-shape__use">Processteg (px för spetsen, 16 px)</div><div class="sg-shape__pts">1,4 92,1 100,50 92,96 2,100 6,50</div></div></div>
+</div><p class="sg-text">Alla former visas här i rose-200. Faktisk fyllnadsfärg anges i <code>tokens.json</code> (<code>shape.polygons.*.fill</code>).</p><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Välj en befintlig form innan du skapar en ny</li><li>Skapa en ny form som variant av en befintlig, med samma skalregel</li><li>Låt stora element ha fler punkter än små</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Kopiera en form och ändra den så att den är nästan rak</li><li>Använda samma form identiskt på alla element på en sida: växla mellan varianter</li><li>Skära former så att text eller ansikten kapas</li></ul></div></div>
+</div>
+</section>
+<section class="sg-block" id="hover" aria-labelledby="h-hover">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Rörelse</p>
+    <h2 id="h-hover">Formen öppnas vid hover</h2>
+    <p>När en klickbar polygon hovras blir den <em>mer rektangulär</em>. Den slappnar av. Den försvinner inte och byter inte färg dramatiskt.</p>
+  </div>
+<div class="sg-demo">
+<div class="sg-row"><a class="sg-hover-demo" href="#hover">Peka här</a><a class="mg-btn mg-btn--primary" href="#hover">Primär knapp</a><a class="mg-btn mg-btn--secondary" href="#hover">Sekundär knapp</a></div>
+</div><div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Läge</th><th>Knapp (polygon)</th></tr></thead><tbody><tr><td>Vila</td><td><code>2% 5%, 99% 0%, 100% 88%, 97% 100%, 0% 95%</code></td></tr><tr><td>Hover</td><td><code>0% 2%, 100% 0%, 99% 93%, 96% 100%, 1% 98%</code></td></tr></tbody></table></div><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Animera <code>clip-path</code> 350–400 ms med <code>ease</code></li><li>Låt hover-formen ha samma antal punkter som vilo-formen</li><li>Stäng av animationen med <code>prefers-reduced-motion</code></li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Rotera eller skala klickbara former vid hover</li><li>Byta till rundade hörn vid hover</li><li>Animera mer än en egenskap utöver bakgrundsfärg</li></ul></div></div>
+</div>
+</section>
+<section class="mg-section--rose sg-block sg-block--rose" id="medier" aria-labelledby="h-medier">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Andra medier</p>
+    <h2 id="h-medier">Så använder du formerna utanför webben</h2>
+    <p>Formerna är geometri, inte CSS. I Word, PowerPoint, Figma och tryck byggs de som fria former (Freeform / Redigera punkter).</p>
+  </div>
+<div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Medium</th><th>Gör så här</th></tr></thead><tbody><tr><td>PowerPoint, Keynote</td><td>Utgå från <a href="office.html">Powerpoint-mallen</a>, där layouterna redan har formerna. Behövs fler: importera SVG från <code>assets/shapes/</code> eller rita en Freeform med punkterna från <code>tokens.json</code>. Låt SVG:n sträckas (den har <code>preserveAspectRatio="none"</code>).</td></tr><tr><td>Word, PDF</td><td>Utgå från <a href="office.html">Word-mallen</a>. Fler former finns sist i <code>Powerpoint-mall-howto.pptx</code> och i <code>Word-mall-howto.docx</code>, eller infoga SVG från <code>assets/shapes/</code> som bild.</td></tr><tr><td>Figma, Illustrator</td><td>Dra in SVG:erna. Koordinaterna är procent av en 100 × 100-ruta, skala till önskad storlek.</td></tr><tr><td>Sociala medier, bilder</td><td>Beskär foton med polygonerna <code>image-a/b/c</code>. Lägg text på en <code>plate</code>, inte direkt på fotot.</td></tr><tr><td>Agent som genererar SVG</td><td>Läs polygonerna ur <code>tokens/tokens.json</code> och skriv <code>&lt;polygon points=…&gt;</code> i en viewBox på 100 × 100.</td></tr></tbody></table></div>
+</div>
+</section>
+
+</main>
+
+
+<!-- ═══ FOOTER ═════════════════════════════════════════════════ -->
+<footer class="mg-footer">
+  <div class="mg-wrap">
+    <div class="mg-footer__inner">
+      <div class="mg-footer__col"><span class="mg-footer__brand">Magello styleguide</span>Version 0.1<br>Formspråk för webb, dokument<br>och sociala medier</div>
+      <div class="mg-footer__col">
+        <a href="../tokens/tokens.json">tokens.json</a><br>
+        <a href="../docs/design-language.md">design-language.md</a><br>
+        <a href="../docs/design-guidelines-web.md">design-guidelines-web.md</a>
+      </div>
+      <div class="mg-footer__col" style="text-align:right">Västgötagatan 2<br>118 27 Stockholm<br>info@magello.se</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/magello.js"></script>
+</body>
+</html>
