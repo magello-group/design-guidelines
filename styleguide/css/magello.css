@@ -489,7 +489,8 @@ img {
   line-height: 1;
 }
 .mg-nav__chevron-btn svg { transition: transform .2s ease; }
-.mg-nav__has-sub:hover .mg-nav__chevron-btn svg, .mg-nav__has-sub.is-open .mg-nav__chevron-btn svg {
+/* Chevron följer .is-open, inte :hover, så att den aldrig pekar upp när menyn är stängd */
+.mg-nav__has-sub.is-open .mg-nav__chevron-btn svg {
   transform: rotate(180deg);
 }
 .mg-nav__sub {

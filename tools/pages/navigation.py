@@ -40,7 +40,7 @@ def body(sg):
     drop = sg.block("dropdown", "Dropdown", "Undermeny under huvudlänken",
         "Menyn öppnas vid hover eller klick på chevron och ligger direkt under länken. Den är <code>position: fixed</code> och placeras av JavaScript.",
         fig("nav-dropdown.png", "Dropdown öppen under ”Grunder”. Chevron vänd uppåt.") +
-        sg.use(do=["Synlighet styrs bara av klassen <code>.is-open</code>", "Ingen lucka mellan länk och meny", "220 ms stängningsfördröjning och lyssnare på själva menyn", "150 ms fördröjning innan grannens meny tar över", "Följ med vid scroll, stäng när headern roterat bort, vid klick utanför och <code>Escape</code>"],
+        sg.use(do=["Synlighet styrs bara av klassen <code>.is-open</code>", "Ingen lucka mellan länk och meny", "220 ms stängningsfördröjning på listpunkten, som också omsluter menyn", "150 ms fördröjning innan grannens meny tar över", "Följ med vid scroll, stäng när headern roterat bort, vid klick utanför och <code>Escape</code>"],
                dont=["CSS <code>:hover</code> som styr synlighet. Menyn stängs när pekaren passerar luckan", "<code>position: absolute</code>. Headern har <code>transform</code> och menyn hamnar i vänstra hörnet", "Meny som öppnar åt fel håll"],
                note=["All logik finns i <code>js/magello.js</code>. Kopiera filen, skriv inte om den"]), rose=True)
 

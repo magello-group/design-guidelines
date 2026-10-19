@@ -47,11 +47,16 @@
 
   /* ── Dropdown i headern (desktop) ──────────────────────────────────────
      Synligheten styrs bara av .is-open, aldrig av CSS :hover.
-     220 ms stängningsfördröjning per listpunkt, och lyssnare på själva
-     undermenyn, så att musen hinner från länk till meny. När en meny redan
-     är öppen byter hover till grannen först efter 150 ms, så att musen kan
-     gå snett ned över grannlänken utan att menyn byts. Scroll flyttar menyn
-     i stället för att stänga den, och stänger bara när headern inte syns. */
+     220 ms stängningsfördröjning per listpunkt, så att musen hinner från
+     länk till meny. Undermenyn ligger i listpunkten i DOM:en, så listpunktens
+     mouseenter/mouseleave täcker även menyn. Egna lyssnare på undermenyn får
+     inte finnas: deras mouseleave startade stängningen när musen gick från
+     menyn tillbaka till länken, och menyn försvann under pekaren.
+     När en meny redan är öppen byter hover till grannen först efter 150 ms,
+     så att musen kan gå snett ned över grannlänken utan att menyn byts.
+     Ett musklick på chevron när menyn öppnats av hover håller den öppen
+     (tangentbord och touch växlar). Scroll flyttar menyn i stället för att
+     stänga den, och stänger bara när headern inte syns. */
   var closeTimers = new WeakMap();
   var openTimers  = new WeakMap();
   function positionSub(item) {
@@ -81,7 +86,6 @@
     $$('.mg-nav__has-sub.is-open').forEach(function (o) { setDrop(o, false); });
   }
   $$('.mg-nav__has-sub').forEach(function (item) {
-    var sub = $('.mg-nav__sub', item);
     item.addEventListener('mouseenter', function () {
       var other = $$('.mg-nav__has-sub.is-open').some(function (o) { return o !== item; });
       if (other) openTimers.set(item, setTimeout(function () { openDrop(item); }, 150));
@@ -91,16 +95,16 @@
       clearTimeout(openTimers.get(item));
       scheduleClose(item);
     });
-    if (sub) {
-      sub.addEventListener('mouseenter', function () { clearTimeout(closeTimers.get(item)); });
-      sub.addEventListener('mouseleave', function () { scheduleClose(item); });
-    }
   });
   $$('.mg-nav__chevron-btn').forEach(function (btn) {
+    var pointer = '';
+    btn.addEventListener('pointerdown', function (e) { pointer = e.pointerType; });
     btn.addEventListener('click', function (e) {
       e.stopPropagation();
       var item = btn.closest('.mg-nav__has-sub');
-      if (item.classList.contains('is-open')) setDrop(item, false); else openDrop(item);
+      var hovered = e.detail > 0 && pointer === 'mouse' && item.matches(':hover');   /* mus, inte touch eller Enter/Space */
+      pointer = '';
+      if (item.classList.contains('is-open') && !hovered) setDrop(item, false); else openDrop(item);
     });
   });
   document.addEventListener('click', closeAllDrops);
