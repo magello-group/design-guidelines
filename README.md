@@ -2,7 +2,7 @@
 
 Magellos formspråk, samlat i en katalog som du kan ta med och bygga vidare på i ett nytt projekt. Underlaget är gjort för att användas av **både människor och AI-agenter** som skapar grafisk kommunikation: webb, dokument, presentationer, bilder och sociala medier.
 
-Styleguiden är publicerad på **https://magello-group.github.io/design-guidelines/**. Lokalt öppnar du **`styleguide/index.html`** i en webbläsare för en levande styleguide med bruksanvisning per färg, form, komponent, sektion och meny.
+Styleguiden finns på **https://magello-group.github.io/design-guidelines/**: en levande styleguide med bruksanvisning per färg, form, komponent, sektion och meny, och mallar och typsnitt att ladda ned.
 
 ## Innehåll
 
@@ -24,12 +24,7 @@ Styleguiden är publicerad på **https://magello-group.github.io/design-guidelin
 
 ## Kom igång
 
-**Titta på styleguiden:**
-
-```bash
-python3 -m http.server 8000
-# öppna http://localhost:8000/styleguide/
-```
+**Titta på styleguiden:** öppna https://magello-group.github.io/design-guidelines/.
 
 **Starta ett nytt projekt med Magellos formspråk:**
 
@@ -39,34 +34,18 @@ python3 -m http.server 8000
 4. Profilbilder, LinkedIn-bilder och kundlogotyper: gör dem i [bildverktyget](https://linkedin-profile-image.magello.se).
 5. Be en agent läsa `AGENTS.md` först. Den vet vilken fil som gäller för vilket uppdrag.
 
-## Bygga om
+## Ändra och publicera
 
-Styleguide-sidorna genereras av Python (kräver Python 3.12 eller nyare, inga paket):
+Ändra i källfilerna och pusha till `main`. GitHub Pages bygger och publicerar resten, och ingen behöver bygga något eller starta en server på sin egen dator.
 
-```bash
-python3 tools/make_shapes.py        # SVG-former i assets/shapes/ ur tokens.json
-python3 tools/build_styleguide.py   # styleguide/*.html ur tools/pages/*.py
-python3 tools/make_nav_images.py    # skärmdumpar av navigationens lägen (kräver Chrome och Pillow)
-```
+| Vad du ändrar | Var |
+|---|---|
+| Styleguidens sidor | `tools/pages/<sida>.py` (header, sidospår, mobilmeny och footer i `tools/build_styleguide.py`) |
+| Färger, typografi, avstånd, former | `tokens/tokens.json` |
+| CSS och JS | `styleguide/css/magello.css`, `styleguide/js/magello.js` |
+| Office-mallar | `assets/templates/` (originalen). Skriv en rad i `DECISIONS.md` |
 
-### Publicering på GitHub Pages
-
-Vid varje push till `main` bygger [`.github/workflows/pages.yml`](.github/workflows/pages.yml) styleguiden och publicerar den på https://magello-group.github.io/design-guidelines/. Jobbet kör `make_shapes.py` och `build_styleguide.py` och fallerar om någon genererad fil skiljer sig från den committade, så kör båda och committa resultatet innan du pushar. Sedan sätter `tools/build_site.py` ihop webbplatsen i `_site/`: styleguiden, tokens, docs, ikoner, logotyper, former, Office-mallarna, howto-dokumenten och specialtypsnittet Kattux som nedladdningar och de foton styleguiden använder (inte hela fotobiblioteket). Det kan också köras manuellt under Actions (*Run workflow*).
-
-Testa lokalt:
-
-```bash
-python3 tools/build_site.py
-python3 -m http.server 8000 -d _site   # öppna http://localhost:8000/
-```
-
-Första gången måste *Settings → Pages → Source* i repot vara satt till **GitHub Actions**.
-
-### Office-mallar
-
-Mallarna i `assets/templates/` är originalen. Ändra dem här och skriv en rad i `DECISIONS.md`. Hur de används står på [styleguide/office.html](styleguide/office.html).
-
-Header, sidospår, mobilmeny och footer definieras en gång i `tools/build_styleguide.py`. Innehållet per sida ligger i `tools/pages/<sida>.py` och skrivs med hjälpfunktionerna i `tools/sg.py` (`block`, `demo`, `use`, `code`, `spec`).
+Vid varje push till `main` kör [`.github/workflows/pages.yml`](.github/workflows/pages.yml) scripten i `tools/`, som genererar former, Tailwind-tema och styleguide-sidor, och publicerar webbplatsen på https://magello-group.github.io/design-guidelines/. Den kan också köras under Actions (*Run workflow*). Första gången måste *Settings → Pages → Source* i repot vara satt till **GitHub Actions**.
 
 ## Utveckla formspråket
 

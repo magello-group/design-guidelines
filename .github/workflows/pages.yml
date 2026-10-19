@@ -33,14 +33,6 @@ jobs:
           python3 tools/make_tailwind.py
           python3 tools/build_styleguide.py
 
-      - name: Kontrollera att genererade filer är committade
-        run: |
-          git status --porcelain -- assets/shapes tokens/tailwind.css styleguide
-          if ! git diff --exit-code -- assets/shapes tokens/tailwind.css styleguide || [ -n "$(git status --porcelain -- assets/shapes tokens/tailwind.css styleguide)" ]; then
-            echo "::error::Genererade filer skiljer sig från de committade. Kör make_shapes.py, make_tailwind.py och build_styleguide.py och committa resultatet."
-            exit 1
-          fi
-
       - name: Sätt ihop webbplatsen
         run: python3 tools/build_site.py
 

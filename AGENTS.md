@@ -57,7 +57,7 @@ btn     = t["shape"]["polygons"]["button"]["points"]           # [[2,5],[99,0],[
 h2_pt   = t["type"]["print"]["h2"]["pt"]                       # 18  (Word)
 ```
 
-**Rita en form som SVG** (till exempel för en bild eller en slide): skriv en `<polygon>` i en viewBox på `0 0 100 100` med `preserveAspectRatio="none"` och punkterna ur `shape.polygons`. Färdiga filer finns i `assets/shapes/` (genereras med `python3 tools/make_shapes.py`).
+**Rita en form som SVG** (till exempel för en bild eller en slide): skriv en `<polygon>` i en viewBox på `0 0 100 100` med `preserveAspectRatio="none"` och punkterna ur `shape.polygons`. Färdiga filer finns i `assets/shapes/` (genereras ur `tokens.json` när GitHub Pages bygger).
 
 **Typografi i dokument:** i Word och PowerPoint kommer typografin från mallens formatmallar och layouter (se `docs/office-mallar.md`). `type.print` och `type.presentation` beskriver samma skala i pt, för kontroll och för andra medier. Brödtext i presentation aldrig under 18 pt, absolut minimum 14 pt.
 
@@ -87,9 +87,9 @@ Formspråket ska kunna växa, men som ett system: en ny sak ska stärka de sju p
 1. **Härled först.** Finns det ett liknande mönster? Återanvänd dess form, färg och rörelse. Bryter din lösning mot en princip är den fel.
 2. **Lägg nya komponenter som modifier** på en befintlig (`.mg-card--namn`), inte som en kopia med egen polygon.
 3. **Uppdatera i den här ordningen:**
-   1. `tokens/tokens.json` (nya färger, former eller värden). Kör `python3 tools/make_shapes.py`.
+   1. `tokens/tokens.json` (nya färger, former eller värden).
    2. `styleguide/css/magello.css` (och `magello.js` vid beteende). Håll tokens i `:root`.
-   3. En sida i `tools/pages/` med levande exempel, "Gör / Gör inte / Tänk på" och markup. Kör `python3 tools/build_styleguide.py`.
+   3. En sida i `tools/pages/` med levande exempel, "Gör / Gör inte / Tänk på" och markup.
    4. `docs/design-language.md` (om principerna eller mediaoberoende regler ändras) och `docs/design-guidelines-web.md` (webbdetaljer).
    5. En rad i `DECISIONS.md` med datum och motivering.
 4. **Testa** att komponenten ser rätt ut i 375, 768, 1280 och 1842 px, med bara rubriken ifylld och med allt ifyllt, och med tangentbord.

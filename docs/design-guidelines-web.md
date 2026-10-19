@@ -225,7 +225,7 @@ Kopiera `styleguide/css/magello.css` och `styleguide/js/magello.js` till projekt
 @import "../design-guidelines/tokens/tailwind.css";
 ```
 
-Då finns tokens som utilities: `bg-mg-rose-100`, `text-mg-magenta`, `font-head`, `p-mg-5`, `max-w-mg`, `max-w-mg-text` och brytpunkterna `tablet:`, `nav:` (över hamburgerläget) och `desktop:`. Använd ändå `.mg-wrap` som container, eftersom den har högermarginalen för sidospåret. Bygg inte om komponenterna (knappar, kort, navigation) med utilities, utan använd klasserna i `magello.css`. Temat genereras med `python3 tools/make_tailwind.py` och ändras aldrig för hand.
+Då finns tokens som utilities: `bg-mg-rose-100`, `text-mg-magenta`, `font-head`, `p-mg-5`, `max-w-mg`, `max-w-mg-text` och brytpunkterna `tablet:`, `nav:` (över hamburgerläget) och `desktop:`. Använd ändå `.mg-wrap` som container, eftersom den har högermarginalen för sidospåret. Bygg inte om komponenterna (knappar, kort, navigation) med utilities, utan använd klasserna i `magello.css`. Temat genereras ur `tokens.json` av `tools/make_tailwind.py` när GitHub Pages bygger och ändras aldrig för hand.
 
 ### Steg 3 — Container och linjering
 
