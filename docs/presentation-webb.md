@@ -20,7 +20,7 @@ Blanda inte spåren i samma presentation.
 
 1. Ställ frågorna i `design-language.md`, inklusive valet av spår.
 2. Läs innehållet och dela upp det: **ett budskap per bild**. Långa originaltexter flyttas till talarnoterna, inte till mindre teckenstorlek.
-3. Bygg med `tools/presentation/magello_pptx.py` (python-pptx, Pillow, cairosvg). Se `tools/presentation/exempel_ai_integration.py`.
+3. Bygg med `tools/presentation/magello_pptx.py` (python-pptx, Pillow, cairosvg). Bildtyperna och hur de anropas står i modulens funktioner och docstrings.
 4. Rendera och granska varje bild visuellt (till exempel via PDF). Rätta allt som överlappar, bryts mitt i ord eller går utanför sin yta.
 5. Leverera `.pptx`. Skicka även PDF om mottagaren kan sakna Roboto.
 

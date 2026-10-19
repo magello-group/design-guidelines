@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 .DS_Store
 _site/
+
+# Filer som Claude skapar som exempel eller utkast hör inte hemma i repot
+Claude outputs/

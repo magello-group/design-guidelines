@@ -2,7 +2,7 @@
 
 Bygger en .pptx från en tom 16:9-presentation med webbens styleguide som förlaga:
 tokens/tokens.json, styleguide/css/magello.css, assets/. Ingen PowerPoint-mall.
-Regler och bildtyper beskrivs i docs/presentation-webb.md. Exempel: exempel_ai_integration.py.
+Regler och bildtyper beskrivs i docs/presentation-webb.md.
 
 Kräver: python-pptx, Pillow, cairosvg.
 
