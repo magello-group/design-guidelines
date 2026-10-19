@@ -170,6 +170,17 @@
 <div class="mg-btn-row"><a class="mg-btn mg-btn--secondary" href="../assets/templates/Powerpoint-mall-howto.pptx" download>PowerPoint-instruktion</a><a class="mg-btn mg-btn--secondary" href="../assets/templates/Word-mall-howto.docx" download>Word-instruktion</a></div><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Skriv titeln med formatmallen DocTitle, så hamnar den i sidhuvudet</li><li>Använd mallens formatmallar och layouter</li><li>Var sparsam med färg. Behövs en accent, välj magenta</li><li>Byt exempelbilderna mot egna svartvita foton</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Börja från ett tomt dokument</li><li>Byta typsnitt eller färger på rubriker och brödtext</li><li>Färgfoton eller egna former med raka hörn</li><li>Klistra in med formatering från andra dokument. Klistra in som text</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--loading">Tänk på</span><ul><li>Grafiken i Words sidhuvud ändras från sida två. Datumet uppdateras av sig självt</li><li>Grafik och bakgrundsformer att kopiera finns sist i PowerPoint-instruktionen</li><li>Rubriken på färgad platta använder <a href="typsnitt.html">specialtypsnittet Kattux</a>. Använd det bara för ett kort budskap</li></ul></div></div>
 </div>
 </section>
+<section class="sg-block" id="tva-spar" aria-labelledby="h-tva-spar">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">PowerPoint</p>
+    <h2 id="h-tva-spar">Två sätt att göra en presentation</h2>
+    <p>Agenten frågar alltid först vilket spår du vill ha. Välj mallen om du själv ska ändra och bygga vidare. Välj webbens formspråk om agenten ska leverera en färdig presentation som ser ut som webben.</p>
+  </div>
+<div class="mg-table-wrap"><table class="mg-table "><thead><tr><th></th><th>Spår A: PowerPoint-mallen</th><th>Spår B: webbens formspråk</th></tr></thead><tbody><tr><td>Passar när</td><td>Du själv ska ändra, byta bilder och lägga till bilder</td><td>En agent ska bygga hela presentationen</td></tr><tr><td>Utgår från</td><td><code>Powerpoint-mall.potx</code>, layouter och platshållare</td><td>En tom 16:9-presentation och tokens</td></tr><tr><td>Utseende</td><td>Mallens layouter, plattor och Kattux</td><td>Signaturyta, stor typografi, helbilder och luft, som webben</td></tr><tr><td>Ändra efteråt</td><td>Enkelt, via layouterna</td><td>Möjligt, men textrutor och former ligger fritt</td></tr><tr><td>Instruktion</td><td><a href='https://github.com/magello-group/design-guidelines/blob/main/docs/office-mallar.md'><code>docs/office-mallar.md</code></a></td><td><a href='https://github.com/magello-group/design-guidelines/blob/main/docs/presentation-webb.md'><code>docs/presentation-webb.md</code></a></td></tr></tbody></table></div><pre class="sg-code"><code>Läs https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md.
+Gör en presentation om vårt erbjudande inom moln i webbens formspråk (spår B).</code></pre><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Säg vilket spår du vill ha, annars frågar agenten</li><li>Spår B: rubriker i svart, rosagrått bara där något ska sticka ut</li><li>Spår B: be om PDF om mottagaren saknar Roboto</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Blanda spåren i samma presentation</li><li>Magenta rubriker i spår B</li></ul></div></div>
+</div>
+</section>
 <section class="sg-block" id="layouter" aria-labelledby="h-layouter">
 <div class="mg-wrap">
   <div class="mg-section-head">
@@ -198,7 +209,7 @@
     <p>Be agenten läsa <a href='https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md'><code>AGENTS.md</code></a>. Agenten skapar själv ett dokument ur mallen, använder layouterna och formatmallarna och lämnar en vanlig .pptx eller .docx. Du behöver inte köra något.</p>
   </div>
 <pre class="sg-code"><code>Läs https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md.
-Gör en presentation om vårt erbjudande inom moln utifrån Magellos PowerPoint-mall. Börja med Förstasida och avsluta
+Gör en presentation om vårt erbjudande inom moln utifrån Magellos PowerPoint-mall (spår A). Börja med Förstasida och avsluta
 med Fokus - Rubrik vänster på bild. Använd svartvita foton.</code></pre><p class="sg-text">Detaljerna för agenter, och var mallarna avviker från tokens, står i <a href='https://github.com/magello-group/design-guidelines/blob/main/docs/office-mallar.md'><code>docs/office-mallar.md</code></a>.</p>
 </div>
 </section>
@@ -210,7 +221,7 @@ med Fokus - Rubrik vänster på bild. Använd svartvita foton.</code></pre><p cl
 <footer class="mg-footer">
   <div class="mg-wrap">
     <div class="mg-footer__inner">
-      <div class="mg-footer__col"><span class="mg-footer__brand">Magello styleguide</span>Version 0.1<br>Formspråk för webb, dokument<br>och sociala medier</div>
+      <div class="mg-footer__col"><span class="mg-footer__brand">Magello styleguide</span>Git commit: <a href="https://github.com/magello-group/design-guidelines/commit/f0eba52">f0eba52</a><br>Formspråk för webb, dokument<br>och sociala medier</div>
       <div class="mg-footer__col">
         <a href="../tokens/tokens.json">tokens.json</a><br>
         <a href="../docs/design-language.md">design-language.md</a><br>

@@ -7,7 +7,7 @@ Varje sida är en Python-modul i tools/pages/ med PAGE = {slug, title, kicker, l
 actions (valfri)}. Layouten (header, sidospår, mobilmeny, footer) genereras här från NAV,
 så att menyn är samma på alla sidor. Resultatet är ren statisk HTML utan byggsteg i webbläsaren.
 """
-import importlib, pathlib, sys
+import importlib, os, pathlib, subprocess, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "styleguide"
@@ -17,6 +17,22 @@ import sg  # noqa: E402
 LOGO = (ROOT / "tools/partials/logo.svg.html").read_text()
 BURGER = (ROOT / "tools/partials/burger.html").read_text()
 CLOSE = (ROOT / "tools/partials/close.html").read_text()
+# Commit som sidorna byggs från, visas i sidfoten. I GitHub Actions från GITHUB_SHA,
+# annars från git. Utan git visas ingenting.
+def commit_sha():
+    sha = os.environ.get("GITHUB_SHA", "")
+    if not sha:
+        try:
+            sha = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True,
+                                 text=True, check=True).stdout.strip()
+        except (OSError, subprocess.CalledProcessError):
+            return ""
+    return sha[:7]
+
+
+SHA = commit_sha()
+VERSION = (f'Git commit: <a href="https://github.com/magello-group/design-guidelines/commit/{SHA}">{SHA}</a>'
+           if SHA else "")
 CHEVRON = ('<svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" '
            'stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>')
 
@@ -195,7 +211,7 @@ def layout(page):
 <footer class="mg-footer">
   <div class="mg-wrap">
     <div class="mg-footer__inner">
-      <div class="mg-footer__col"><span class="mg-footer__brand">Magello styleguide</span>Version 0.1<br>Formspråk för webb, dokument<br>och sociala medier</div>
+      <div class="mg-footer__col"><span class="mg-footer__brand">Magello styleguide</span>{VERSION}<br>Formspråk för webb, dokument<br>och sociala medier</div>
       <div class="mg-footer__col">
         <a href="../tokens/tokens.json">tokens.json</a><br>
         <a href="../docs/design-language.md">design-language.md</a><br>

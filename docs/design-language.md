@@ -17,7 +17,7 @@
 
 **Visuell referens:** `styleguide/` är en komplett statisk styleguide som visar formspråket i praktiken, med bruksanvisning per komponent (se tabellen nedan). Öppna `styleguide/index.html`. Maskinläsbara värden finns i `tokens/tokens.json` och formerna som SVG i `assets/shapes/`. Webbspecifik kod hör hemma i `docs/design-guidelines-web.md`.
 
-**Word och PowerPoint utgår alltid från Magellos officiella mallar**, `assets/templates/Word-mall.dotx` och `assets/templates/Powerpoint-mall.potx`, aldrig från ett tomt dokument. Hur de används, vilka layouter och formatmallar som finns och var de avviker från tokens står i `docs/office-mallar.md`.
+**Word utgår alltid från Magellos officiella mall**, `assets/templates/Word-mall.dotx`, aldrig från ett tomt dokument. **PowerPoint görs på ett av två sätt**, som användaren väljer: med `assets/templates/Powerpoint-mall.potx` (spår A) eller konstruerad av en agent i webbens formspråk (spår B, `docs/presentation-webb.md`). Hur de används, vilka layouter och formatmallar som finns och var de avviker från tokens står i `docs/office-mallar.md`.
 
 Referensmaterial: `assets/templates/Powerpoint-mall-howto.pptx` och `assets/templates/Word-mall-howto.docx` visar mallarna i bruk, och `styleguide/office.html` beskriver hur de används med agent eller för hand.
 
@@ -345,7 +345,8 @@ Ställ frågorna i ordning. Föreslå standardvalet (markerat med ★) om använ
 2. **Vad är syftet med materialet?** (Sälja, informera, rekrytera, dokumentera, bjuda in.)
 3. **Vem läser eller tittar?** Chefer, rekryterare, beställande IT-personer, kunder, kollegor? ★ Chefer och beställare.
 4. **Var används det?** Skärm, utskrift, projektor, sociala medier? Avgör storlekar och minsta textstorlek.
-5. **Word eller PowerPoint?** Utgå alltid från `assets/templates/Word-mall.dotx` (A4) eller `assets/templates/Powerpoint-mall.potx` (16:9), se `docs/office-mallar.md`. För andra format: fråga om format och sidstorlek.
+5. **Word eller PowerPoint?** Word utgår alltid från `assets/templates/Word-mall.dotx` (A4), se `docs/office-mallar.md`. För andra format: fråga om format och sidstorlek.
+   **PowerPoint: mallen eller webbens formspråk?** Spår A utgår från `assets/templates/Powerpoint-mall.potx` (16:9) och mallens layouter, så att användaren enkelt kan ändra själv (`docs/office-mallar.md`). Spår B låter en agent konstruera presentationen så att den ser ut som webben (`docs/presentation-webb.md`). ★ Spår A om användaren ska bygga vidare själv, spår B om agenten levererar en färdig presentation.
 
 ### Om innehållet
 6. **Vilket är det enda budskap mottagaren ska minnas?** Det styr rubrik och struktur.

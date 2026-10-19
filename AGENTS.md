@@ -8,7 +8,8 @@ Du ska skapa eller ändra grafisk kommunikation för Magello: webb, dokument, pr
 |---|---|
 | **Alla uppdrag** | `docs/design-language.md` (designspråket i ord, sju principer) |
 | **Webb, UI, Strapi** | `docs/design-guidelines-web.md`, öppna `styleguide/` och kopiera `styleguide/css/magello.css` + `styleguide/js/magello.js` **oförändrade**. Med Tailwind: importera även `tokens/tailwind.css` (v4-tema) |
-| **Word, PowerPoint** | `docs/design-language.md`, `docs/office-mallar.md`, `styleguide/office.html`, `styleguide/typsnitt.html` (Kattux), och mallarna `assets/templates/Word-mall.dotx` och `assets/templates/Powerpoint-mall.potx` |
+| **Word** | `docs/design-language.md`, `docs/office-mallar.md`, `styleguide/office.html` och mallen `assets/templates/Word-mall.dotx` |
+| **PowerPoint** | **Fråga först vilket spår som gäller** (se avsnitt 2). Spår A, mallen: `docs/office-mallar.md`, `styleguide/office.html`, `styleguide/typsnitt.html` (Kattux) och `assets/templates/Powerpoint-mall.potx`. Spår B, webbens formspråk: `docs/presentation-webb.md` och `tools/presentation/` |
 | **PDF** | `docs/design-language.md`, `tokens/tokens.json` (typ i pt), formerna i `assets/shapes/`. Skapas PDF:en från Word eller PowerPoint gäller raden ovan |
 | **Bilder, SVG, sociala medier** | `docs/design-language.md` (avsnittet Bilder och Bildverktyget), `tokens/tokens.json` (färg, former), `assets/shapes/`, `assets/logos/`, `assets/images/black-and-white/` (alla foton visas i `styleguide/bildbank.html`) |
 | **E-postsignatur** | `styleguide/e-postsignatur.html` (signaturen, HTML och textversion). Ändra inte innehållet, byt bara namn, titel, LinkedIn och mobilnummer |
@@ -20,6 +21,10 @@ Texten räcker inte för att få rätt utseende. **Facit är `styleguide/` (leva
 ## 2. Arbetssätt
 
 1. **Fråga först.** Ställ frågorna i slutet av `docs/design-language.md` (alla medier) och, för webb, avsnitt 2 i `docs/design-guidelines-web.md`. Föreslå standardvalet (★) om användaren inte har en åsikt. Fråga aldrig samma sak två gånger.
+   **Presentationer:** fråga alltid vilket spår användaren vill ha, innan du gör något annat:
+   - **Spår A, Magellos PowerPoint-mall.** Presentationen byggs i `Powerpoint-mall.potx` med mallens layouter och platshållare, så att användaren enkelt kan ändra och bygga vidare själv. Se `docs/office-mallar.md`.
+   - **Spår B, webbens formspråk.** Agenten konstruerar hela presentationen från en tom 16:9-presentation så att den ser ut som webben: signaturytan på förstasidan, stor typografi, helbilder, luft. Se `docs/presentation-webb.md` och biblioteket i `tools/presentation/`.
+   ★ Spår A om användaren själv ska fortsätta arbeta i presentationen, spår B om agenten ska leverera en färdig presentation. Blanda aldrig spåren.
 2. **Bygg med tokens, inte med ögonmått.** Färger, typsnitt, avstånd och former hämtas ur `tokens/tokens.json` eller `magello.css`. Hitta aldrig på mellanvärden.
 3. **Kopiera, skriv inte om.** På webben kopierar du `magello.css` och `magello.js`. Markup kopierar du från motsvarande styleguide-sida.
 4. **Självgranska** mot checklistan nedan innan du levererar. Jämför visuellt med styleguiden.
@@ -42,7 +47,7 @@ Texten räcker inte för att få rätt utseende. **Facit är `styleguide/` (leva
 12. **Inga löpnummer (01, 02, 03)** som dekoration.
 13. **Text på foto** läggs på en vit polygonplatta, aldrig direkt på bilden.
 14. **Respektera `prefers-reduced-motion`** och håll kontrast på minst 4,5 : 1 för brödtext.
-15. **Word och PowerPoint utgår alltid från Magellos officiella mallar** (`assets/templates/Word-mall.dotx`, `assets/templates/Powerpoint-mall.potx`), aldrig från ett tomt dokument eller en annan mall. Skapa själv en kopia av mallen och byt innehållstypen från mall till dokument (.potx → .pptx, .dotx → .docx), använd mallens layouter och formatmallar, och ändra inte tema, bakgrunder eller sidhuvud. Be aldrig användaren köra kommandon. Se `docs/office-mallar.md`.
+15. **Word utgår alltid från Magellos officiella mall** (`assets/templates/Word-mall.dotx`). **PowerPoint följer det spår användaren valt:** spår A utgår från `assets/templates/Powerpoint-mall.potx`, spår B byggs från en tom 16:9-presentation enligt `docs/presentation-webb.md`. Med mall: skapa själv en kopia och byt innehållstypen från mall till dokument (.potx → .pptx, .dotx → .docx), använd mallens layouter och formatmallar, och ändra inte tema, bakgrunder eller sidhuvud. Utgå aldrig från en annan mall. Be aldrig användaren köra kommandon. Se `docs/office-mallar.md`.
 16. **Profilbilder, LinkedIn-banners och -inlägg, svartvita miljöbilder och kundlogotyper görs i bildverktyget** https://linkedin-profile-image.magello.se, aldrig för hand. Hänvisa användaren dit och säg vilken tjänst som passar.
 
 ## 4. Använda `tokens/tokens.json`
@@ -65,12 +70,12 @@ h2_pt   = t["type"]["print"]["h2"]["pt"]                       # 18  (Word)
 
 ## 5. Checklista innan leverans
 
-- [ ] Utgår Word och PowerPoint från Magellos mall, med mallens layouter och formatmallar?
+- [ ] Utgår Word från Magellos mall? Följer PowerPoint det spår användaren valt (A: mallens layouter, B: `docs/presentation-webb.md`)?
 - [ ] Syns den rosagrå signaturytan där den ska (förstasida, omslag, header)?
 - [ ] Är alla synliga former polygoner utan exakt raka kanter?
 - [ ] Är alla foton svartvita och beskurna i polygonform?
 - [ ] Är magenta bara fyllnad, rubrikfärg och länk, aldrig linje?
-- [ ] Är rubriker Roboto Condensed och brödtext Roboto? Är H2 magenta?
+- [ ] Är rubriker Roboto Condensed och brödtext Roboto? På webben: är H2 magenta? I presentationer (spår B): är rubrikerna svarta, som DocTitle och h1?
 - [ ] Är all text på svenska, utan utropstecken?
 - [ ] Ligger allt innehåll på samma vänsterkant som logotypen?
 - [ ] Ligger infoblock efter varandra i full bredd?

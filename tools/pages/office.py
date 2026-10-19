@@ -78,11 +78,30 @@ def body(sg):
         "Formatmallarna finns under <em>Start</em>. Tabellformaten finns under <em>Tabelldesign</em>.",
         sg.spec(["Formatmall", "Använd till"], STYLES), rose=True)
 
+    tracks = sg.block("tva-spar", "PowerPoint", "Två sätt att göra en presentation",
+        "Agenten frågar alltid först vilket spår du vill ha. Välj mallen om du själv ska ändra och bygga vidare. "
+        "Välj webbens formspråk om agenten ska leverera en färdig presentation som ser ut som webben.",
+        sg.spec(["", "Spår A: PowerPoint-mallen", "Spår B: webbens formspråk"], [
+            ["Passar när", "Du själv ska ändra, byta bilder och lägga till bilder", "En agent ska bygga hela presentationen"],
+            ["Utgår från", "<code>Powerpoint-mall.potx</code>, layouter och platshållare", "En tom 16:9-presentation och tokens"],
+            ["Utseende", "Mallens layouter, plattor och Kattux", "Signaturyta, stor typografi, helbilder och luft, som webben"],
+            ["Ändra efteråt", "Enkelt, via layouterna", "Möjligt, men textrutor och former ligger fritt"],
+            ["Instruktion", "<a href='https://github.com/magello-group/design-guidelines/blob/main/docs/office-mallar.md'><code>docs/office-mallar.md</code></a>",
+             "<a href='https://github.com/magello-group/design-guidelines/blob/main/docs/presentation-webb.md'><code>docs/presentation-webb.md</code></a>"],
+        ]) +
+        sg.code("""Läs https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md.
+Gör en presentation om vårt erbjudande inom moln i webbens formspråk (spår B).""") +
+        sg.use(do=["Säg vilket spår du vill ha, annars frågar agenten",
+                   "Spår B: rubriker i svart, rosagrått bara där något ska sticka ut",
+                   "Spår B: be om PDF om mottagaren saknar Roboto"],
+               dont=["Blanda spåren i samma presentation",
+                     "Magenta rubriker i spår B"]))
+
     agent = sg.block("agent", "Med agent", "Låt en agent göra dokumentet",
         "Be agenten läsa <a href='https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md'><code>AGENTS.md</code></a>. Agenten skapar själv ett dokument ur mallen, använder layouterna och formatmallarna och lämnar en vanlig .pptx eller .docx. Du behöver inte köra något.",
         sg.code("""Läs https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md.
-Gör en presentation om vårt erbjudande inom moln utifrån Magellos PowerPoint-mall. Börja med Förstasida och avsluta
+Gör en presentation om vårt erbjudande inom moln utifrån Magellos PowerPoint-mall (spår A). Börja med Förstasida och avsluta
 med Fokus - Rubrik vänster på bild. Använd svartvita foton.""") +
         sg.text("Detaljerna för agenter, och var mallarna avviker från tokens, står i <a href='https://github.com/magello-group/design-guidelines/blob/main/docs/office-mallar.md'><code>docs/office-mallar.md</code></a>."))
 
-    return manual + howto + layouts + styles + agent
+    return manual + howto + tracks + layouts + styles + agent
