@@ -24,7 +24,7 @@ Mallen är gjord för att människor enkelt ska kunna göra presentationer själ
 | Instruktion för PowerPoint-mallen | `assets/templates/Powerpoint-mall-howto.pptx` | Läses och används som exempel, inte som mall |
 | Instruktion för Word-mallen | `assets/templates/Word-mall-howto.docx` | Läses och används som exempel, inte som mall |
 
-Styleguidesidan `styleguide/office.html` (Word och PowerPoint) har nedladdningsknappar och korta instruktioner för den som gör dokumentet själv.
+Styleguidesidorna `styleguide/powerpoint.html` och `styleguide/word.html` har nedladdningsknappar, en text att kopiera till en AI-agent och korta instruktioner för den som gör dokumentet själv. För PowerPoint är AI-agenten förstahandsvalet.
 
 ## Källa
 

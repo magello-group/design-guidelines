@@ -54,15 +54,16 @@ NAV = [
         ("Markdown", "markdown.html"),
     ]),
     ("Navigation", "navigation.html", []),
-    ("Mallar", "office.html", [
-        ("Word &amp; PowerPoint", "office.html"),
+    ("Mallar", "powerpoint.html", [
+        ("PowerPoint", "powerpoint.html"),
+        ("Word", "word.html"),
         ("E-postsignatur", "e-postsignatur.html"),
     ]),
 ]
 FEATURED = ("Tokens (JSON)", "../tokens/tokens.json")
 
 PAGES = ["index", "farg", "form", "typografi", "typsnitt", "bilder-ikoner", "bildbank", "avstand-rorelse",
-         "komponenter", "sektioner", "formular-feedback", "navigation", "markdown", "office",
+         "komponenter", "sektioner", "formular-feedback", "navigation", "markdown", "powerpoint", "word",
          "e-postsignatur"]
 
 

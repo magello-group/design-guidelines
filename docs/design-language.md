@@ -19,7 +19,7 @@
 
 **Word utgår alltid från Magellos officiella mall**, `assets/templates/Word-mall.dotx`, aldrig från ett tomt dokument. **PowerPoint görs på ett av två sätt**, som användaren väljer: med `assets/templates/Powerpoint-mall.potx` (spår A) eller konstruerad av en agent i webbens formspråk (spår B, `docs/presentation-webb.md`). Hur de används, vilka layouter och formatmallar som finns och var de avviker från tokens står i `docs/office-mallar.md`.
 
-Referensmaterial: `assets/templates/Powerpoint-mall-howto.pptx` och `assets/templates/Word-mall-howto.docx` visar mallarna i bruk, och `styleguide/office.html` beskriver hur de används med agent eller för hand.
+Referensmaterial: `assets/templates/Powerpoint-mall-howto.pptx` och `assets/templates/Word-mall-howto.docx` visar mallarna i bruk, och `styleguide/powerpoint.html` och `styleguide/word.html` beskriver hur de används med AI-agent eller för hand.
 
 ### Visuell referens — styleguiden
 
@@ -37,7 +37,8 @@ Referensmaterial: `assets/templates/Powerpoint-mall-howto.pptx` och `assets/temp
 | `styleguide/sektioner.html` | Sidtyper, sidhuvud, rosa sektion, bild och text, case, artikellayout |
 | `styleguide/formular-feedback.html` | Fält, val, uppladdning, pills, toast, laddning |
 | `styleguide/navigation.html` | Header, dropdown, sidospår, mobilmeny, brödsmula |
-| `styleguide/office.html` | Word och PowerPoint: mallarna, med agent eller för hand, layouter och formatmallar |
+| `styleguide/powerpoint.html` | PowerPoint: i första hand med AI-agent, annars mallen och layouterna |
+| `styleguide/word.html` | Word: mallen, formatmallarna och med AI-agent |
 | `styleguide/markdown.html` | Hur Markdown (till exempel från Strapi) renderas |
 
 Tillgångar (logotyper, ikoner, svartvita foton) ligger i `assets/logos/`, `assets/graphics/` och `assets/images/black-and-white/`.

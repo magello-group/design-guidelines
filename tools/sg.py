@@ -79,3 +79,33 @@ def link_cards(items):
         f'<p class="mg-offer-card__desc">{d}</p><a class="mg-offer-card__link" href="{u}">{lt} →</a></div></div>'
         for i, t, d, u, lt in items)
     return f'<div class="mg-offer-grid">{cards}</div>'
+
+
+def steps(*items, cls=""):
+    """Processteg. Sista steget är alltid magenta (hård regel 9)."""
+    colors = ["blue", "orange", "green", "yellow"][:len(items) - 1] + ["magenta"]
+    css = "mg-steps" + (f" {cls}" if cls else "")
+    return (f'<div class="{css}" role="list">' + "".join(
+        f'<div class="mg-step mg-step--{c}" role="listitem"><span class="mg-step__num">Steg {i}</span>{t}</div>'
+        for i, (c, t) in enumerate(zip(colors, items), 1)) + '</div>')
+
+
+def prompt(id_, text_):
+    """Text att klistra in i en AI-agent, med kopiera-knapp (data-mg-copy i magello.js)."""
+    return (f'<pre class="sg-code sg-code--prompt"><code id="{id_}">{esc(text_)}</code></pre>'
+            f'<p class="sg-copy-row"><button type="button" class="mg-btn mg-btn--secondary" '
+            f'data-mg-copy="#{id_}">Kopiera texten</button></p>')
+
+
+AGENTS_URL = "https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md"
+
+
+def ai_start(id_, intro, what, label="Kom igång", title="Börja med en AI-agent", example=""):
+    """Kom igång med AI: fyra steg och en text att kopiera. what = det agenten ska skapa."""
+    ex = (f" Till exempel <em>{example}</em>." if example else "")
+    return block(id_, label, title, intro,
+        steps("Öppna din AI-agent", "Kopiera texten nedan", "Beskriv vad du vill ha", "Granska och använd",
+              cls="sg-start-steps")
+        + sub("Texten att klistra in", "Kopiera texten och klistra in den i agenten. Skriv sedan vad du vill ha." + ex)
+        + prompt(f"{id_}-prompt", f"Läs {AGENTS_URL} och följ den.\n{what}"),
+        rose=True)

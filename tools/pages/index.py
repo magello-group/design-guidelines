@@ -1,7 +1,7 @@
 PAGE = dict(
     title="Magellos formspråk", kicker="Styleguide", h1="Magellos<br>formspråk",
     lead="Så ser Magello ut, och hur du använder färg, form och komponenter. För människor och AI-agenter som skapar webb, dokument, presentationer och sociala medier.",
-    actions=[("Börja med principerna", "#principer", "primary"), ("Ladda ner tokens", "../tokens/tokens.json", "secondary")],
+    actions=[("Kom igång med AI", "#kom-igang", "primary"), ("Läs principerna", "#principer", "secondary")],
 )
 
 PRINCIPLES = [
@@ -33,14 +33,8 @@ def body(sg):
             ("check-mark-checked.svg", "Skapa ett formulär", "Fält, states, feedback och laddning.", "formular-feedback.html", "Till formulär"),
             ("arrow-up-right.svg", "Bygga menyer", "Header, dropdown, sidospår, mobilmeny och brödsmula.", "navigation.html", "Till navigation"),
         ]))
-    agents = sg.block("agenter", "AI-agenter", "Använd styleguiden som underlag",
-        "Styleguiden är gjord för att läsas av både människor och agenter. Börja med <a href='https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md'><code>AGENTS.md</code></a> i <a href='https://github.com/magello-group/design-guidelines'>repot på GitHub</a>, hämta värden ur <code>tokens/tokens.json</code> och rita former med SVG-filerna i <code>assets/shapes/</code>.",
-        sg.code("""# Exempel på uppdrag till en agent
-Läs https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md
-och docs/design-language.md i samma repo. Skapa en presentation (16:9) om vårt
-erbjudande inom Cloud. Använd tokens/tokens.json för färger och typsnitt, formerna
-i assets/shapes/ och mallen assets/templates/Powerpoint-mall.potx. Följ checklistan
-i AGENTS.md innan du levererar.""")
-        + sg.use(do=["Be agenten läsa <a href='https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md'><code>AGENTS.md</code></a> först", "Hänvisa till tokens och former i stället för att beskriva dem", "Be om en självgranskning mot checklistan"],
-                 dont=["Be agenten ”göra det snyggt” utan underlag", "Låta agenten uppfinna egna färger eller former"]))
-    return intro + principles + nav + agents
+    start = sg.ai_start("kom-igang",
+        "Det enklaste sättet att skapa något i Magellos formspråk är att låta en AI-agent göra jobbet, till exempel Claude eller Copilot. Agenten läser reglerna själv. Du beskriver bara vad du vill ha.",
+        "Jag vill skapa: ",
+        example="en presentation om vårt erbjudande inom Cloud, eller en LinkedIn-bild till en ny medarbetare")
+    return start + intro + principles + nav

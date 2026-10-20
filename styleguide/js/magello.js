@@ -135,6 +135,36 @@
     });
   });
 
+  /* ── Kopiera-knapp ──────────────────────────────────────────────────
+     <button class="mg-btn mg-btn--secondary" data-mg-copy="#id">Kopiera</button>
+     kopierar textinnehållet i #id. Knapptexten blir "Kopierat" i 2 s
+     (ändra med data-mg-copied). */
+  $$('[data-mg-copy]').forEach(function (btn) {
+    var label = btn.textContent;
+    btn.addEventListener('click', function () {
+      var target = $(btn.getAttribute('data-mg-copy'));
+      if (!target) return;
+      var text = target.textContent;
+      var done = function () {
+        btn.textContent = btn.getAttribute('data-mg-copied') || 'Kopierat';
+        setTimeout(function () { btn.textContent = label; }, 2000);
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(done);
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) { /* markera för hand */ }
+        ta.remove();
+      }
+    });
+  });
+
   /* ── Escape stänger meny och dropdown ──────────────────────────────── */
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;

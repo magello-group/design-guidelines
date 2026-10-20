@@ -8,8 +8,8 @@ Du ska skapa eller ändra grafisk kommunikation för Magello: webb, dokument, pr
 |---|---|
 | **Alla uppdrag** | `docs/design-language.md` (designspråket i ord, sju principer) |
 | **Webb, UI, Strapi** | `docs/design-guidelines-web.md`, öppna `styleguide/` och kopiera `styleguide/css/magello.css` + `styleguide/js/magello.js` **oförändrade**. Med Tailwind: importera även `tokens/tailwind.css` (v4-tema) |
-| **Word** | `docs/design-language.md`, `docs/office-mallar.md`, `styleguide/office.html` och mallen `assets/templates/Word-mall.dotx` |
-| **PowerPoint** | **Fråga först vilket spår som gäller** (se avsnitt 2). Spår A, mallen: `docs/office-mallar.md`, `styleguide/office.html`, `styleguide/typsnitt.html` (Kattux) och `assets/templates/Powerpoint-mall.potx`. Spår B, webbens formspråk: `docs/presentation-webb.md` och `tools/presentation/` |
+| **Word** | `docs/design-language.md`, `docs/office-mallar.md`, `styleguide/word.html` och mallen `assets/templates/Word-mall.dotx` |
+| **PowerPoint** | **Fråga först vilket spår som gäller** (se avsnitt 2). Spår A, mallen: `docs/office-mallar.md`, `styleguide/powerpoint.html`, `styleguide/typsnitt.html` (Kattux) och `assets/templates/Powerpoint-mall.potx`. Spår B, webbens formspråk: `docs/presentation-webb.md` och `tools/presentation/` |
 | **PDF** | `docs/design-language.md`, `tokens/tokens.json` (typ i pt), formerna i `assets/shapes/`. Skapas PDF:en från Word eller PowerPoint gäller raden ovan |
 | **Bilder, SVG, sociala medier** | `docs/design-language.md` (avsnittet Bilder och Bildverktyget), `tokens/tokens.json` (färg, former), `assets/shapes/`, `assets/logos/`, `assets/images/black-and-white/` (alla foton visas i `styleguide/bildbank.html`) |
 | **E-postsignatur** | `styleguide/e-postsignatur.html` (signaturen, HTML och textversion). Ändra inte innehållet, byt bara namn, titel, LinkedIn och mobilnummer |

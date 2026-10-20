@@ -14,7 +14,7 @@ Styleguiden finns på **https://magello-group.github.io/design-guidelines/**: en
 | [`docs/design-language.md`](docs/design-language.md) | Designspråket i ord, utan webbdetaljer. Underlag för PowerPoint, Word, PDF, bilder |
 | [`docs/design-guidelines-web.md`](docs/design-guidelines-web.md) | Webbriktlinjer: frågor, nytt projekt eller omstyling, tokens, komponenter, navigation, Strapi med Markdown |
 | [`tokens/tokens.json`](tokens/tokens.json) | Färg, typografi (web, tryck, presentation), avstånd, layout, rörelse, former (polygoner) och regler som maskinläsbara värden |
-| [`docs/office-mallar.md`](docs/office-mallar.md) + [`styleguide/office.html`](styleguide/office.html) | Magellos officiella Word- och PowerPoint-mallar, med agent eller för hand: hur ett nytt dokument skapas, layouter, formatmallar och kända avvikelser |
+| [`docs/office-mallar.md`](docs/office-mallar.md) + [`styleguide/powerpoint.html`](styleguide/powerpoint.html), [`styleguide/word.html`](styleguide/word.html) | Magellos officiella Word- och PowerPoint-mallar, med agent eller för hand: hur ett nytt dokument skapas, layouter, formatmallar och kända avvikelser |
 | [`assets/templates/`](assets/templates/) | **Officiella mallar**: [`Powerpoint-mall.potx`](assets/templates/Powerpoint-mall.potx) och [`Word-mall.dotx`](assets/templates/Word-mall.dotx) och howto-dokumenten [`Powerpoint-mall-howto.pptx`](assets/templates/Powerpoint-mall-howto.pptx) och [`Word-mall-howto.docx`](assets/templates/Word-mall-howto.docx) |
 | [`assets/`](assets/) | Logotyper, ikoner, svartvita foton, SVG-former (`shapes/`) |
 | [Bildbanken](https://magello-group.github.io/design-guidelines/styleguide/bildbank.html) | Alla svartvita foton att titta på och ladda ned, och en översikt över bildverktygets tjänster |

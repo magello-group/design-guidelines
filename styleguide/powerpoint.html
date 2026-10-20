@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PowerPoint — Magello styleguide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Condensed:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/magello.css">
+<link rel="stylesheet" href="css/styleguide.css">
+</head>
+<body>
+
+<!-- ═══ SIDOSPÅR ═══════════════════════════════════════════════ -->
+<div class="mg-side-nav" aria-label="Sidonavigering">
+  <a class="mg-side-nav__logo" href="index.html" aria-label="Magello">
+    <img src="../assets/logos/icon-logotype.svg" alt="Magello">
+  </a>
+  <ul class="mg-side-nav__links">
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="farg.html">Grunder</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="bildbank.html">Bildbank</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+    </li>
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="komponenter.html">Byggstenar</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+    </li>
+    <li><a href="navigation.html">Navigation</a></li>
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="powerpoint.html" class="is-active">Mallar</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="powerpoint.html" class="is-active">PowerPoint</a></li><li><a href="word.html">Word</a></li><li><a href="e-postsignatur.html">E-postsignatur</a></li></ul>
+    </li>
+  </ul>
+  <a class="mg-side-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+</div>
+
+<!-- ═══ HEADER ═════════════════════════════════════════════════ -->
+<div class="mg-page-header mg-page-header--rotate">
+  <div class="mg-header-shape"></div>
+  <nav class="mg-nav">
+    <div class="mg-nav__inner">
+      <a class="mg-nav__logo" href="index.html" aria-label="Magello">
+        <svg viewBox="0 0 1298 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>Magello</title>
+          <rect x="114" y="41" width="1096" height="251" fill="white"/>
+          <path d="M383.475 127.758L378.345 171.487L398.438 170.63L397.583 126.043L383.475 127.758Z" fill="#EC008C"/>
+          <path d="M1040.56 171.916L1084.16 180.49L1096.99 227.221L1147.86 177.918L1151.28 131.616L1088.44 120.47L1040.56 171.916Z" fill="#EC008C"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M138.513 0L50.0185 22.7221L1.71003 95.1756L0 290.243L47.026 318.109L97.472 322.825L320.632 332.686L1226.09 325.826L1295.78 257.66L1297.06 24.8657L1267.56 6.43078L138.513 0ZM293.271 258.946L244.535 266.234L241.115 197.639L212.899 216.932L190.241 197.639L188.104 267.521H138.94L135.093 210.93L139.795 93.4607H176.989L218.884 152.195L255.65 93.8894H293.698L293.271 258.946ZM410.408 260.232L401.003 190.351H376.635L369.795 256.374H321.487L340.297 135.046C340.297 135.046 353.55 80.5992 356.115 81.4566C358.68 82.314 420.241 85.3151 420.241 85.3151L443.327 138.476L462.564 265.377L410.408 260.232ZM604.925 256.803L576.282 262.805L510.018 257.66L483.94 222.076L482.23 187.35L481.802 150.909L492.062 119.613L514.72 92.1746L558.754 85.3151L585.687 89.6022L613.047 93.4607L612.192 107.18L604.497 141.049L557.044 128.187L531.821 146.193L528.401 190.78L548.494 214.359L567.732 210.072V187.35C560.891 186.493 560.036 186.493 560.036 186.493C559.181 186.064 560.036 167.2 560.036 167.2L613.902 171.059V192.924L614.33 214.788L604.925 256.803ZM752.843 135.046L695.984 135.904V154.339L743.438 152.195L743.01 192.495L692.992 195.925L696.412 213.502L752.415 218.218L751.988 260.661L647.248 260.232L648.103 93.4607L752.843 96.4618V135.046ZM893.493 259.804L787.899 259.375L788.754 80.5992L834.497 81.0279L835.779 213.931L894.348 212.216L893.493 259.804ZM909.739 247.371L905.891 116.612L910.594 72.0248L952.917 74.5971L952.062 203.213L989.255 203.641L1008.92 205.356L1009.35 252.944L909.739 247.371ZM1180.35 225.935L1135.04 262.805L1040.98 242.655L1019.61 165.486L1034.14 96.8905C1034.14 96.8905 1091 79.7417 1099.98 78.8843L1140.59 84.4576L1187.19 133.76L1180.35 225.935Z" fill="#EC008C"/>
+        </svg>
+      </a>
+      <ul class="mg-nav__links">
+        <li class="mg-nav__has-sub">
+          <a href="farg.html">Grunder</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Grunder"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="bildbank.html">Bildbank</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+        </li>
+        <li class="mg-nav__has-sub">
+          <a href="komponenter.html">Byggstenar</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Byggstenar"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+        </li>
+        <li><a href="navigation.html">Navigation</a></li>
+        <li class="mg-nav__has-sub">
+          <a href="powerpoint.html" class="is-active">Mallar</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Mallar"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="powerpoint.html" class="is-active">PowerPoint</a></li><li><a href="word.html">Word</a></li><li><a href="e-postsignatur.html">E-postsignatur</a></li></ul>
+        </li>
+      </ul>
+      <a class="mg-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+      <button class="mg-nav__burger" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" aria-hidden="true">
+          <rect width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="8" width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="16" width="24" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<!-- ═══ MOBILMENY ══════════════════════════════════════════════ -->
+<div class="mg-mobile-menu" id="mobile-menu" aria-hidden="true" aria-label="Mobilnavigering">
+  <div class="mg-mobile-menu__head">
+    <a href="index.html" class="mg-nav__logo" aria-label="Magello">
+      <svg style="height:32px;width:auto" viewBox="0 0 1298 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>Magello</title>
+          <rect x="114" y="41" width="1096" height="251" fill="white"/>
+          <path d="M383.475 127.758L378.345 171.487L398.438 170.63L397.583 126.043L383.475 127.758Z" fill="#EC008C"/>
+          <path d="M1040.56 171.916L1084.16 180.49L1096.99 227.221L1147.86 177.918L1151.28 131.616L1088.44 120.47L1040.56 171.916Z" fill="#EC008C"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M138.513 0L50.0185 22.7221L1.71003 95.1756L0 290.243L47.026 318.109L97.472 322.825L320.632 332.686L1226.09 325.826L1295.78 257.66L1297.06 24.8657L1267.56 6.43078L138.513 0ZM293.271 258.946L244.535 266.234L241.115 197.639L212.899 216.932L190.241 197.639L188.104 267.521H138.94L135.093 210.93L139.795 93.4607H176.989L218.884 152.195L255.65 93.8894H293.698L293.271 258.946ZM410.408 260.232L401.003 190.351H376.635L369.795 256.374H321.487L340.297 135.046C340.297 135.046 353.55 80.5992 356.115 81.4566C358.68 82.314 420.241 85.3151 420.241 85.3151L443.327 138.476L462.564 265.377L410.408 260.232ZM604.925 256.803L576.282 262.805L510.018 257.66L483.94 222.076L482.23 187.35L481.802 150.909L492.062 119.613L514.72 92.1746L558.754 85.3151L585.687 89.6022L613.047 93.4607L612.192 107.18L604.497 141.049L557.044 128.187L531.821 146.193L528.401 190.78L548.494 214.359L567.732 210.072V187.35C560.891 186.493 560.036 186.493 560.036 186.493C559.181 186.064 560.036 167.2 560.036 167.2L613.902 171.059V192.924L614.33 214.788L604.925 256.803ZM752.843 135.046L695.984 135.904V154.339L743.438 152.195L743.01 192.495L692.992 195.925L696.412 213.502L752.415 218.218L751.988 260.661L647.248 260.232L648.103 93.4607L752.843 96.4618V135.046ZM893.493 259.804L787.899 259.375L788.754 80.5992L834.497 81.0279L835.779 213.931L894.348 212.216L893.493 259.804ZM909.739 247.371L905.891 116.612L910.594 72.0248L952.917 74.5971L952.062 203.213L989.255 203.641L1008.92 205.356L1009.35 252.944L909.739 247.371ZM1180.35 225.935L1135.04 262.805L1040.98 242.655L1019.61 165.486L1034.14 96.8905C1034.14 96.8905 1091 79.7417 1099.98 78.8843L1140.59 84.4576L1187.19 133.76L1180.35 225.935Z" fill="#EC008C"/>
+        </svg>
+    </a>
+    <button class="mg-mobile-menu__close" aria-label="Stäng meny">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <ul class="mg-mobile-menu__links">
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="farg.html">Grunder</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="bildbank.html">Bildbank</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+    </li>
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="komponenter.html">Byggstenar</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+    </li>
+    <li><a href="navigation.html">Navigation</a></li>
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="powerpoint.html" class="is-active">Mallar</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="powerpoint.html" class="is-active">PowerPoint</a></li><li><a href="word.html">Word</a></li><li><a href="e-postsignatur.html">E-postsignatur</a></li></ul>
+    </li>
+  </ul>
+  <a class="mg-mobile-menu__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+</div>
+
+<!-- ═══ SIDHUVUD ═══════════════════════════════════════════════ -->
+<div class="mg-ingang-hero">
+  <div class="mg-ingang-col">
+    <nav class="mg-breadcrumb" aria-label="Brödsmula">
+      <a href="index.html">Hem</a>
+      <span class="mg-breadcrumb__sep">/</span>
+      <span aria-current="page">PowerPoint</span>
+    </nav>
+    <p class="mg-kicker">Mallar</p>
+    <h1 class="mg-ingang-title">PowerPoint</h1>
+    <p class="mg-ingang-sub">Låt en AI-agent göra presentationen. Den följer Magellos formspråk och använder rätt mall. Vill du göra den själv utgår du från PowerPoint-mallen.</p>
+    <div class="mg-ingang-actions"><a href="#ai" class="mg-btn mg-btn--primary">Kom igång med AI</a><a href="../assets/templates/Powerpoint-mall.potx" class="mg-btn mg-btn--secondary">Ladda ned PowerPoint-mallen</a></div>
+  </div>
+</div>
+
+<main id="main-content">
+<section class="mg-section--rose sg-block sg-block--rose" id="ai" aria-labelledby="h-ai">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Kom igång</p>
+    <h2 id="h-ai">Låt en AI-agent göra presentationen</h2>
+    <p>Det enklaste och bästa sättet att göra en presentation. Agenten läser reglerna, frågar vad som saknas och lämnar en färdig .pptx. Du behöver inte installera eller köra något.</p>
+  </div>
+<div class="mg-steps sg-start-steps" role="list"><div class="mg-step mg-step--blue" role="listitem"><span class="mg-step__num">Steg 1</span>Öppna din AI-agent</div><div class="mg-step mg-step--orange" role="listitem"><span class="mg-step__num">Steg 2</span>Kopiera texten nedan</div><div class="mg-step mg-step--green" role="listitem"><span class="mg-step__num">Steg 3</span>Beskriv vad du vill ha</div><div class="mg-step mg-step--magenta" role="listitem"><span class="mg-step__num">Steg 4</span>Granska och använd</div></div><h3 class="sg-sub">Texten att klistra in</h3><p class="sg-text">Kopiera texten och klistra in den i agenten. Skriv sedan vad du vill ha. Till exempel <em>vårt erbjudande inom Cloud, 10 bilder, till en kund i energibranschen</em>.</p><pre class="sg-code sg-code--prompt"><code id="ai-prompt">Läs https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md och följ den.
+Gör en PowerPoint-presentation om: </code></pre><p class="sg-copy-row"><button type="button" class="mg-btn mg-btn--secondary" data-mg-copy="#ai-prompt">Kopiera texten</button></p>
+</div>
+</section>
+<section class="sg-block" id="tva-spar" aria-labelledby="h-tva-spar">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Med AI</p>
+    <h2 id="h-tva-spar">Agenten frågar vilket utseende du vill ha</h2>
+    <p>Det finns två sätt att göra en presentation. Agenten frågar alltid först. Vet du redan, skriv det direkt i texten till agenten.</p>
+  </div>
+<div class="mg-table-wrap"><table class="mg-table "><thead><tr><th></th><th>Mallen</th><th>Webbens formspråk</th></tr></thead><tbody><tr><td>Passar när</td><td>Du själv ska ändra, byta bilder och lägga till bilder efteråt</td><td>Agenten ska leverera en färdig presentation</td></tr><tr><td>Utseende</td><td>Mallens layouter, plattor och Kattux</td><td>Signaturyta, stor typografi, helbilder och luft, som webben</td></tr><tr><td>Ändra efteråt</td><td>Enkelt, via layouterna</td><td>Möjligt, men textrutor och former ligger fritt</td></tr><tr><td>Skriv till agenten</td><td><em>Använd PowerPoint-mallen</em></td><td><em>Använd webbens formspråk</em></td></tr></tbody></table></div><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Ge agenten innehållet: anteckningar, ett dokument eller en gammal presentation</li><li>Säg vem som ska se presentationen och hur lång den ska vara</li><li>Be om PDF också om mottagaren kan sakna typsnitten</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Be agenten ”göra det snyggt” utan underlag</li><li>Ändra färger eller typsnitt i efterhand</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--loading">Tänk på</span><ul><li>Agentens instruktioner står i <a href='https://github.com/magello-group/design-guidelines/blob/main/docs/office-mallar.md'><code>office-mallar.md</code></a> och <a href='https://github.com/magello-group/design-guidelines/blob/main/docs/presentation-webb.md'><code>presentation-webb.md</code></a></li></ul></div></div>
+</div>
+</section>
+<section class="mg-section--rose sg-block sg-block--rose" id="sjalv" aria-labelledby="h-sjalv">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Utan AI</p>
+    <h2 id="h-sjalv">Gör presentationen själv</h2>
+    <p>Det fungerar likadant på Mac och PC.</p>
+  </div>
+<div class="sg-demo">
+<div class="mg-steps" role="list"><div class="mg-step mg-step--blue" role="listitem"><span class="mg-step__num">Steg 1</span>Ladda ned mallen</div><div class="mg-step mg-step--orange" role="listitem"><span class="mg-step__num">Steg 2</span>Dubbelklicka på filen</div><div class="mg-step mg-step--magenta" role="listitem"><span class="mg-step__num">Steg 3</span>Spara som vanligt</div></div>
+</div><ol class="sg-text"><li>Ladda ned mallen.</li><li>Dubbelklicka på filen. PowerPoint öppnar en ny presentation som bygger på mallen.</li><li>Skriv, och spara som vanligt. Mallen ändras inte.</li></ol><div class="mg-btn-row"><a class="mg-btn mg-btn--secondary" href="../assets/templates/Powerpoint-mall.potx" download>PowerPoint-mallen</a><a class="mg-btn mg-btn--secondary" href="../assets/templates/Powerpoint-mall-howto.pptx" download>PowerPoint-instruktion</a></div><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Använd mallens layouter under <em>Ny bild</em></li><li>Var sparsam med färg. Behövs en accent, välj magenta</li><li>Byt exempelbilderna mot svartvita foton från <a href="bildbank.html">Bildbanken</a></li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Börja från en tom presentation</li><li>Byta typsnitt eller färger på rubriker och brödtext</li><li>Färgfoton eller egna former med raka hörn</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--loading">Tänk på</span><ul><li>Instruktionen visar mallen i bruk. Grafik och bakgrundsformer att kopiera finns sist i den</li><li>Rubriken på färgad platta använder <a href="typsnitt.html">specialtypsnittet Kattux</a>. Använd det bara för ett kort budskap</li></ul></div></div>
+</div>
+</section>
+<section class="sg-block" id="layouter" aria-labelledby="h-layouter">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Utan AI</p>
+    <h2 id="h-layouter">Välj rätt layout</h2>
+    <p>Välj layout under <em>Ny bild</em>. En presentation börjar med Förstasida och slutar gärna med Fokus - Rubrik vänster på bild.</p>
+  </div>
+<div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Layout</th><th>Använd till</th></tr></thead><tbody><tr><td>Förstasida</td><td>Första bilden: rubrik, datum och svartvitt foto</td></tr><tr><td>Innehåll - Grå bård</td><td>Innehåll med bild eller grafik</td></tr><tr><td>Innehåll - Enkel</td><td>Text, tabeller, diagram och processer</td></tr><tr><td>Sektion - Röd / Gul / Grön platta</td><td>Avdelare mellan delar av presentationen</td></tr><tr><td>Fokus - Rubrik vänster på bild</td><td>Ett budskap över en helbild. Avslutning, ”Nästa steg”</td></tr><tr><td>Fokus - Med innehåll</td><td>Ett budskap med en kort förklarande text</td></tr><tr><td>Fokus - Rubrik på platta</td><td>Citat eller kort påstående på färgad platta</td></tr><tr><td>Innehåll - Platta</td><td>Kort text på färgad platta, gärna med grafik</td></tr><tr><td>Bild - Stor bild</td><td>Ett foto som fyller bilden</td></tr><tr><td>Bilder - Flera</td><td>Bildkollage, team, miljöer</td></tr><tr><td>Tom utan rubrik</td><td>Fri yta för diagram eller grafik</td></tr></tbody></table></div>
+</div>
+</section>
+
+</main>
+
+
+<!-- ═══ FOOTER ═════════════════════════════════════════════════ -->
+<footer class="mg-footer">
+  <div class="mg-wrap">
+    <div class="mg-footer__inner">
+      <div class="mg-footer__col"><span class="mg-footer__brand">Magello styleguide</span>Git commit: <a href="https://github.com/magello-group/design-guidelines/commit/8b05838">8b05838</a><br>Formspråk för webb, dokument<br>och sociala medier</div>
+      <div class="mg-footer__col">
+        <a href="../tokens/tokens.json">tokens.json</a><br>
+        <a href="../docs/design-language.md">design-language.md</a><br>
+        <a href="../docs/design-guidelines-web.md">design-guidelines-web.md</a>
+      </div>
+      <div class="mg-footer__col" style="text-align:right">Västgötagatan 2<br>118 27 Stockholm<br>info@magello.se</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/magello.js"></script>
+</body>
+</html>
