@@ -44,7 +44,6 @@ NAV = [
         ("Typografi", "typografi.html"),
         ("Specialtypsnitt", "typsnitt.html"),
         ("Bilder &amp; ikoner", "bilder-ikoner.html"),
-        ("Bildbank", "bildbank.html"),
         ("Avstånd &amp; rörelse", "avstand-rorelse.html"),
     ]),
     ("Byggstenar", "komponenter.html", [
@@ -59,6 +58,7 @@ NAV = [
         ("Word", "word.html"),
         ("E-postsignatur", "e-postsignatur.html"),
     ]),
+    ("Bildbank", "bildbank.html", []),
 ]
 FEATURED = ("Tokens (JSON)", "../tokens/tokens.json")
 

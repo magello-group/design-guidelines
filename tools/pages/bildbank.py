@@ -5,7 +5,7 @@ PHOTOS = ROOT / "assets" / "images" / "black-and-white"
 TOOL = "https://linkedin-profile-image.magello.se"
 
 PAGE = dict(
-    title="Bildbank", kicker="Grunder",
+    title="Bildbank", kicker="Bilder",
     lead="Magellos svartvita foton från kontor, möten och event. Ladda ned dem i full storlek. Behöver du en profilbild, en LinkedIn-bild eller en egen miljöbild gör du den i bildverktyget.",
     actions=[("Till bildverktyget", TOOL, "primary"),
              ("Så används bilderna", "bilder-ikoner.html", "secondary")],
