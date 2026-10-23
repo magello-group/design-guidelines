@@ -14,7 +14,7 @@ root = pathlib.Path(__file__).resolve().parent.parent
 out = root / "_site"
 # Kopieras alltid, i sin helhet
 dirs = ["styleguide", "tokens", "docs", "assets/graphics", "assets/logos", "assets/shapes",
-        "assets/images/black-and-white"]
+        "assets/images/black-and-white", "assets/assignments-logos"]
 # Office-mallarna och howto-dokumenten, som nedladdningar
 files = ["assets/templates/Powerpoint-mall.potx", "assets/templates/Word-mall.dotx",
          "assets/templates/Powerpoint-mall-howto.pptx", "assets/templates/Word-mall-howto.docx",

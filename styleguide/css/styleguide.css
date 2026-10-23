@@ -191,3 +191,15 @@
 .sg-code--prompt { font-size: .9375rem; color: var(--mg-black); user-select: all; -webkit-user-select: all; cursor: text; white-space: pre-wrap; background: var(--mg-white); }
 @media (max-width: 599px) { .sg-start-steps .mg-step { flex-basis: 100%; } }
 .sg-copy-row { margin: calc(-1 * var(--mg-space-2)) 0 var(--mg-space-5); }
+
+/* Kundlogotyper: vita polygonplattor med sök */
+.sg-logo-search { max-width: 360px; margin: var(--mg-space-5) 0; }
+.sg-logos { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--mg-space-5) var(--mg-space-4); margin: var(--mg-space-4) 0 var(--mg-space-7); }
+.sg-logo { margin: 0; }
+.sg-logo[hidden] { display: none; }
+.sg-logo__img { background: var(--mg-rose-50); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; padding: var(--mg-space-4);
+  clip-path: polygon(0% 3%, 97% 0%, 100% 96%, 3% 100%); }
+.sg-logo__img img { width: 100%; height: 100%; object-fit: contain; }
+.sg-logo figcaption { display: flex; flex-direction: column; gap: 2px; margin-top: var(--mg-space-3); }
+.sg-logo__name { font: 700 .875rem/1.3 var(--mg-font-head); color: var(--mg-black); }
+@media (max-width: 599px) { .sg-logos { grid-template-columns: repeat(2, 1fr); } }

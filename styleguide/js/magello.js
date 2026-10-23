@@ -165,6 +165,29 @@
     });
   });
 
+  /* ── Filtrera en lista ──────────────────────────────────────────────
+     <input type="search" data-mg-filter="#lista"> döljer barn med
+     data-mg-filter-item i #lista vars text inte innehåller söktexten.
+     Ett element med data-mg-filter-empty="#lista" visas när inget matchar. */
+  var fold = function (s) { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); };
+  $$('[data-mg-filter]').forEach(function (input) {
+    var sel = input.getAttribute('data-mg-filter');
+    var list = $(sel);
+    if (!list) return;
+    var items = $$('[data-mg-filter-item]', list);
+    var empty = $('[data-mg-filter-empty="' + sel + '"]');
+    input.addEventListener('input', function () {
+      var q = fold(input.value.trim());
+      var shown = 0;
+      items.forEach(function (it) {
+        var hit = !q || fold(it.textContent).indexOf(q) !== -1;
+        it.hidden = !hit;
+        if (hit) shown++;
+      });
+      if (empty) empty.hidden = shown > 0;
+    });
+  });
+
   /* ── Escape stänger meny och dropdown ──────────────────────────────── */
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') return;

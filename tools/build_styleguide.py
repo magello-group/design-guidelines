@@ -58,11 +58,14 @@ NAV = [
         ("Word", "word.html"),
         ("E-postsignatur", "e-postsignatur.html"),
     ]),
-    ("Bildbank", "bildbank.html", []),
+    ("Bildbank", "bildbank.html", [
+        ("Foton", "bildbank.html"),
+        ("Kundlogotyper", "kundlogotyper.html"),
+    ]),
 ]
 FEATURED = ("Tokens (JSON)", "../tokens/tokens.json")
 
-PAGES = ["index", "farg", "form", "typografi", "typsnitt", "bilder-ikoner", "bildbank", "avstand-rorelse",
+PAGES = ["index", "farg", "form", "typografi", "typsnitt", "bilder-ikoner", "bildbank", "kundlogotyper", "avstand-rorelse",
          "komponenter", "sektioner", "formular-feedback", "navigation", "markdown", "powerpoint", "word",
          "e-postsignatur"]
 

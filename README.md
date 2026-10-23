@@ -18,6 +18,7 @@ Styleguiden finns på **https://magello-group.github.io/design-guidelines/**: en
 | [`assets/templates/`](assets/templates/) | **Officiella mallar**: [`Powerpoint-mall.potx`](assets/templates/Powerpoint-mall.potx) och [`Word-mall.dotx`](assets/templates/Word-mall.dotx) och howto-dokumenten [`Powerpoint-mall-howto.pptx`](assets/templates/Powerpoint-mall-howto.pptx) och [`Word-mall-howto.docx`](assets/templates/Word-mall-howto.docx) |
 | [`assets/`](assets/) | Logotyper, ikoner, svartvita foton, SVG-former (`shapes/`) |
 | [Bildbanken](https://magello-group.github.io/design-guidelines/styleguide/bildbank.html) | Alla svartvita foton att titta på och ladda ned, och en översikt över bildverktygets tjänster |
+| [`assets/assignments-logos/`](assets/assignments-logos/) + [Kundlogotyper](https://magello-group.github.io/design-guidelines/styleguide/kundlogotyper.html) | Logotyper för kunder där konsulterna haft uppdrag, 200 × 200 px, till CV:n. `manifest.json` kopplar kundnamn till fil |
 | [`assets/fonts/`](assets/fonts/) + [`styleguide/typsnitt.html`](styleguide/typsnitt.html) | Specialtypsnittet Kattux för speciella tillfällen, främst i PowerPoint: regler och installation på Mac och PC |
 | [Bildverktyget](https://linkedin-profile-image.magello.se) | Profilbilder, LinkedIn-banners och -inlägg, svartvita miljöbilder och kundlogotyper för CV. Används i stället för att göra sådana bilder för hand |
 | [`DECISIONS.md`](DECISIONS.md) | Beslutslogg med datum och motivering |
