@@ -48,7 +48,7 @@ Texten räcker inte för att få rätt utseende. **Facit är `styleguide/` (leva
 13. **Text på foto** läggs på en vit polygonplatta, aldrig direkt på bilden.
 14. **Respektera `prefers-reduced-motion`** och håll kontrast på minst 4,5 : 1 för brödtext.
 15. **Word utgår alltid från Magellos officiella mall** (`assets/templates/Word-mall.dotx`). **PowerPoint följer det spår användaren valt:** spår A utgår från `assets/templates/Powerpoint-mall.potx`, spår B byggs från en tom 16:9-presentation enligt `docs/presentation-webb.md`. Med mall: skapa själv en kopia och byt innehållstypen från mall till dokument (.potx → .pptx, .dotx → .docx), använd mallens layouter och formatmallar, och ändra inte tema, bakgrunder eller sidhuvud. Utgå aldrig från en annan mall. Be aldrig användaren köra kommandon. Se `docs/office-mallar.md`.
-16. **Profilbilder, LinkedIn-banners och -inlägg, svartvita miljöbilder och kundlogotyper görs i bildverktyget** https://linkedin-profile-image.magello.se, aldrig för hand. Hänvisa användaren dit och säg vilken tjänst som passar. Färdiga kundlogotyper till CV ligger i `assets/assignments-logos/` (visas på `styleguide/kundlogotyper.html`). Kolla där först.
+16. **Profilbilder, LinkedIn-banners och -inlägg, svartvita miljöbilder och kundlogotyper görs i bildverktyget** https://linkedin-profile-image.magello.se, aldrig för hand. Hänvisa användaren dit och säg vilken tjänst som passar. Färdiga kundlogotyper till CV ligger i `assets/assignments-logos/` (visas på `styleguide/kundlogotyper.html`), och färdiga LinkedIn-banners i `assets/linkedin-banners/` (`styleguide/linkedin-banners.html`). Kolla där först.
 
 ## 4. Använda `tokens/tokens.json`
 

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LinkedIn-banners — Magello styleguide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Condensed:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/magello.css">
+<link rel="stylesheet" href="css/styleguide.css">
+</head>
+<body>
+
+<!-- ═══ SIDOSPÅR ═══════════════════════════════════════════════ -->
+<div class="mg-side-nav" aria-label="Sidonavigering">
+  <a class="mg-side-nav__logo" href="index.html" aria-label="Magello">
+    <img src="../assets/logos/icon-logotype.svg" alt="Magello">
+  </a>
+  <ul class="mg-side-nav__links">
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="farg.html">Grunder</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+    </li>
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="komponenter.html">Byggstenar</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+    </li>
+    <li><a href="navigation.html">Navigation</a></li>
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="powerpoint.html">Mallar</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="powerpoint.html">PowerPoint</a></li><li><a href="word.html">Word</a></li><li><a href="e-postsignatur.html">E-postsignatur</a></li></ul>
+    </li>
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="bildbank.html" class="is-active">Bildbank</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="bildbank.html">Foton</a></li><li><a href="kundlogotyper.html">Kundlogotyper</a></li><li><a href="linkedin-banners.html" class="is-active">LinkedIn-banners</a></li></ul>
+    </li>
+  </ul>
+  <a class="mg-side-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+</div>
+
+<!-- ═══ HEADER ═════════════════════════════════════════════════ -->
+<div class="mg-page-header mg-page-header--rotate">
+  <div class="mg-header-shape"></div>
+  <nav class="mg-nav">
+    <div class="mg-nav__inner">
+      <a class="mg-nav__logo" href="index.html" aria-label="Magello">
+        <svg viewBox="0 0 1298 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>Magello</title>
+          <rect x="114" y="41" width="1096" height="251" fill="white"/>
+          <path d="M383.475 127.758L378.345 171.487L398.438 170.63L397.583 126.043L383.475 127.758Z" fill="#EC008C"/>
+          <path d="M1040.56 171.916L1084.16 180.49L1096.99 227.221L1147.86 177.918L1151.28 131.616L1088.44 120.47L1040.56 171.916Z" fill="#EC008C"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M138.513 0L50.0185 22.7221L1.71003 95.1756L0 290.243L47.026 318.109L97.472 322.825L320.632 332.686L1226.09 325.826L1295.78 257.66L1297.06 24.8657L1267.56 6.43078L138.513 0ZM293.271 258.946L244.535 266.234L241.115 197.639L212.899 216.932L190.241 197.639L188.104 267.521H138.94L135.093 210.93L139.795 93.4607H176.989L218.884 152.195L255.65 93.8894H293.698L293.271 258.946ZM410.408 260.232L401.003 190.351H376.635L369.795 256.374H321.487L340.297 135.046C340.297 135.046 353.55 80.5992 356.115 81.4566C358.68 82.314 420.241 85.3151 420.241 85.3151L443.327 138.476L462.564 265.377L410.408 260.232ZM604.925 256.803L576.282 262.805L510.018 257.66L483.94 222.076L482.23 187.35L481.802 150.909L492.062 119.613L514.72 92.1746L558.754 85.3151L585.687 89.6022L613.047 93.4607L612.192 107.18L604.497 141.049L557.044 128.187L531.821 146.193L528.401 190.78L548.494 214.359L567.732 210.072V187.35C560.891 186.493 560.036 186.493 560.036 186.493C559.181 186.064 560.036 167.2 560.036 167.2L613.902 171.059V192.924L614.33 214.788L604.925 256.803ZM752.843 135.046L695.984 135.904V154.339L743.438 152.195L743.01 192.495L692.992 195.925L696.412 213.502L752.415 218.218L751.988 260.661L647.248 260.232L648.103 93.4607L752.843 96.4618V135.046ZM893.493 259.804L787.899 259.375L788.754 80.5992L834.497 81.0279L835.779 213.931L894.348 212.216L893.493 259.804ZM909.739 247.371L905.891 116.612L910.594 72.0248L952.917 74.5971L952.062 203.213L989.255 203.641L1008.92 205.356L1009.35 252.944L909.739 247.371ZM1180.35 225.935L1135.04 262.805L1040.98 242.655L1019.61 165.486L1034.14 96.8905C1034.14 96.8905 1091 79.7417 1099.98 78.8843L1140.59 84.4576L1187.19 133.76L1180.35 225.935Z" fill="#EC008C"/>
+        </svg>
+      </a>
+      <ul class="mg-nav__links">
+        <li class="mg-nav__has-sub">
+          <a href="farg.html">Grunder</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Grunder"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+        </li>
+        <li class="mg-nav__has-sub">
+          <a href="komponenter.html">Byggstenar</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Byggstenar"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+        </li>
+        <li><a href="navigation.html">Navigation</a></li>
+        <li class="mg-nav__has-sub">
+          <a href="powerpoint.html">Mallar</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Mallar"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="powerpoint.html">PowerPoint</a></li><li><a href="word.html">Word</a></li><li><a href="e-postsignatur.html">E-postsignatur</a></li></ul>
+        </li>
+        <li class="mg-nav__has-sub">
+          <a href="bildbank.html" class="is-active">Bildbank</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Bildbank"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="bildbank.html">Foton</a></li><li><a href="kundlogotyper.html">Kundlogotyper</a></li><li><a href="linkedin-banners.html" class="is-active">LinkedIn-banners</a></li></ul>
+        </li>
+      </ul>
+      <a class="mg-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+      <button class="mg-nav__burger" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" aria-hidden="true">
+          <rect width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="8" width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="16" width="24" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<!-- ═══ MOBILMENY ══════════════════════════════════════════════ -->
+<div class="mg-mobile-menu" id="mobile-menu" aria-hidden="true" aria-label="Mobilnavigering">
+  <div class="mg-mobile-menu__head">
+    <a href="index.html" class="mg-nav__logo" aria-label="Magello">
+      <svg style="height:32px;width:auto" viewBox="0 0 1298 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>Magello</title>
+          <rect x="114" y="41" width="1096" height="251" fill="white"/>
+          <path d="M383.475 127.758L378.345 171.487L398.438 170.63L397.583 126.043L383.475 127.758Z" fill="#EC008C"/>
+          <path d="M1040.56 171.916L1084.16 180.49L1096.99 227.221L1147.86 177.918L1151.28 131.616L1088.44 120.47L1040.56 171.916Z" fill="#EC008C"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M138.513 0L50.0185 22.7221L1.71003 95.1756L0 290.243L47.026 318.109L97.472 322.825L320.632 332.686L1226.09 325.826L1295.78 257.66L1297.06 24.8657L1267.56 6.43078L138.513 0ZM293.271 258.946L244.535 266.234L241.115 197.639L212.899 216.932L190.241 197.639L188.104 267.521H138.94L135.093 210.93L139.795 93.4607H176.989L218.884 152.195L255.65 93.8894H293.698L293.271 258.946ZM410.408 260.232L401.003 190.351H376.635L369.795 256.374H321.487L340.297 135.046C340.297 135.046 353.55 80.5992 356.115 81.4566C358.68 82.314 420.241 85.3151 420.241 85.3151L443.327 138.476L462.564 265.377L410.408 260.232ZM604.925 256.803L576.282 262.805L510.018 257.66L483.94 222.076L482.23 187.35L481.802 150.909L492.062 119.613L514.72 92.1746L558.754 85.3151L585.687 89.6022L613.047 93.4607L612.192 107.18L604.497 141.049L557.044 128.187L531.821 146.193L528.401 190.78L548.494 214.359L567.732 210.072V187.35C560.891 186.493 560.036 186.493 560.036 186.493C559.181 186.064 560.036 167.2 560.036 167.2L613.902 171.059V192.924L614.33 214.788L604.925 256.803ZM752.843 135.046L695.984 135.904V154.339L743.438 152.195L743.01 192.495L692.992 195.925L696.412 213.502L752.415 218.218L751.988 260.661L647.248 260.232L648.103 93.4607L752.843 96.4618V135.046ZM893.493 259.804L787.899 259.375L788.754 80.5992L834.497 81.0279L835.779 213.931L894.348 212.216L893.493 259.804ZM909.739 247.371L905.891 116.612L910.594 72.0248L952.917 74.5971L952.062 203.213L989.255 203.641L1008.92 205.356L1009.35 252.944L909.739 247.371ZM1180.35 225.935L1135.04 262.805L1040.98 242.655L1019.61 165.486L1034.14 96.8905C1034.14 96.8905 1091 79.7417 1099.98 78.8843L1140.59 84.4576L1187.19 133.76L1180.35 225.935Z" fill="#EC008C"/>
+        </svg>
+    </a>
+    <button class="mg-mobile-menu__close" aria-label="Stäng meny">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <ul class="mg-mobile-menu__links">
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="farg.html">Grunder</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li></ul>
+    </li>
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="komponenter.html">Byggstenar</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+    </li>
+    <li><a href="navigation.html">Navigation</a></li>
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="powerpoint.html">Mallar</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="powerpoint.html">PowerPoint</a></li><li><a href="word.html">Word</a></li><li><a href="e-postsignatur.html">E-postsignatur</a></li></ul>
+    </li>
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="bildbank.html" class="is-active">Bildbank</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="bildbank.html">Foton</a></li><li><a href="kundlogotyper.html">Kundlogotyper</a></li><li><a href="linkedin-banners.html" class="is-active">LinkedIn-banners</a></li></ul>
+    </li>
+  </ul>
+  <a class="mg-mobile-menu__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+</div>
+
+<!-- ═══ SIDHUVUD ═══════════════════════════════════════════════ -->
+<div class="mg-ingang-hero">
+  <div class="mg-ingang-col">
+    <nav class="mg-breadcrumb" aria-label="Brödsmula">
+      <a href="index.html">Hem</a>
+      <span class="mg-breadcrumb__sep">/</span>
+      <span aria-current="page">LinkedIn-banners</span>
+    </nav>
+    <p class="mg-kicker">Bildbank</p>
+    <h1 class="mg-ingang-title">LinkedIn-banners</h1>
+    <p class="mg-ingang-sub">Färdiga bakgrundsbilder till din LinkedIn-profil i Magellos formspråk. Välj en, ladda ned och lägg upp den. Vill du ha en egen miljöbild gör du bannern i bildverktyget.</p>
+    <div class="mg-ingang-actions"><a href="https://linkedin-profile-image.magello.se" class="mg-btn mg-btn--primary">Gör en egen banner</a><a href="bildbank.html" class="mg-btn mg-btn--secondary">Till fotona</a></div>
+  </div>
+</div>
+
+<main id="main-content">
+<section class="sg-block" id="banners" aria-labelledby="h-banners">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">LinkedIn-banners</p>
+    <h2 id="h-banners">18 banners att välja bland</h2>
+    <p>Alla är 1584 × 396 px, det mått LinkedIn vill ha. Klicka på en banner för att se den i full storlek.</p>
+  </div>
+<div class="sg-banners"><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-1.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-1.png" loading="lazy" alt="LinkedIn-banner 1" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 1</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-1.png" download>Ladda ned · PNG · 608 kB</a></figcaption></figure><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-2.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-2.png" loading="lazy" alt="LinkedIn-banner 2" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 2</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-2.png" download>Ladda ned · PNG · 700 kB</a></figcaption></figure><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-3.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-3.png" loading="lazy" alt="LinkedIn-banner 3" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 3</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-3.png" download>Ladda ned · PNG · 684 kB</a></figcaption></figure><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-4.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-4.png" loading="lazy" alt="LinkedIn-banner 4" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 4</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-4.png" download>Ladda ned · PNG · 661 kB</a></figcaption></figure><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-5.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-5.png" loading="lazy" alt="LinkedIn-banner 5" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 5</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-5.png" download>Ladda ned · PNG · 620 kB</a></figcaption></figure><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-6.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-6.png" loading="lazy" alt="LinkedIn-banner 6" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 6</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-6.png" download>Ladda ned · PNG · 665 kB</a></figcaption></figure><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-7.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-7.png" loading="lazy" alt="LinkedIn-banner 7" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 7</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-7.png" download>Ladda ned · PNG · 677 kB</a></figcaption></figure><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-8.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-8.png" loading="lazy" alt="LinkedIn-banner 8" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 8</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-8.png" download>Ladda ned · PNG · 673 kB</a></figcaption></figure><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-10.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-10.png" loading="lazy" alt="LinkedIn-banner 9" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 9</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-10.png" download>Ladda ned · PNG · 684 kB</a></figcaption></figure><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-11.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-11.png" loading="lazy" alt="LinkedIn-banner 10" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 10</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-11.png" download>Ladda ned · PNG · 695 kB</a></figcaption></figure><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-12.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-12.png" loading="lazy" alt="LinkedIn-banner 11" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 11</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-12.png" download>Ladda ned · PNG · 708 kB</a></figcaption></figure><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-13.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-13.png" loading="lazy" alt="LinkedIn-banner 12" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 12</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-13.png" download>Ladda ned · PNG · 642 kB</a></figcaption></figure><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-14.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-14.png" loading="lazy" alt="LinkedIn-banner 13" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 13</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-14.png" download>Ladda ned · PNG · 667 kB</a></figcaption></figure><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-15.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-15.png" loading="lazy" alt="LinkedIn-banner 14" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 14</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-15.png" download>Ladda ned · PNG · 663 kB</a></figcaption></figure><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-16.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-16.png" loading="lazy" alt="LinkedIn-banner 15" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 15</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-16.png" download>Ladda ned · PNG · 588 kB</a></figcaption></figure><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-17.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-17.png" loading="lazy" alt="LinkedIn-banner 16" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 16</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-17.png" download>Ladda ned · PNG · 592 kB</a></figcaption></figure><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-18.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-18.png" loading="lazy" alt="LinkedIn-banner 17" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 17</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-18.png" download>Ladda ned · PNG · 640 kB</a></figcaption></figure><figure class="sg-banner"><a href="../assets/linkedin-banners/linkedin-banner-19.png" target="_blank" rel="noopener"><img src="../assets/linkedin-banners/linkedin-banner-19.png" loading="lazy" alt="LinkedIn-banner 18" width="1584" height="396"></a><figcaption><span class="sg-photo__name">Banner 18</span><a class="sg-photo__dl" href="../assets/linkedin-banners/linkedin-banner-19.png" download>Ladda ned · PNG · 649 kB</a></figcaption></figure></div><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Använd en banner tillsammans med en profilbild från bildverktyget</li><li>Kontrollera på mobilen att Magello-logotypen inte hamnar bakom profilbilden</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Lägga till egen text, filter eller färg på bannern</li><li>Beskära eller sträcka ut bannern</li></ul></div></div>
+</div>
+</section>
+<section class="mg-section--rose sg-block sg-block--rose" id="lagg-upp" aria-labelledby="h-lagg-upp">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Så gör du</p>
+    <h2 id="h-lagg-upp">Byt banner på LinkedIn</h2>
+    <p>Det tar en minut, på datorn eller i appen.</p>
+  </div>
+<div class="sg-demo">
+<div class="mg-steps" role="list"><div class="mg-step mg-step--blue" role="listitem"><span class="mg-step__num">Steg 1</span>Ladda ned en banner</div><div class="mg-step mg-step--orange" role="listitem"><span class="mg-step__num">Steg 2</span>Öppna din profil</div><div class="mg-step mg-step--magenta" role="listitem"><span class="mg-step__num">Steg 3</span>Byt bakgrundsbild</div></div>
+</div><ol class="sg-text"><li>Ladda ned den banner du vill ha.</li><li>Öppna din profil på LinkedIn.</li><li>Klicka på pennan uppe till höger på bakgrundsbilden, välj <em>Ändra bild</em> och ladda upp filen. Spara.</li></ol><h3 class="sg-sub">Gör en egen banner</h3><p class="sg-text">Vill du ha en egen miljöbild, öppna <a href="https://linkedin-profile-image.magello.se">bildverktyget</a> och välj <em>LinkedIn – personlig topbanner</em>. Ladda upp ett foto, så får du en banner i samma formspråk som de här.</p>
+</div>
+</section>
+
+</main>
+
+
+<!-- ═══ FOOTER ═════════════════════════════════════════════════ -->
+<footer class="mg-footer">
+  <div class="mg-wrap">
+    <div class="mg-footer__inner">
+      <div class="mg-footer__col"><span class="mg-footer__brand">Magello styleguide</span>Git commit: <a href="https://github.com/magello-group/design-guidelines/commit/c7aab06">c7aab06</a><br>Formspråk för webb, dokument<br>och sociala medier</div>
+      <div class="mg-footer__col">
+        <a href="../tokens/tokens.json">tokens.json</a><br>
+        <a href="../docs/design-language.md">design-language.md</a><br>
+        <a href="../docs/design-guidelines-web.md">design-guidelines-web.md</a>
+      </div>
+      <div class="mg-footer__col" style="text-align:right">Västgötagatan 2<br>118 27 Stockholm<br>info@magello.se</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/magello.js"></script>
+</body>
+</html>

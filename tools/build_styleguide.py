@@ -61,11 +61,12 @@ NAV = [
     ("Bildbank", "bildbank.html", [
         ("Foton", "bildbank.html"),
         ("Kundlogotyper", "kundlogotyper.html"),
+        ("LinkedIn-banners", "linkedin-banners.html"),
     ]),
 ]
 FEATURED = ("Tokens (JSON)", "../tokens/tokens.json")
 
-PAGES = ["index", "farg", "form", "typografi", "typsnitt", "bilder-ikoner", "bildbank", "kundlogotyper", "avstand-rorelse",
+PAGES = ["index", "farg", "form", "typografi", "typsnitt", "bilder-ikoner", "bildbank", "kundlogotyper", "linkedin-banners", "avstand-rorelse",
          "komponenter", "sektioner", "formular-feedback", "navigation", "markdown", "powerpoint", "word",
          "e-postsignatur"]
 
