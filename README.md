@@ -24,6 +24,7 @@ Styleguiden finns på **https://magello-group.github.io/design-guidelines/**: en
 | [Bildverktyget](https://linkedin-profile-image.magello.se) | Profilbilder, LinkedIn-banners och -inlägg, svartvita miljöbilder och kundlogotyper för CV. Används i stället för att göra sådana bilder för hand |
 | [`DECISIONS.md`](DECISIONS.md) | Beslutslogg med datum och motivering |
 | [`docs/presentation-webb.md`](docs/presentation-webb.md) + [`tools/presentation/`](tools/presentation/) | Presentationer som en agent konstruerar i webbens formspråk (spår B): raster, typografi, bildtyper, logotyper och ett bibliotek med exempel |
+| [`styleguide/presentationer/`](styleguide/presentationer/) + [`magello-deck.css`](styleguide/css/magello-deck.css), [`magello-deck.js`](styleguide/js/magello-deck.js) | **Webbpresentationer i HTML (spår C)**: mall, exempel och talarvy som i PowerPoint. Öppnas direkt från disk, ingen server. [Exemplet](https://magello-group.github.io/design-guidelines/styleguide/presentationer/exempel/) |
 | [`tools/`](tools/) | Byggscript för styleguide, SVG-former, navigationsbilder och Pages-webbplatsen, |
 
 ## Kom igång
@@ -34,7 +35,7 @@ Styleguiden finns på **https://magello-group.github.io/design-guidelines/**: en
 
 1. Kopiera hela katalogen till det nya projektet (eller bara de delar du behöver).
 2. Webb: länka `styleguide/css/magello.css` och `styleguide/js/magello.js`, och kopiera markup från styleguide-sidorna.
-3. Word: utgå alltid från `assets/templates/Word-mall.dotx`. PowerPoint: välj spår. Använd `assets/templates/Powerpoint-mall.potx` när du själv ska kunna ändra (`docs/office-mallar.md`), eller låt en agent konstruera presentationen i webbens formspråk (`docs/presentation-webb.md`).
+3. Word: utgå alltid från `assets/templates/Word-mall.dotx`. PowerPoint: välj spår. Använd `assets/templates/Powerpoint-mall.potx` när du själv ska kunna ändra (`docs/office-mallar.md`), låt en agent konstruera presentationen i webbens formspråk (`docs/presentation-webb.md`), eller gör en webbpresentation i HTML från `styleguide/presentationer/mall/`.
 4. Profilbilder, LinkedIn-bilder och kundlogotyper: gör dem i [bildverktyget](https://linkedin-profile-image.magello.se).
 5. Be en agent läsa `AGENTS.md` först. Den vet vilken fil som gäller för vilket uppdrag.
 

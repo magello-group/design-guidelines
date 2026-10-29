@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Webbpresentationer på Magello</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Condensed:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/magello.css">
+<link rel="stylesheet" href="../../css/magello-deck.css">
+</head>
+<body>
+<main class="deck" data-header="Exempel · Oktober 2026">
+
+  <section class="slide slide--title">
+    <div class="slide__media"><img src="../../../assets/images/black-and-white/kontor-3.jpg" alt="Kollegor vid skrivbord bakom en krukväxt på kontoret"></div>
+    <div class="plate">
+      <span class="kicker">Exempelpresentation</span>
+      <h1>Presentationer som är webbsidor</h1>
+      <p class="lead">Samma formspråk som magello.se, öppnas direkt från disk.</p>
+      <p class="meta">Patric Jansson · Oktober 2026</p>
+    </div>
+    <aside class="notes">
+      <p>Välkommen. Den här presentationen visar alla layouter som finns i motorn.</p>
+      <p>Tryck S för att öppna talarvyn i ett eget fönster.</p>
+    </aside>
+  </section>
+
+  <section class="slide">
+    <span class="kicker">Varför</span>
+    <h2>En presentation ska gå att öppna överallt</h2>
+    <ul>
+      <li class="step">En HTML-fil öppnas i alla webbläsare, utan server</li>
+      <li class="step">Text, färger och former följer <em>Magellos designsystem</em> och ser ut som webben</li>
+      <li class="step">Källan är HTML, så den går att versionshantera och låta AI skriva</li>
+    </ul>
+    <aside class="notes">
+      <p>Punkterna kommer fram en i taget eftersom de har class="step".</p>
+    </aside>
+  </section>
+
+  <section class="slide slide--section">
+    <h2>Layouter</h2>
+    <p class="lead">Byggstenarna du kan kombinera.</p>
+  </section>
+
+  <section class="slide">
+    <span class="kicker">Tre kolumner</span>
+    <h2>Kort med ikoner</h2>
+    <div class="cols cols--3">
+      <div class="card">
+        <img class="icon" src="../../../assets/graphics/light.svg" alt="">
+        <h3>Idé</h3>
+        <p>Börja med en tanke per bild. Rubriken säger slutsatsen.</p>
+      </div>
+      <div class="card">
+        <img class="icon" src="../../../assets/graphics/nodes.svg" alt="">
+        <h3>Struktur</h3>
+        <p>Luft, ytor och former delar upp innehållet, aldrig streck.</p>
+      </div>
+      <div class="card">
+        <img class="icon" src="../../../assets/graphics/rocket.svg" alt="">
+        <h3>Leverans</h3>
+        <p>Publicera som statisk sida och dela länken.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide slide--image">
+    <div class="slide__media"><img src="../../../assets/images/black-and-white/kontor-30.jpg" alt="Post-it-lappar på en glasvägg i ett mötesrum"></div>
+    <span class="kicker">Text och bild</span>
+    <h2>Fotot får ta plats</h2>
+    <p>Bilder är alltid svartvita och klipps i en polygon. Texten behåller samma vänsterkant som på alla andra bilder.</p>
+  </section>
+
+  <section class="slide">
+    <span class="kicker">Nyckeltal</span>
+    <h2>Siffror som blickfång</h2>
+    <div class="cols cols--3">
+      <div class="step"><span class="stat">1</span><p>länk att dela</p></div>
+      <div class="step"><span class="stat stat--grey">0</span><p>beroenden eller byggsteg</p></div>
+      <div class="step"><span class="stat stat--grey">16:9</span><p>skalar till alla skärmar</p></div>
+    </div>
+  </section>
+
+  <section class="slide slide--statement">
+    <p>Allvaret ligger i typografin. <em>Lekfullheten</em> ligger i formerna.</p>
+  </section>
+
+  <section class="slide slide--photo">
+    <div class="slide__media"><img src="../../../assets/images/black-and-white/event-4.jpg" alt="Publik som lyssnar på en föreläsning"></div>
+    <div class="plate">
+      <span class="kicker">Helbild</span>
+      <h2>Text på foto ligger på en vit platta</h2>
+      <p>Aldrig direkt på bilden.</p>
+    </div>
+  </section>
+
+  <section class="slide slide--quote">
+    <blockquote>
+      En form säger ”här börjar något”. En linje säger ”här slutar något”.
+      <cite>Magellos formspråk</cite>
+    </blockquote>
+  </section>
+
+  <section class="slide">
+    <span class="kicker">Process</span>
+    <h2>Så skapar du en ny presentation</h2>
+    <div class="cols">
+      <ol>
+        <li>Kopiera <code>styleguide/presentationer/mall</code> till en ny katalog</li>
+        <li>Skriv en <code>section</code> per bild</li>
+        <li>Dubbelklicka på index.html och tryck F för helskärm</li>
+      </ol>
+      <pre><code>&lt;section class="slide"&gt;
+  &lt;span class="kicker"&gt;Etikett&lt;/span&gt;
+  &lt;h2&gt;Rubriken är slutsatsen&lt;/h2&gt;
+  &lt;p&gt;En tanke per bild.&lt;/p&gt;
+  &lt;aside class="notes"&gt;…&lt;/aside&gt;
+&lt;/section&gt;</code></pre>
+    </div>
+  </section>
+
+  <section class="slide">
+    <span class="kicker">Talarvy</span>
+    <h2>Bara du ser anteckningarna</h2>
+    <div class="cols">
+      <ol>
+        <li>Tryck <strong>S</strong> så öppnas talarvyn i ett eget fönster</li>
+        <li>Dra presentationen till projektorn och tryck <strong>F</strong> för helskärm</li>
+        <li>Bläddra i vilket fönster som helst, de följer varandra</li>
+      </ol>
+      <div class="card">
+        <h3>I talarvyn</h3>
+        <ul>
+          <li>Aktuell och nästa bild</li>
+          <li>Dina anteckningar</li>
+          <li>Tid sedan start och klocka</li>
+        </ul>
+      </div>
+    </div>
+    <aside class="notes">
+      <p>Det här ser bara du. Anteckningarna skrivs i en aside class="notes" inuti bilden de hör till.</p>
+      <p>Tillåt popup-fönster om talarvyn inte öppnas när du trycker S.</p>
+    </aside>
+  </section>
+
+  <section class="slide slide--end">
+    <h2>Tack!</h2>
+    <p class="lead">Frågor? <em>patric.jansson@magello.se</em></p>
+  </section>
+
+</main>
+<script src="../../js/magello-deck.js"></script>
+</body>
+</html>

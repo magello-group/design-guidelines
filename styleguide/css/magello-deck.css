@@ -1,0 +1,546 @@
+/* ==========================================================================
+   Magello webbpresentationer — bildlayout (magello-deck.css)
+   Bygger på tokens i magello.css. Länka magello.css före den här filen.
+   Mall och exempel: styleguide/presentationer/. Spår C i AGENTS.md.
+   Varje bild är en yta på minst 1920×1080 som skalas till fönstret, så alla
+   mått här är px på den ytan. 2 px ≈ 1 pt i PowerPoint (13,33 tum bred).
+   Ytan växer i bredd eller höjd så att bilden alltid fyller hela fönstret
+   (--deck-w och --deck-h sätts av deck.js).
+   ========================================================================== */
+
+/* ── TOKENS ──────────────────────────────────────────────────────────── */
+:root {
+  --deck-w: 1920px;
+  --deck-h: 1080px;
+  --deck-pad-x: 192px;      /* logotypens vänsterkant = all texts vänsterkant */
+  --deck-nav-h: 108px;      /* webbens header ×1,5 (72 + 48 px på 1280 px bredd) */
+  --deck-header-h: 180px;
+  --deck-pad-y: 128px;
+  --deck-fs-display: 132px;
+  --deck-fs-h1: 104px;
+  --deck-fs-h2: 64px;
+  --deck-fs-h3: 56px;       /* H2 och H3 följer typografins faktorer 1,8 och 1,6 av brödtexten */
+  --deck-fs-lead: 44px;
+  --deck-fs-body: 36px;
+  --deck-fs-small: 28px;    /* minsta storlek, motsvarar 14 pt */
+  --deck-fs-stat: 168px;
+  --deck-shape-card: polygon(0% 3%, 62% 0%, 100% 2%, 100% 97%, 38% 100%, 0% 98%);
+  --deck-shape-plate: polygon(0% 3%, 4% 0%, 97% 2%, 100% 6%, 98% 94%, 94% 100%, 2% 97%, 0% 93%);
+}
+
+/* ── SKAL OCH SKALNING ───────────────────────────────────────────────── */
+html, body { height: 100%; }
+body {
+  background: var(--mg-white);
+  overflow: hidden;
+}
+.deck {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+.deck > * { grid-area: 1 / 1; }
+.frame {
+  --s: var(--fit, .5);
+  display: none;
+  width: calc(var(--deck-w) * var(--s));
+  height: calc(var(--deck-h) * var(--s));
+  overflow: hidden;
+}
+.slide {
+  position: relative;
+  isolation: isolate;
+  width: var(--deck-w);
+  height: var(--deck-h);
+  transform: scale(var(--s));
+  transform-origin: 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--deck-pad-y) var(--deck-pad-x);
+  overflow: hidden;
+  background: var(--mg-white);
+  color: var(--mg-black);
+  font: 400 var(--deck-fs-body)/1.45 var(--mg-font-body);
+}
+.frame.is-current { display: block; }
+
+/* Bildbyte: bilderna glider vertikalt som när man scrollar en webbsida.
+   Framåt kommer nästa bild underifrån, bakåt kommer den uppifrån. */
+.mode-deck .frame.is-leaving { display: block; animation: deck-leave .6s cubic-bezier(.4, 0, .6, 1) both; }
+.mode-deck .frame.is-entering { animation: deck-enter .6s cubic-bezier(.4, 0, .6, 1) both; }
+.mode-deck.is-back .frame.is-leaving { animation-name: deck-leave-back; }
+.mode-deck.is-back .frame.is-entering { animation-name: deck-enter-back; }
+@keyframes deck-enter      { from { transform: translateY(100vh); } }
+@keyframes deck-leave      { to   { transform: translateY(-100vh); } }
+@keyframes deck-enter-back { from { transform: translateY(-100vh); } }
+@keyframes deck-leave-back { to   { transform: translateY(100vh); } }
+
+.mode-deck.is-idle, .mode-deck.is-idle * { cursor: none; }
+
+/* Stegvis visning: lägg class="step" på det som ska komma fram ett i taget */
+.step { transition: opacity .3s ease; }
+html[class*="mode-"] .step:not(.is-shown) { opacity: 0; }
+
+.slide .notes { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mode-deck .frame { animation: none !important; }
+  .mode-deck .frame.is-leaving { display: none; }
+  .step { transition: none; }
+}
+
+/* ── TYPOGRAFI ───────────────────────────────────────────────────────── */
+/* Rubriker är vanlig Roboto, inte Condensed (avsteg från magello-design).
+   Etiketter, underrubriker och siffror är fortfarande Condensed. */
+.slide h1, .slide h2, .slide h3 {
+  font-family: var(--mg-font-body);
+  line-height: 1.15;        /* tätt i rubriker: 1,1–1,2 */
+}
+.slide h1 {
+  font-size: var(--deck-fs-h1);
+  font-weight: 700;
+  color: var(--mg-magenta);
+  letter-spacing: -.01em;
+}
+.slide h2 {
+  font-size: var(--deck-fs-h2);
+  font-weight: 500;
+  color: var(--mg-black);
+  margin-bottom: 48px;
+}
+.slide h3 {
+  font-size: var(--deck-fs-h3);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.slide p + p { margin-top: 24px; }
+.slide em { font-style: normal; color: var(--mg-magenta); }   /* accentord */
+.slide strong { font-weight: 700; }
+
+.kicker {
+  display: block;
+  font: 700 var(--deck-fs-small)/1 var(--mg-font-head);
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--mg-magenta);
+  margin-bottom: 28px;
+}
+/* Underrubrik: Condensed 400, lätt spärrad, textgrå */
+.lead {
+  font-family: var(--mg-font-head);
+  font-size: var(--deck-fs-lead);
+  letter-spacing: .02em;
+  line-height: 1.35;
+  color: var(--mg-text-2);
+  max-width: 1300px;
+}
+.slide small, .small {
+  font-size: var(--deck-fs-small);
+  color: var(--mg-text-2);
+}
+
+/* Punktlistor med diamantmarkör, numrerade listor med stora grå siffror */
+.slide ul { list-style: none; display: grid; gap: 28px; }
+.slide ul li { position: relative; padding-left: 56px; }
+.slide ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .45em;
+  width: 22px;
+  height: 22px;
+  background: var(--mg-magenta);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.slide ol { list-style: none; counter-reset: deck-n; display: grid; gap: 32px; }
+.slide ol li { position: relative; padding-left: 88px; counter-increment: deck-n; }
+.slide ol li::before {
+  content: counter(deck-n);
+  position: absolute;
+  left: 0;
+  top: -.08em;
+  font: 700 56px/1 var(--mg-font-head);
+  color: var(--mg-grey-300);
+}
+
+.slide pre {
+  background: var(--mg-rose-50);
+  padding: 40px 48px;
+  font: 400 var(--deck-fs-small)/1.5 var(--mg-font-code);
+  white-space: pre;
+  overflow: hidden;
+  clip-path: polygon(0% 1%, 100% 0%, 99.6% 100%, 0% 98%);
+}
+.slide code { font-family: var(--mg-font-code); font-size: .9em; }
+
+/* ── BYGGSTENAR ──────────────────────────────────────────────────────── */
+.cols {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 2), minmax(0, 1fr));
+  gap: 80px;
+  align-items: start;
+}
+.cols--3 { --cols: 3; gap: 56px; }
+.cols--4 { --cols: 4; gap: 48px; }
+
+.card {
+  background: var(--mg-rose-50);
+  padding: 48px 48px 56px;
+  font-size: 30px;
+  line-height: 1.45;
+  clip-path: var(--deck-shape-card);
+}
+.card h3 { font-size: 48px; margin-bottom: 12px; }   /* 1,6 × kortets brödtext */
+.card .icon { height: 96px; margin-bottom: 28px; }
+
+.icon { height: 120px; width: auto; margin-bottom: 32px; }
+
+.stat {
+  display: block;
+  font: 700 var(--deck-fs-stat)/1 var(--mg-font-head);
+  color: var(--mg-magenta);
+  letter-spacing: -.02em;
+}
+.stat--grey { color: var(--mg-grey-300); }
+.stat + p { margin-top: 12px; color: var(--mg-text-2); }
+
+/* Vit bildplatta för text ovanpå foto, som webbens hero */
+.plate {
+  align-self: flex-start;
+  max-width: 1040px;
+  padding: 72px 72px 80px;
+  background: var(--mg-white);
+  clip-path: var(--deck-shape-plate);
+}
+
+/* Svartvita foton, alltid i polygonform */
+.slide__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+/* ── SIGNATURHEADER OCH IKONLOGOTYP ──────────────────────────────────
+   Första bilden visar webbens header: rosagrå polygon med logotypen. På
+   övriga bilder roterar den bort runt övre högra hörnet (som webbens
+   undersidor) och ikonlogotypen glider in uppe till höger (som sidospåret).
+   Lagret .deck__chrome animeras; .slide__chrome är statiska kopior i varje
+   bild för översikt, utskrift och talarvy. */
+.deck__chrome {
+  position: relative;
+  z-index: 2;
+  width: calc(var(--deck-w) * var(--fit, .5));
+  height: calc(var(--deck-h) * var(--fit, .5));
+  overflow: hidden;
+  pointer-events: none;
+}
+.deck__chrome .chrome {
+  width: var(--deck-w);
+  height: var(--deck-h);
+  transform: scale(var(--fit, .5));
+  transform-origin: 0 0;
+}
+.chrome { position: absolute; inset: 0; z-index: 10; pointer-events: none; }
+.chrome.is-hidden { display: none; }
+
+.chrome__header {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: var(--deck-header-h);
+  transform-origin: right top;
+  transition: transform .6s cubic-bezier(.4, 0, .6, 1);
+}
+.chrome__shape {
+  position: absolute;
+  inset: 0;
+  background: var(--mg-rose-100);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 55%, var(--deck-pad-x) 100%, 0% 82%);
+}
+.chrome__nav {
+  position: relative;
+  height: var(--deck-nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--deck-pad-x);
+}
+.chrome__logo { height: 57px; width: auto; }
+.chrome__tagline {
+  font: 500 var(--deck-fs-small)/1 var(--mg-font-head);
+  letter-spacing: .03em;
+  color: var(--mg-magenta);
+}
+.chrome__icon {
+  position: absolute;
+  top: 56px;
+  right: 72px;
+  width: 88px;
+  height: auto;
+  opacity: 0;
+  transform: translateX(200px);
+  transition: transform .42s cubic-bezier(0, 0, .2, 1) .18s, opacity .28s ease .18s;
+}
+.chrome:not(.is-cover) .chrome__header { transform: rotate(90deg); }
+.chrome:not(.is-cover) .chrome__icon { opacity: 1; transform: none; }
+.chrome.is-cover .chrome__icon { transition: transform .3s ease, opacity .2s ease; }
+
+.is-loading .chrome *, .slide__chrome * { transition: none !important; }
+.mode-deck:not(.is-overview) .slide__chrome { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .chrome * { transition: none !important; }
+}
+
+/* ── LAYOUTER ────────────────────────────────────────────────────────── */
+
+/* Titelbild: signaturheader överst, svartvitt foto och vit platta som webbens hero */
+.slide--title { padding-top: calc(var(--deck-header-h) + 48px); }
+.slide--title .slide__media { position: absolute; inset: 0; z-index: -1; }
+.slide--title h1 {
+  font: 500 96px/1.1 var(--mg-font-body);
+  color: var(--mg-black);
+}
+.slide--title .lead {
+  margin-top: 36px;
+  line-height: 1.3;
+}
+.slide--title .meta {
+  margin-top: 48px;
+  font: 500 var(--deck-fs-small)/1.3 var(--mg-font-head);
+  letter-spacing: .02em;
+  color: var(--mg-text-2);
+}
+
+/* Avsnitt: rosagrå yta och rubrik. Inga löpnummer (hård regel 12) */
+.slide--section { background: var(--mg-rose-100); }
+.slide--section::before {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 34%;
+  z-index: -1;
+  background: var(--mg-rose-200);
+  clip-path: polygon(0% 46%, 58% 0%, 100% 22%, 100% 100%, 0% 100%);
+}
+.slide--section h2 { font-size: var(--deck-fs-h1); font-weight: 700; color: var(--mg-magenta); margin-bottom: 0; }
+.slide--section .lead { margin-top: 32px; }
+
+/* Påstående: en mening, stor text */
+.slide--statement p {
+  font: 500 88px/1.15 var(--mg-font-head);
+  max-width: 1520px;
+}
+.slide--statement p + p { margin-top: 40px; }
+
+/* Citat */
+.slide--quote blockquote {
+  font: 500 68px/1.2 var(--mg-font-head);
+  max-width: 1480px;
+}
+.slide--quote blockquote::before {
+  content: '';
+  display: block;
+  width: 110px;
+  height: 90px;
+  margin-bottom: 40px;
+  background: url(../../assets/graphics/citation.svg) left center / contain no-repeat;
+}
+.slide--quote cite {
+  display: block;
+  margin-top: 48px;
+  font: 400 var(--deck-fs-small)/1.4 var(--mg-font-body);
+  font-style: normal;
+  color: var(--mg-text-2);
+}
+
+/* Text vänster, foto höger (vänsterkanten behålls) */
+.slide--image { padding-right: calc(var(--deck-w) * .46 + 96px); }   /* inte %, då räknas den mot den skalade ramen */
+.slide--image .slide__media {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 46%;
+  clip-path: polygon(9% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* Helbild med vit bildplatta för texten */
+.slide--photo { justify-content: flex-end; }
+.slide--photo .slide__media { position: absolute; inset: 0; z-index: -1; }
+.slide--photo .plate h2 { margin-bottom: 24px; }
+
+/* Avslutning */
+.slide--end { background: var(--mg-rose-100); }
+.slide--end h2 { font-size: var(--deck-fs-h1); font-weight: 700; color: var(--mg-magenta); margin-bottom: 40px; }
+
+/* ── RÖRELSE I ROSAGRÅ YTOR ──────────────────────────────────────────
+   När en bild visas lyfts korten och kodrutan in en i taget, och avsnittets
+   våg växer upp från nederkanten medan rubriken lyfts in. Startar medan
+   bildbytet landar. Kort med class="step" lämnas i fred, där sköter steget
+   visningen. */
+.mode-deck .frame.is-current :is(.card:not(.step), pre) {
+  animation: deck-rise .7s cubic-bezier(0, 0, .2, 1) .35s both;
+}
+.mode-deck .frame.is-current .card:nth-child(2) { animation-delay: .45s; }
+.mode-deck .frame.is-current .card:nth-child(3) { animation-delay: .55s; }
+.mode-deck .frame.is-current .card:nth-child(4) { animation-delay: .65s; }
+.mode-deck .frame.is-current .slide--section::before {
+  animation: deck-wave .9s cubic-bezier(.2, 0, .2, 1) .3s both;
+}
+.mode-deck .frame.is-current .slide--section h2 {
+  animation: deck-rise .7s cubic-bezier(0, 0, .2, 1) .5s both;
+}
+@keyframes deck-rise { from { opacity: 0; transform: translateY(48px); } }
+@keyframes deck-wave {
+  from { clip-path: polygon(0% 100%, 58% 100%, 100% 100%, 100% 100%, 0% 100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frame * , .frame *::before { animation: none !important; }
+}
+
+/* ── ÖVERSIKT (tangent O) ────────────────────────────────────────────── */
+.is-overview body { overflow: auto; background: var(--mg-rose-100); }
+.is-overview .deck__chrome { display: none; }
+.is-overview .deck > * { grid-area: auto; }
+.is-overview .deck {
+  --deck-w: 1920px !important;
+  --deck-h: 1080px !important;
+  position: static;
+  grid-template-columns: repeat(auto-fill, 320px);
+  justify-content: center;
+  gap: 32px;
+  padding: 48px;
+}
+.is-overview .frame {
+  --s: calc(320 / 1920);
+  display: block;
+  cursor: pointer;
+}
+.is-overview .frame.is-current { outline: 4px solid var(--mg-black); outline-offset: 6px; }
+.is-overview .step { opacity: 1 !important; }
+.is-overview .frame, .is-overview .frame *, .is-overview .frame *::before { animation: none !important; }
+
+/* ── TALARVY (tangent S) ─────────────────────────────────────────────
+   Som PowerPoints föredragshållarvy. Bara presentatören ser den. */
+.mode-presenter .deck { display: none; }
+.mode-presenter body { background: var(--mg-rose-200); }
+.presenter {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 28px;
+  padding: 28px;
+  font-family: var(--mg-font-body);
+}
+.presenter__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  min-width: 0;
+}
+.presenter__view {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--mg-white);
+}
+.presenter__view .slide { position: absolute; top: 0; left: 0; }
+.presenter__view--next { cursor: pointer; }
+.presenter__side {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 0;
+}
+
+.presenter button {
+  font: 500 16px/1 var(--mg-font-head);
+  letter-spacing: .02em;
+  color: var(--mg-black);
+  background: var(--mg-white);
+  border: 0;
+  padding: 10px 16px;
+  cursor: pointer;
+  clip-path: polygon(0% 6%, 96% 0%, 100% 90%, 3% 100%);
+}
+.presenter button:hover { color: var(--mg-magenta); }
+.presenter button:disabled { color: var(--mg-grey-300); cursor: default; }
+
+.presenter__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.presenter__controls button { font-size: 20px; padding: 14px 22px; }
+.presenter__pos { font: 700 28px/1 var(--mg-font-head); color: var(--mg-text-2); }
+
+.presenter__bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.presenter__timer { font: 700 44px/1 var(--mg-font-head); margin-right: 4px; }
+.presenter.is-paused .presenter__timer { color: var(--mg-magenta); }
+.presenter__clock { margin-left: auto; font: 500 44px/1 var(--mg-font-head); color: var(--mg-text-2); }
+
+.presenter__label {
+  display: block;
+  margin-bottom: 10px;
+  font: 700 13px/1 var(--mg-font-head);
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--mg-magenta);
+}
+.presenter__end { display: none; font: 500 22px/1.4 var(--mg-font-head); color: var(--mg-text-2); }
+.presenter.is-last .presenter__next .presenter__view { display: none; }
+.presenter.is-last .presenter__end { display: block; }
+
+.presenter__notes-box {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--mg-white);
+}
+.presenter__notes-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 24px 0 32px;
+}
+.presenter__notes-head .presenter__label { margin: 0 auto 0 0; }
+.presenter__notes-head button { background: var(--mg-rose-50); padding: 8px 12px; }
+.presenter__notes {
+  flex: 1;
+  overflow: auto;
+  padding: 16px 32px 28px;
+  font-size: 24px;
+  line-height: 1.5;
+}
+.presenter__notes p + p, .presenter__notes li + li { margin-top: .5em; }
+.presenter__notes ul { padding-left: 1.2em; }
+.presenter__empty { color: var(--mg-grey-300); }
+
+/* ── UTSKRIFT / PDF ──────────────────────────────────────────────────── */
+@page { size: 1920px 1080px; margin: 0; }
+@media print {
+  html, body { height: auto; overflow: visible; background: none; }
+  .deck { position: static; display: block; --deck-w: 1920px !important; --deck-h: 1080px !important; }
+  .deck__chrome { display: none; }
+  .slide__chrome { display: block !important; }
+  .frame {
+    --s: 1;
+    display: block !important;
+    break-after: page;
+    outline: none !important;
+  }
+  .frame *, .frame *::before { animation: none !important; }
+  .slide { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .step { opacity: 1 !important; }
+}

@@ -16,6 +16,8 @@ Det finns två sätt att göra en presentation. **Fråga alltid användaren vilk
 
 Blanda inte spåren i samma presentation.
 
+Det finns också ett tredje spår, **spår C: webbpresentation i HTML**, som inte är PowerPoint alls. Se `styleguide/presentationer/README.md` och spår C i `AGENTS.md`.
+
 ## Arbetsgång (spår B)
 
 1. Ställ frågorna i `design-language.md`, inklusive valet av spår.
