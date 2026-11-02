@@ -162,8 +162,12 @@
      från disk utan iframes. */
   var ui = null;
   var elapsed = 0;               // ms före senaste start
-  var runningSince = Date.now(); // null när tidtagningen är pausad
+  var runningSince = null;       // null när tidtagningen är pausad eller inte startad
+  var timerStarted = false;      // tidtagningen startar när man går till bild 2
   var notesSize = 24;
+  // Nedräkning: valfri. Slås på i talarvyn och startar när man går till bild 2.
+  // Standardlängd i minuter: data-duration på <main class="deck">, annars 30.
+  var cd = { on: false, minutes: parseInt(deckEl.getAttribute('data-duration'), 10) || 30, start: null };
 
   function pad(n) { return (n < 10 ? '0' : '') + n; }
 
@@ -188,6 +192,16 @@
           '<button type="button" data-act="reset">Nollställ</button>' +
           '<span class="presenter__clock"></span>' +
         '</div>' +
+        '<div class="presenter__countdown">' +
+          '<span class="presenter__label">Nedräkning</span>' +
+          '<div class="presenter__cd-row">' +
+            '<span class="presenter__cd-time" aria-live="off"></span>' +
+            '<label class="presenter__cd-set"><input type="number" class="presenter__cd-min" min="1" max="240" step="1" aria-label="Längd i minuter"> min</label>' +
+            '<button type="button" data-act="countdown">Aktivera</button>' +
+            '<button type="button" data-act="cdrestart" hidden>Starta om</button>' +
+          '</div>' +
+          '<div class="presenter__cd-bar" aria-hidden="true"><span></span></div>' +
+        '</div>' +
         '<div class="presenter__next">' +
           '<span class="presenter__label presenter__next-label">Nästa bild</span>' +
           '<div class="presenter__view presenter__view--next" title="Gå till nästa"></div>' +
@@ -208,11 +222,18 @@
       prev: prev,
       next: next,
       pause: function () {
+        if (!timerStarted) { timerStarted = true; runningSince = Date.now(); tick(); return; }
         if (runningSince) { elapsed += Date.now() - runningSince; runningSince = null; }
         else runningSince = Date.now();
         tick();
       },
       reset: function () { elapsed = 0; if (runningSince) runningSince = Date.now(); tick(); },
+      countdown: function () {
+        cd.on = !cd.on;
+        cd.start = cd.on && state.i >= 1 ? Date.now() : null;
+        tick();
+      },
+      cdrestart: function () { cd.start = state.i >= 1 ? Date.now() : null; tick(); },
       smaller: function () { setNotesSize(notesSize - 4); },
       bigger: function () { setNotesSize(notesSize + 4); }
     };
@@ -221,6 +242,14 @@
       if (btn) { actions[btn.getAttribute('data-act')](); btn.blur(); return; }
       if (e.target.closest('.presenter__view--next')) next();
     });
+    var cdInput = $('.presenter__cd-min', ui);
+    cdInput.value = cd.minutes;
+    cdInput.addEventListener('change', function () {
+      cd.minutes = Math.max(1, Math.min(240, parseInt(cdInput.value, 10) || cd.minutes));
+      cdInput.value = cd.minutes;
+      tick();
+    });
+    cdInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') cdInput.blur(); });
     window.addEventListener('resize', renderPresenter);
     setNotesSize(notesSize);
     tick();
@@ -240,9 +269,34 @@
     var s = Math.floor((elapsed + (runningSince ? Date.now() - runningSince : 0)) / 1000);
     var now = new Date();
     $('.presenter__timer', ui).textContent = pad(Math.floor(s / 60)) + ':' + pad(s % 60);
-    $('[data-act="pause"]', ui).textContent = runningSince ? 'Paus' : 'Fortsätt';
-    ui.classList.toggle('is-paused', !runningSince);
+    $('[data-act="pause"]', ui).textContent = !timerStarted ? 'Starta' : runningSince ? 'Paus' : 'Fortsätt';
+    ui.classList.toggle('is-paused', timerStarted && !runningSince);
     $('.presenter__clock', ui).textContent = pad(now.getHours()) + ':' + pad(now.getMinutes());
+    tickCountdown();
+  }
+
+  function tickCountdown() {
+    var box = $('.presenter__countdown', ui);
+    var out = $('.presenter__cd-time', ui);
+    var fill = $('.presenter__cd-bar span', ui);
+    $('[data-act="countdown"]', ui).textContent = cd.on ? 'Stäng av' : 'Aktivera';
+    $('[data-act="cdrestart"]', ui).hidden = !cd.on;
+    box.classList.toggle('is-off', !cd.on);
+    out.className = 'presenter__cd-time';
+    fill.className = '';
+    if (!cd.on) { out.textContent = pad(cd.minutes % 1000) + ':00'; fill.style.width = '0'; return; }
+    if (!cd.start) { out.textContent = 'Startar på bild 2'; out.classList.add('is-waiting'); fill.style.width = '0'; return; }
+    var total = cd.minutes * 60;
+    var left = total - Math.floor((Date.now() - cd.start) / 1000);
+    var a = Math.abs(left);
+    var done = Math.min(1, (total - left) / total);
+    out.textContent = (left < 0 ? '−' : '') + pad(Math.floor(a / 60)) + ':' + pad(a % 60);
+    if (left < 0) out.classList.add('is-over');
+    else if (left <= 120) out.classList.add('is-low');
+    // Stapeln: blå, orange och röd i steg (inga övertoningar), pulserar de sista två minuterna
+    fill.style.width = (done * 100) + '%';
+    fill.className = done < .5 ? 'is-blue' : done < .8 ? 'is-orange' : 'is-red';
+    if (left <= 120) fill.classList.add('is-pulse');
   }
 
   function renderSlide(view, i, step) {
@@ -255,6 +309,8 @@
 
   function renderPresenter() {
     if (!ui) return;
+    if (!timerStarted && state.i >= 1) { timerStarted = true; runningSince = Date.now(); tick(); }
+    if (cd.on && !cd.start && state.i >= 1) { cd.start = Date.now(); tickCountdown(); }
     var hasMore = state.step < steps[state.i].length;
     var upcoming = hasMore ? [state.i, state.step + 1] : [state.i + 1, 0];
     var isLast = upcoming[0] >= slides.length;

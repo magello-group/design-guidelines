@@ -489,6 +489,53 @@ html[class*="mode-"] .step:not(.is-shown) { opacity: 0; }
 .presenter.is-paused .presenter__timer { color: var(--mg-magenta); }
 .presenter__clock { margin-left: auto; font: 500 44px/1 var(--mg-font-head); color: var(--mg-text-2); }
 
+/* Nedräkning: valfri, startar på bild 2. Avstängd är den grå och tar en rad. */
+.presenter__countdown .presenter__label { margin-bottom: 12px; }
+.presenter__cd-row { display: flex; align-items: center; gap: 12px; }
+.presenter__cd-time { margin-right: auto; font: 700 44px/1 var(--mg-font-head); color: var(--mg-black); }
+.presenter__cd-time.is-waiting { font: 500 20px/1.2 var(--mg-font-head); color: var(--mg-text-2); }
+.presenter__cd-time.is-low { color: var(--mg-magenta); }
+.presenter__cd-time.is-over { color: var(--mg-red); }
+.presenter__cd-set { display: flex; align-items: center; gap: 6px; font: 500 16px/1 var(--mg-font-head); color: var(--mg-text-2); }
+.presenter__cd-min {
+  width: 72px;
+  padding: 8px 10px;
+  font: 500 18px/1 var(--mg-font-head);
+  color: var(--mg-black);
+  background: var(--mg-white);
+  border: 1px solid var(--mg-rose-300);
+}
+
+.presenter__countdown.is-off { display: flex; align-items: center; gap: 12px; }
+.presenter__countdown.is-off .presenter__label { margin: 0; color: var(--mg-text-2); }
+.presenter__countdown.is-off .presenter__cd-row { flex: 1; gap: 10px; }
+.presenter__countdown.is-off .presenter__cd-time { font: 500 20px/1 var(--mg-font-head); color: var(--mg-grey-300); }
+.presenter__countdown.is-off .presenter__cd-set { font-size: 14px; color: var(--mg-text-2); }
+.presenter__countdown.is-off .presenter__cd-min { width: 56px; padding: 5px 8px; font-size: 14px; color: var(--mg-text-2); }
+.presenter__countdown.is-off .presenter__cd-bar { display: none; }
+
+.presenter__cd-bar {
+  height: 16px;
+  margin-top: 16px;
+  background: var(--mg-white);
+  clip-path: polygon(0% 18%, 100% 0%, 99.7% 100%, 0% 86%);
+}
+.presenter__cd-bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  transition: width 1s linear, background-color .4s ease;
+}
+.presenter__cd-bar .is-blue   { background: var(--mg-blue); }
+.presenter__cd-bar .is-orange { background: var(--mg-orange); }
+.presenter__cd-bar .is-red    { background: var(--mg-red); }
+.presenter__cd-bar .is-pulse  { animation: cd-pulse 1s ease-in-out infinite; }
+@keyframes cd-pulse { 50% { opacity: .35; } }
+@media (prefers-reduced-motion: reduce) {
+  .presenter__cd-bar span { transition: none; }
+  .presenter__cd-bar .is-pulse { animation: none; }
+}
+
 .presenter__label {
   display: block;
   margin-bottom: 10px;

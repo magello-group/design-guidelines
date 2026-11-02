@@ -56,10 +56,22 @@ Som föredragshållarvyn i PowerPoint: bara du ser den, publiken ser presentatio
 
 Talarvyn visar aktuell bild, nästa bild (eller nästa steg), anteckningarna från `<aside class="notes">`, tid sedan start med paus och nollställning, och klockan. A− och A+ ändrar textstorleken i anteckningarna. Klicka på nästa bild för att gå dit.
 
+Tiden sedan start börjar när du går till bild 2, så att tiden på titelbilden inte räknas. Knappen Starta startar den tidigare.
+
+### Nedräkning
+
+Under tidtagningen finns en nedräkning som du slår på om du vill. Avstängd är den grå och tar en rad.
+
+1. Ställ in längden i minuter. Standard är 30, eller värdet i `data-duration` på `<main class="deck">`.
+2. Klicka på **Aktivera**. Nedräkningen startar när du går till bild 2, eller direkt om du redan är längre fram.
+3. **Starta om** sätter tiden till full längd igen, **Stäng av** tar bort den.
+
+En stapel visar hur mycket tid som gått: blå första halvan, orange från halva tiden och röd sista femtedelen. De sista två minuterna pulserar den, och siffrorna blir magenta. När tiden har gått ut blir siffrorna röda och räknar vidare med minustecken. Färgerna byter i steg, utan övertoning (hård regel 7). Pulsen stängs av med `prefers-reduced-motion`.
+
 ## Markup
 
 ```html
-<main class="deck" data-header="Kundevent · Oktober 2026">
+<main class="deck" data-header="Kundevent · Oktober 2026" data-duration="30">   <!-- data-duration: nedräkningens längd i minuter -->
 <section class="slide">                 <!-- en bild, minst 1920×1080 -->
   <span class="kicker">Etikett</span>
   <h2>Rubriken är slutsatsen</h2>
