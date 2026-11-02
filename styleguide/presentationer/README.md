@@ -40,9 +40,11 @@ Bilderna fyller alltid hela fönstret, utan svarta kanter. Innehållet är gjort
 | → ↓ Mellanslag Enter PageDown | Nästa steg eller bild |
 | ← ↑ Shift+Mellanslag PageUp | Föregående |
 | Home / End | Första / sista bilden |
-| F | Helskärm |
-| O | Översikt (klicka på en bild för att gå dit, Esc stänger) |
-| S | Talarvy i nytt fönster (se nedan) |
+| H | Helskärm |
+| Ö | Översikt (klicka på en bild för att gå dit, Esc stänger) |
+| P | Talarvy i nytt fönster (se nedan) |
+
+Tangenterna står i en platta nere till höger på startbilden de första 5 sekunderna. Plattan försvinner direkt när man trycker på en tangent. Ö finns bara på svenskt tangentbord.
 
 Svep åt sidan på mobil. Adressen visar bildnummer (`#4`) så att man kan länka till en bild. Presentationsklickers fungerar eftersom de skickar PageUp/PageDown.
 
@@ -50,23 +52,27 @@ Svep åt sidan på mobil. Adressen visar bildnummer (`#4`) så att man kan länk
 
 Som föredragshållarvyn i PowerPoint: bara du ser den, publiken ser presentationen.
 
-1. Öppna presentationen och tryck **S**. Talarvyn öppnas i ett eget fönster.
-2. Flytta presentationsfönstret till projektorn och tryck **F** för helskärm. Behåll talarvyn på din skärm.
+1. Öppna presentationen och tryck **P**. Talarvyn öppnas i ett eget fönster.
+2. Flytta presentationsfönstret till projektorn och tryck **H** för helskärm. Behåll talarvyn på din skärm.
 3. Bläddra i vilket fönster som helst, de följer varandra.
 
-Talarvyn visar aktuell bild, nästa bild (eller nästa steg), anteckningarna från `<aside class="notes">`, tid sedan start med paus och nollställning, och klockan. A− och A+ ändrar textstorleken i anteckningarna. Klicka på nästa bild för att gå dit.
+Vänster spalt: aktuell bild, bildnummer ("2 av 20") och under dem anteckningarna från `<aside class="notes">` på en rosagrå yta. A− och A+ ändrar textstorleken i anteckningarna.
 
-Tiden sedan start börjar när du går till bild 2, så att tiden på titelbilden inte räknas. Knappen Starta startar den tidigare.
+Höger spalt: nästa bild (eller nästa steg) överst, klicka på den för att gå dit. Längst ner nedräkningen och tid sedan start med knappen Nollställ.
+
+Tiden sedan start börjar när du går till bild 2, så att tiden på titelbilden inte räknas. Är nedräkningen på visas tiden sedan start mindre och grå.
 
 ### Nedräkning
 
-Under tidtagningen finns en nedräkning som du slår på om du vill. Avstängd är den grå och tar en rad.
+Ovanför tiden sedan start finns en nedräkning som du slår på om du vill. Avstängd är den grå och tar en rad.
 
 1. Ställ in längden i minuter. Standard är 30, eller värdet i `data-duration` på `<main class="deck">`.
 2. Klicka på **Aktivera**. Nedräkningen startar när du går till bild 2, eller direkt om du redan är längre fram.
 3. **Starta om** sätter tiden till full längd igen, **Stäng av** tar bort den.
 
-En stapel visar hur mycket tid som gått: blå första halvan, orange från halva tiden och röd sista femtedelen. De sista två minuterna pulserar den, och siffrorna blir magenta. När tiden har gått ut blir siffrorna röda och räknar vidare med minustecken. Färgerna byter i steg, utan övertoning (hård regel 7). Pulsen stängs av med `prefers-reduced-motion`.
+En stapel visar hur mycket tid som gått, och siffrorna har samma färg som stapeln: grön upp till 75 %, orange upp till 90 % och röd sista tiondelen. När tiden har gått ut räknar siffrorna vidare med minustecken och stapeln blinkar. Färgerna byter i steg, utan övertoning (hård regel 7). Blinkandet stängs av med `prefers-reduced-motion`.
+
+Knapparna har ikoner: spela (Aktivera), stopp (Stäng av), rund pil (Starta om) och dubbel rund pil (Nollställ). Ikonerna är ifyllda former i magenta, från Material Symbols (Apache 2.0).
 
 ## Markup
 
