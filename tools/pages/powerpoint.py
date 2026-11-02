@@ -36,12 +36,13 @@ def body(sg):
         example="vårt erbjudande inom Cloud, 10 bilder, till en kund i energibranschen")
 
     tracks = sg.block("tva-spar", "Med AI", "Agenten frågar vilket utseende du vill ha",
-        "Det finns två sätt att göra en presentation. Agenten frågar alltid först. Vet du redan, skriv det direkt i texten till agenten.",
-        sg.spec(["", "Mallen", "Webbens formspråk"], [
+        "Det finns två sätt att göra en PowerPoint-presentation: för manuell framtagning eller för AI-framtagning. Agenten frågar alltid först. Vet du redan, skriv det direkt i texten till agenten.",
+        sg.spec(["", "Spår A: PowerPoint för manuell framtagning", "Spår B: PowerPoint för AI-framtagning"], [
+            ["Bygger på", "PowerPoint-mallen", "Webbens formspråk"],
             ["Passar när", "Du själv ska ändra, byta bilder och lägga till bilder efteråt", "Agenten ska leverera en färdig presentation"],
             ["Utseende", "Mallens layouter, plattor och Kattux", "Signaturyta, stor typografi, helbilder och luft, som webben"],
             ["Ändra efteråt", "Enkelt, via layouterna", "Möjligt, men textrutor och former ligger fritt"],
-            ["Skriv till agenten", "<em>Använd PowerPoint-mallen</em>", "<em>Använd webbens formspråk</em>"],
+            ["Skriv till agenten", "<em>Gör ett utkast i PowerPoint-mallen. Jag ändrar själv efteråt.</em>", "<em>Gör en färdig presentation. Leverera .pptx och PDF.</em>"],
         ]) +
         sg.use(do=["Ge agenten innehållet: anteckningar, ett dokument eller en gammal presentation",
                    "Säg vem som ska se presentationen och hur lång den ska vara",

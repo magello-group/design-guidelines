@@ -2,20 +2,20 @@
 
 > Den här filen beskriver Magellos officiella mallar för Word och PowerPoint och hur en människa eller en agent använder dem. Principerna står i `design-language.md`. Här står vad som finns i mallarna och vilken layout eller formatmall som ska användas till vad.
 
-**Regel:** Ett Word-dokument från Magello utgår alltid från Word-mallen, aldrig från ett tomt dokument eller en annan mall. En PowerPoint-presentation utgår från PowerPoint-mallen när användaren valt spår A (nedan).
+**Regel:** Ett Word-dokument från Magello utgår alltid från Word-mallen, aldrig från ett tomt dokument eller en annan mall. En PowerPoint-presentation utgår från PowerPoint-mallen när användaren valt spår A, PowerPoint för manuell framtagning (nedan).
 
 ## Två spår för PowerPoint
 
 Fråga alltid användaren vilket spår som gäller innan presentationen byggs.
 
-| | Spår A: PowerPoint-mallen (den här filen) | Spår B: webbens formspråk |
+| | Spår A: PowerPoint för manuell framtagning (PowerPoint-mallen, den här filen) | Spår B: PowerPoint för AI-framtagning (webbens formspråk) |
 |---|---|---|
 | Passar när | Användaren själv ska ändra och bygga vidare | En agent ska leverera en färdig presentation |
 | Utgår från | `Powerpoint-mall.potx`, layouter och platshållare | En tom 16:9-presentation, tokens och `tools/presentation/` |
 | Utseende | Mallens layouter, plattor och Kattux | Som webben: signaturyta, stor typografi, helbilder, luft |
 | Läs | Den här filen | `docs/presentation-webb.md` |
 
-Mallen är gjord för att människor enkelt ska kunna göra presentationer själva. Spår B är för när en agent konstruerar hela presentationen och ska få samma utseende som webben. Blanda inte spåren.
+Mallen är gjord för att människor enkelt ska kunna göra presentationer själva. Spår B, PowerPoint för AI-framtagning, är för när en agent konstruerar hela presentationen och ska få samma utseende som webben. Blanda inte spåren.
 
 | Mall | Fil här | Blir |
 |---|---|---|

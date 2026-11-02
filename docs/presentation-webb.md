@@ -1,4 +1,4 @@
-# Magello — Presentation i webbens formspråk (spår B)
+# Magello — PowerPoint för AI-framtagning (spår B, webbens formspråk)
 
 > Den här filen beskriver hur en AI-agent bygger en PowerPoint-presentation som ser ut som Magellos webb, utan Magellos PowerPoint-mall. Principerna står i `design-language.md`. Förlagan är styleguiden (`styleguide/`), `styleguide/css/magello.css` och `tokens/tokens.json`. Ett färdigt bibliotek och ett exempel finns i `tools/presentation/`.
 
@@ -6,7 +6,7 @@
 
 Det finns två sätt att göra en presentation. **Fråga alltid användaren vilket spår som gäller innan du börjar** (se `AGENTS.md`, avsnitt 2).
 
-| | Spår A: Magellos PowerPoint-mall | Spår B: webbens formspråk |
+| | Spår A: PowerPoint för manuell framtagning (PowerPoint-mallen) | Spår B: PowerPoint för AI-framtagning (webbens formspråk) |
 |---|---|---|
 | **Passar när** | Användaren själv ska bygga vidare, byta text, lägga till bilder och återanvända layouter | En agent bygger hela presentationen och användaren vill ha ett färdigt, genomarbetat resultat |
 | **Utgår från** | `assets/templates/Powerpoint-mall.potx` | En tom 16:9-presentation och tokens |
@@ -18,7 +18,7 @@ Blanda inte spåren i samma presentation.
 
 Det finns också ett tredje spår, **spår C: webbpresentation i HTML**, som inte är PowerPoint alls. Se `styleguide/presentationer/README.md` och spår C i `AGENTS.md`.
 
-## Arbetsgång (spår B)
+## Arbetsgång (PowerPoint för AI-framtagning, spår B)
 
 1. Ställ frågorna i `design-language.md`, inklusive valet av spår.
 2. Läs innehållet och dela upp det: **ett budskap per bild**. Långa originaltexter flyttas till talarnoterna, inte till mindre teckenstorlek.

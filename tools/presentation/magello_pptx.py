@@ -1,4 +1,4 @@
-"""Magello-presentationer i webbens formspråk (spår B i AGENTS.md).
+"""PowerPoint för AI-framtagning: Magello-presentationer i webbens formspråk (spår B i AGENTS.md).
 
 Bygger en .pptx från en tom 16:9-presentation med webbens styleguide som förlaga:
 tokens/tokens.json, styleguide/css/magello.css, assets/. Ingen PowerPoint-mall.

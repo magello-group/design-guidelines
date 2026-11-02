@@ -216,7 +216,7 @@ def layout(page):
 <footer class="mg-footer">
   <div class="mg-wrap">
     <div class="mg-footer__inner">
-      <div class="mg-footer__col"><span class="mg-footer__brand">Magello styleguide</span>{VERSION}<br>Formspråk för webb, dokument<br>och sociala medier</div>
+      <div class="mg-footer__col"><span class="sg-footer-name">Magello</span><br>{VERSION}<br>Formspråk för webb, dokument<br>och sociala medier</div>
       <div class="mg-footer__col">
         <a href="../tokens/tokens.json">tokens.json</a><br>
         <a href="../docs/design-language.md">design-language.md</a><br>
