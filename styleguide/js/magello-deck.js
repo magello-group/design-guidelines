@@ -219,7 +219,10 @@
             '<button type="button" data-act="countdown">' + ICON.play + '<span>Aktivera</span></button>' +
             '<button type="button" data-act="cdrestart" hidden>' + ICON.replay + '<span>Starta om</span></button>' +
           '</div>' +
-          '<div class="presenter__cd-bar" aria-hidden="true"><span></span></div>' +
+          '<div class="presenter__cd-track" aria-hidden="true">' +
+            '<div class="presenter__cd-bar"><span></span><i style="left:75%"></i><i style="left:90%"></i></div>' +
+            '<div class="presenter__cd-marks"><span style="left:75%">75 %</span><span style="left:90%">90 %</span></div>' +
+          '</div>' +
         '</div>' +
         '<div class="presenter__bar">' +
           '<span class="presenter__label">Tid sedan start</span>' +
@@ -282,7 +285,13 @@
     var box = $('.presenter__countdown', ui);
     var out = $('.presenter__cd-time', ui);
     var fill = $('.presenter__cd-bar span', ui);
-    $('[data-act="countdown"]', ui).innerHTML = cd.on ? ICON.stop + '<span>Stäng av</span>' : ICON.play + '<span>Aktivera</span>';
+    // Byt knappens innehåll bara när läget ändras. Byts det varje sekund kan ett
+    // klick hamna mellan mousedown och mouseup och försvinna.
+    var btn = $('[data-act="countdown"]', ui);
+    if (btn.getAttribute('data-on') !== String(cd.on)) {
+      btn.setAttribute('data-on', String(cd.on));
+      btn.innerHTML = cd.on ? ICON.stop + '<span>Stäng av</span>' : ICON.play + '<span>Aktivera</span>';
+    }
     $('[data-act="cdrestart"]', ui).hidden = !cd.on;
     box.classList.toggle('is-off', !cd.on);
     ui.classList.toggle('has-countdown', cd.on);

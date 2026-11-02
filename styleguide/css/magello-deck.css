@@ -519,15 +519,17 @@ html[class*="mode-"] .step:not(.is-shown) { opacity: 0; }
 .presenter__countdown.is-off .presenter__cd-time { font: 500 20px/1 var(--mg-font-head); color: var(--mg-grey-300); }
 .presenter__countdown.is-off .presenter__cd-set { font-size: 14px; color: var(--mg-text-2); }
 .presenter__countdown.is-off .presenter__cd-min { width: 56px; padding: 5px 8px; font-size: 14px; color: var(--mg-text-2); }
-.presenter__countdown.is-off .presenter__cd-bar { display: none; }
+.presenter__countdown.is-off .presenter__cd-track { display: none; }
 
+.presenter__cd-track { margin-top: 16px; }
 .presenter__cd-bar {
+  position: relative;
   height: 16px;
-  margin-top: 16px;
   background: var(--mg-white);
   clip-path: polygon(0% 18%, 100% 0%, 99.7% 100%, 0% 86%);
 }
 .presenter__cd-bar span {
+  position: relative;
   display: block;
   height: 100%;
   width: 0;
@@ -536,6 +538,25 @@ html[class*="mode-"] .step:not(.is-shown) { opacity: 0; }
 .presenter__cd-bar .is-green  { background: var(--mg-green); }
 .presenter__cd-bar .is-orange { background: var(--mg-orange); }
 .presenter__cd-bar .is-red    { background: var(--mg-red); }
+.presenter__cd-bar i {
+  /* Brytpunkterna 75 % och 90 %: ett lätt, något snett streck i rosagrått (avsteg från hård regel 1, valt av användaren) */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--mg-rose-300);
+  clip-path: polygon(30% 0%, 100% 0%, 70% 100%, 0% 100%);
+}
+.presenter__cd-marks { position: relative; height: 14px; margin-top: 6px; }
+.presenter__cd-marks span {
+  position: absolute;
+  transform: translateX(-50%);
+  font: 500 12px/1 var(--mg-font-head);
+  color: var(--mg-text-2);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
 .presenter__cd-bar .is-pulse  { animation: cd-pulse 1s ease-in-out infinite; }
 @keyframes cd-pulse { 50% { opacity: .35; } }
 @media (prefers-reduced-motion: reduce) {

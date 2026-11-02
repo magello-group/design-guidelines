@@ -70,7 +70,7 @@ Ovanför tiden sedan start finns en nedräkning som du slår på om du vill. Avs
 2. Klicka på **Aktivera**. Nedräkningen startar när du går till bild 2, eller direkt om du redan är längre fram.
 3. **Starta om** sätter tiden till full längd igen, **Stäng av** tar bort den.
 
-En stapel visar hur mycket tid som gått, och siffrorna har samma färg som stapeln: grön upp till 75 %, orange upp till 90 % och röd sista tiondelen. När tiden har gått ut räknar siffrorna vidare med minustecken och stapeln blinkar. Färgerna byter i steg, utan övertoning (hård regel 7). Blinkandet stängs av med `prefers-reduced-motion`.
+En stapel visar hur mycket tid som gått, och siffrorna har samma färg som stapeln: grön upp till 75 %, orange upp till 90 % och röd sista tiondelen. Ett lätt, något snett rosagrått streck med texten "75 %" och "90 %" under visar var färgen byter. När tiden har gått ut räknar siffrorna vidare med minustecken och stapeln blinkar. Färgerna byter i steg, utan övertoning (hård regel 7). Blinkandet stängs av med `prefers-reduced-motion`.
 
 Knapparna har ikoner: spela (Aktivera), stopp (Stäng av), rund pil (Starta om) och dubbel rund pil (Nollställ). Ikonerna är ifyllda former i magenta, från Material Symbols (Apache 2.0).
 
