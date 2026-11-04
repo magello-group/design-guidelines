@@ -2,6 +2,10 @@
 
 Du ska skapa eller ändra grafisk kommunikation för Magello: webb, dokument, presentationer, bilder eller sociala medier. Den här katalogen är din enda källa till hur Magello ser ut. Följ den, och uppfinn inget eget.
 
+**Läs ordagrant.** Läs den här filen och filerna den pekar på i sin helhet, inte via en sammanfattning. Bäst är att klona repot, `git clone https://github.com/magello-group/design-guidelines`, eller använda en GitHub-koppling. Kan du inte det, be användaren om åtkomst till GitHub innan du börjar. Har du bara ett webbhämtningsverktyg, hämta filerna från `https://magello-group.github.io/design-guidelines/<sökväg>`, till exempel `…/docs/design-language.md`, och inte från github.com, vars sidor bara delvis går att läsa. Alla sökvägar nedan är relativa till repots rot.
+
+**Presentationer har tre spår.** Spår A: PowerPoint för manuell framtagning. Spår B: PowerPoint för AI-framtagning. Spår C: webbpresentation i HTML. Fråga alltid vilket spår som gäller (avsnitt 2).
+
 ## 1. Läs i den här ordningen
 
 | Uppdrag | Läs |

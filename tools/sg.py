@@ -97,7 +97,8 @@ def prompt(id_, text_):
             f'data-mg-copy="#{id_}">Kopiera texten</button></p>')
 
 
-AGENTS_URL = "https://github.com/magello-group/design-guidelines/blob/main/AGENTS.md"
+AGENTS_URL = "https://magello-group.github.io/design-guidelines/AGENTS.md"
+REPO_URL = "https://github.com/magello-group/design-guidelines"
 
 
 def ai_start(id_, intro, what, label="Kom igång", title="Börja med en AI-agent", example=""):
@@ -107,5 +108,6 @@ def ai_start(id_, intro, what, label="Kom igång", title="Börja med en AI-agent
         steps("Öppna din AI-agent", "Kopiera texten nedan", "Beskriv vad du vill ha", "Granska och använd",
               cls="sg-start-steps")
         + sub("Texten att klistra in", "Kopiera texten och klistra in den i agenten. Skriv sedan vad du vill ha." + ex)
-        + prompt(f"{id_}-prompt", f"Läs {AGENTS_URL} och följ den.\n{what}"),
+        + prompt(f"{id_}-prompt", f"Läs {AGENTS_URL} och följ den. Läs filerna ordagrant, inte via en sammanfattning. "
+                 f"Kan du inte det, be mig först om åtkomst till GitHub-repot {REPO_URL}.\n{what}"),
         rose=True)

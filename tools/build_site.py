@@ -15,9 +15,11 @@ out = root / "_site"
 # Kopieras alltid, i sin helhet
 dirs = ["styleguide", "tokens", "docs", "assets/graphics", "assets/logos", "assets/shapes",
         "assets/images/black-and-white", "assets/assignments-logos",
-        "assets/linkedin-banners"]
-# Office-mallarna och howto-dokumenten, som nedladdningar
-files = ["assets/templates/Powerpoint-mall.potx", "assets/templates/Word-mall.dotx",
+        "assets/linkedin-banners", "tools/presentation"]
+# Enskilda filer: agentinstruktionerna och Office-mallarna med howto-dokument
+files = [# Instruktionerna som ren text, så att agenter kan läsa dem utan github.com
+         "AGENTS.md", "CLAUDE.md", "README.md", "DECISIONS.md",
+         "assets/templates/Powerpoint-mall.potx", "assets/templates/Word-mall.dotx",
          "assets/templates/Powerpoint-mall-howto.pptx", "assets/templates/Word-mall-howto.docx",
          # Specialtypsnittet Kattux (Magellos eget), för nedladdning och sidans prov
          *(f"assets/fonts/KattuxAbc-Regular.{ext}" for ext in ("otf", "ttf", "woff2", "woff"))]
