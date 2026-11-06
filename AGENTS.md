@@ -12,6 +12,7 @@ Du ska skapa eller ändra grafisk kommunikation för Magello: webb, dokument, pr
 |---|---|
 | **Alla uppdrag** | `docs/design-language.md` (designspråket i ord, sju principer) |
 | **Webb, UI, Strapi** | `docs/design-guidelines-web.md`, öppna `styleguide/` och kopiera `styleguide/css/magello.css` + `styleguide/js/magello.js` **oförändrade**. Med Tailwind: importera även `tokens/tailwind.css` (v4-tema) |
+| **All text** (webb, dokument, presentationer, CV, LinkedIn, e-post) | `styleguide/sprak.html`: tonen (personligt men professionellt), ord vi använder (till exempel *tech-partner*) och ord vi aldrig använder (till exempel *gedigen*, som ersätts med *lång*, och överdrivet säljande text). Värdena finns i `voice` i `tokens/tokens.json` |
 | **Word** | `docs/design-language.md`, `docs/office-mallar.md`, `styleguide/word.html` och mallen `assets/templates/Word-mall.dotx` |
 | **PowerPoint** | **Fråga först vilket spår som gäller** (se avsnitt 2). Spår A, PowerPoint för manuell framtagning: `docs/office-mallar.md`, `styleguide/powerpoint.html`, `styleguide/typsnitt.html` (Kattux) och `assets/templates/Powerpoint-mall.potx`. Spår B, PowerPoint för AI-framtagning: `docs/presentation-webb.md` och `tools/presentation/`. Spår C, webbpresentation i HTML: `styleguide/presentationer/` (mall, exempel och README), `styleguide/css/magello-deck.css` och `styleguide/js/magello-deck.js` |
 | **PDF** | `docs/design-language.md`, `tokens/tokens.json` (typ i pt), formerna i `assets/shapes/`. Skapas PDF:en från Word eller PowerPoint gäller raden ovan |
@@ -86,6 +87,7 @@ h2_pt   = t["type"]["print"]["h2"]["pt"]                       # 18  (Word)
 - [ ] Är magenta bara fyllnad, rubrikfärg och länk, aldrig linje?
 - [ ] Är rubriker Roboto Condensed och brödtext Roboto? På webben: är H2 magenta? I presentationer för AI-framtagning (spår B): är rubrikerna svarta, som DocTitle och h1? I webbpresentationer (spår C): följer rubrikerna D-62?
 - [ ] Är all text på svenska, utan utropstecken?
+- [ ] Följer texten `styleguide/sprak.html`: personlig men professionell, inga ord ur `voice.neverUse` och ingen överdrivet säljande text?
 - [ ] Ligger allt innehåll på samma vänsterkant som logotypen?
 - [ ] Ligger infoblock efter varandra i full bredd?
 - [ ] Finns högst en primär knapp eller handling per vy?

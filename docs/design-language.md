@@ -59,6 +59,8 @@ Tillgångar (logotyper, ikoner, svartvita foton) ligger i `assets/logos/`, `asse
 
 **Språk:** Svenska. Skriv konkret och varmt, utan utropstecken och utan fluffiga adjektiv. Rubriker beskriver vad något är eller gör ("Vi hjälper kunder bygga fungerande mjukvara"), inte hur fantastiskt det är.
 
+**Ton:** Personligt men professionellt. Vi beskriver oss som kundens **tech-partner**. Vi skriver aldrig *gedigen*, utan *lång* (*lång erfarenhet*), och aldrig överdrivet säljande text: inga superlativ, inga löften utan exempel. Hela underlaget, med ord att använda och undvika, finns i `styleguide/sprak.html`.
+
 ---
 
 ## De sju principerna

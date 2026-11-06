@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Språk och ton — Magello styleguide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Condensed:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/magello.css">
+<link rel="stylesheet" href="css/styleguide.css">
+</head>
+<body>
+
+<!-- ═══ SIDOSPÅR ═══════════════════════════════════════════════ -->
+<div class="mg-side-nav" aria-label="Sidonavigering">
+  <a class="mg-side-nav__logo" href="index.html" aria-label="Magello">
+    <img src="../assets/logos/icon-logotype.svg" alt="Magello">
+  </a>
+  <ul class="mg-side-nav__links">
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="farg.html" class="is-active">Grunder</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="sprak.html" class="is-active">Språk &amp; ton</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li><li><a href="ljud.html">Ljud</a></li></ul>
+    </li>
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="komponenter.html">Byggstenar</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+    </li>
+    <li><a href="navigation.html">Navigation</a></li>
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="powerpoint.html">Mallar</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="powerpoint.html">PowerPoint</a></li><li><a href="word.html">Word</a></li><li><a href="e-postsignatur.html">E-postsignatur</a></li></ul>
+    </li>
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="bildbank.html">Bildbank</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="bildbank.html">Foton</a></li><li><a href="kundlogotyper.html">Kundlogotyper</a></li><li><a href="linkedin-banners.html">LinkedIn-banners</a></li></ul>
+    </li>
+  </ul>
+  <a class="mg-side-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+</div>
+
+<!-- ═══ HEADER ═════════════════════════════════════════════════ -->
+<div class="mg-page-header mg-page-header--rotate">
+  <div class="mg-header-shape"></div>
+  <nav class="mg-nav">
+    <div class="mg-nav__inner">
+      <a class="mg-nav__logo" href="index.html" aria-label="Magello">
+        <svg viewBox="0 0 1298 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>Magello</title>
+          <rect x="114" y="41" width="1096" height="251" fill="white"/>
+          <path d="M383.475 127.758L378.345 171.487L398.438 170.63L397.583 126.043L383.475 127.758Z" fill="#EC008C"/>
+          <path d="M1040.56 171.916L1084.16 180.49L1096.99 227.221L1147.86 177.918L1151.28 131.616L1088.44 120.47L1040.56 171.916Z" fill="#EC008C"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M138.513 0L50.0185 22.7221L1.71003 95.1756L0 290.243L47.026 318.109L97.472 322.825L320.632 332.686L1226.09 325.826L1295.78 257.66L1297.06 24.8657L1267.56 6.43078L138.513 0ZM293.271 258.946L244.535 266.234L241.115 197.639L212.899 216.932L190.241 197.639L188.104 267.521H138.94L135.093 210.93L139.795 93.4607H176.989L218.884 152.195L255.65 93.8894H293.698L293.271 258.946ZM410.408 260.232L401.003 190.351H376.635L369.795 256.374H321.487L340.297 135.046C340.297 135.046 353.55 80.5992 356.115 81.4566C358.68 82.314 420.241 85.3151 420.241 85.3151L443.327 138.476L462.564 265.377L410.408 260.232ZM604.925 256.803L576.282 262.805L510.018 257.66L483.94 222.076L482.23 187.35L481.802 150.909L492.062 119.613L514.72 92.1746L558.754 85.3151L585.687 89.6022L613.047 93.4607L612.192 107.18L604.497 141.049L557.044 128.187L531.821 146.193L528.401 190.78L548.494 214.359L567.732 210.072V187.35C560.891 186.493 560.036 186.493 560.036 186.493C559.181 186.064 560.036 167.2 560.036 167.2L613.902 171.059V192.924L614.33 214.788L604.925 256.803ZM752.843 135.046L695.984 135.904V154.339L743.438 152.195L743.01 192.495L692.992 195.925L696.412 213.502L752.415 218.218L751.988 260.661L647.248 260.232L648.103 93.4607L752.843 96.4618V135.046ZM893.493 259.804L787.899 259.375L788.754 80.5992L834.497 81.0279L835.779 213.931L894.348 212.216L893.493 259.804ZM909.739 247.371L905.891 116.612L910.594 72.0248L952.917 74.5971L952.062 203.213L989.255 203.641L1008.92 205.356L1009.35 252.944L909.739 247.371ZM1180.35 225.935L1135.04 262.805L1040.98 242.655L1019.61 165.486L1034.14 96.8905C1034.14 96.8905 1091 79.7417 1099.98 78.8843L1140.59 84.4576L1187.19 133.76L1180.35 225.935Z" fill="#EC008C"/>
+        </svg>
+      </a>
+      <ul class="mg-nav__links">
+        <li class="mg-nav__has-sub">
+          <a href="farg.html" class="is-active">Grunder</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Grunder"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="sprak.html" class="is-active">Språk &amp; ton</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li><li><a href="ljud.html">Ljud</a></li></ul>
+        </li>
+        <li class="mg-nav__has-sub">
+          <a href="komponenter.html">Byggstenar</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Byggstenar"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+        </li>
+        <li><a href="navigation.html">Navigation</a></li>
+        <li class="mg-nav__has-sub">
+          <a href="powerpoint.html">Mallar</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Mallar"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="powerpoint.html">PowerPoint</a></li><li><a href="word.html">Word</a></li><li><a href="e-postsignatur.html">E-postsignatur</a></li></ul>
+        </li>
+        <li class="mg-nav__has-sub">
+          <a href="bildbank.html">Bildbank</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Bildbank"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="bildbank.html">Foton</a></li><li><a href="kundlogotyper.html">Kundlogotyper</a></li><li><a href="linkedin-banners.html">LinkedIn-banners</a></li></ul>
+        </li>
+      </ul>
+      <a class="mg-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+      <button class="mg-nav__burger" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" aria-hidden="true">
+          <rect width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="8" width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="16" width="24" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<!-- ═══ MOBILMENY ══════════════════════════════════════════════ -->
+<div class="mg-mobile-menu" id="mobile-menu" aria-hidden="true" aria-label="Mobilnavigering">
+  <div class="mg-mobile-menu__head">
+    <a href="index.html" class="mg-nav__logo" aria-label="Magello">
+      <svg style="height:32px;width:auto" viewBox="0 0 1298 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>Magello</title>
+          <rect x="114" y="41" width="1096" height="251" fill="white"/>
+          <path d="M383.475 127.758L378.345 171.487L398.438 170.63L397.583 126.043L383.475 127.758Z" fill="#EC008C"/>
+          <path d="M1040.56 171.916L1084.16 180.49L1096.99 227.221L1147.86 177.918L1151.28 131.616L1088.44 120.47L1040.56 171.916Z" fill="#EC008C"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M138.513 0L50.0185 22.7221L1.71003 95.1756L0 290.243L47.026 318.109L97.472 322.825L320.632 332.686L1226.09 325.826L1295.78 257.66L1297.06 24.8657L1267.56 6.43078L138.513 0ZM293.271 258.946L244.535 266.234L241.115 197.639L212.899 216.932L190.241 197.639L188.104 267.521H138.94L135.093 210.93L139.795 93.4607H176.989L218.884 152.195L255.65 93.8894H293.698L293.271 258.946ZM410.408 260.232L401.003 190.351H376.635L369.795 256.374H321.487L340.297 135.046C340.297 135.046 353.55 80.5992 356.115 81.4566C358.68 82.314 420.241 85.3151 420.241 85.3151L443.327 138.476L462.564 265.377L410.408 260.232ZM604.925 256.803L576.282 262.805L510.018 257.66L483.94 222.076L482.23 187.35L481.802 150.909L492.062 119.613L514.72 92.1746L558.754 85.3151L585.687 89.6022L613.047 93.4607L612.192 107.18L604.497 141.049L557.044 128.187L531.821 146.193L528.401 190.78L548.494 214.359L567.732 210.072V187.35C560.891 186.493 560.036 186.493 560.036 186.493C559.181 186.064 560.036 167.2 560.036 167.2L613.902 171.059V192.924L614.33 214.788L604.925 256.803ZM752.843 135.046L695.984 135.904V154.339L743.438 152.195L743.01 192.495L692.992 195.925L696.412 213.502L752.415 218.218L751.988 260.661L647.248 260.232L648.103 93.4607L752.843 96.4618V135.046ZM893.493 259.804L787.899 259.375L788.754 80.5992L834.497 81.0279L835.779 213.931L894.348 212.216L893.493 259.804ZM909.739 247.371L905.891 116.612L910.594 72.0248L952.917 74.5971L952.062 203.213L989.255 203.641L1008.92 205.356L1009.35 252.944L909.739 247.371ZM1180.35 225.935L1135.04 262.805L1040.98 242.655L1019.61 165.486L1034.14 96.8905C1034.14 96.8905 1091 79.7417 1099.98 78.8843L1140.59 84.4576L1187.19 133.76L1180.35 225.935Z" fill="#EC008C"/>
+        </svg>
+    </a>
+    <button class="mg-mobile-menu__close" aria-label="Stäng meny">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <ul class="mg-mobile-menu__links">
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="farg.html" class="is-active">Grunder</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="sprak.html" class="is-active">Språk &amp; ton</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li><li><a href="ljud.html">Ljud</a></li></ul>
+    </li>
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="komponenter.html">Byggstenar</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+    </li>
+    <li><a href="navigation.html">Navigation</a></li>
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="powerpoint.html">Mallar</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="powerpoint.html">PowerPoint</a></li><li><a href="word.html">Word</a></li><li><a href="e-postsignatur.html">E-postsignatur</a></li></ul>
+    </li>
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="bildbank.html">Bildbank</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="bildbank.html">Foton</a></li><li><a href="kundlogotyper.html">Kundlogotyper</a></li><li><a href="linkedin-banners.html">LinkedIn-banners</a></li></ul>
+    </li>
+  </ul>
+  <a class="mg-mobile-menu__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+</div>
+
+<!-- ═══ SIDHUVUD ═══════════════════════════════════════════════ -->
+<div class="mg-ingang-hero">
+  <div class="mg-ingang-col">
+    <nav class="mg-breadcrumb" aria-label="Brödsmula">
+      <a href="index.html">Hem</a>
+      <span class="mg-breadcrumb__sep">/</span>
+      <span aria-current="page">Språk och ton</span>
+    </nav>
+    <p class="mg-kicker">Grunder</p>
+    <h1 class="mg-ingang-title">Språk och ton</h1>
+    <p class="mg-ingang-sub">Så låter Magello i text: personligt men professionellt. Sidan är en grund att bygga vidare på. Den börjar med orden vi använder och orden vi aldrig använder.</p>
+    <div class="mg-ingang-actions"><a href="#ord" class="mg-btn mg-btn--primary">Ord vi använder</a><a href="#aldrig" class="mg-btn mg-btn--secondary">Ord vi aldrig använder</a></div>
+  </div>
+</div>
+
+<main id="main-content">
+<section class="sg-block" id="ton" aria-labelledby="h-ton">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Tonalitet</p>
+    <h2 id="h-ton">Personligt men professionellt</h2>
+    <p>Vi skriver som en kunnig kollega pratar: rakt, varmt och utan omsvep. Läsaren ska känna att det finns människor bakom texten, och att de vet vad de gör.</p>
+  </div>
+<div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Personligt betyder</th><th>Professionellt betyder</th></tr></thead><tbody><tr><td>Vi skriver <em>vi</em> om Magello och tilltalar läsaren direkt</td><td>Vi håller oss till fakta och säger det vi kan stå för</td></tr><tr><td>Vardagliga ord före facktermer, när det går</td><td>Rätt term när den behövs, förklarad första gången</td></tr><tr><td>Namn på personer, kunder och team</td><td>Konkreta resultat: vad vi gjorde och vad det gav</td></tr><tr><td>En lättsam formulering får finnas</td><td>Aldrig skämt på kundens eller någon annans bekostnad</td></tr></tbody></table></div><h3 class="sg-sub">Våra värdeord i text</h3><p class="sg-text">Magellos värdeord är personliga, trygga, kommunikativa och lärande. Så märks de när vi skriver.</p><div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Värdeord</th><th>Så låter det</th></tr></thead><tbody><tr><td>Personliga</td><td>Vi skriver till en människa, inte till en målgrupp. Gärna med namn och egna erfarenheter</td></tr><tr><td>Trygga</td><td>Vi lovar det vi kan hålla och visar hur. Siffror och exempel i stället för stora ord</td></tr><tr><td>Kommunikativa</td><td>Korta meningar, det viktigaste först och ett budskap per stycke</td></tr><tr><td>Lärande</td><td>Vi delar med oss av vad vi kan, och säger öppet vad vi har lärt oss</td></tr></tbody></table></div>
+</div>
+</section>
+<section class="sg-block" id="ord" aria-labelledby="h-ord">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Ord</p>
+    <h2 id="h-ord">Ord vi använder</h2>
+    <p>Orden säger vem vi är. Använd dem konsekvent, så känns texterna igen oavsett vem som skrivit dem. Listan växer.</p>
+  </div>
+<div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Ord</th><th>Använd så här</th><th>Exempel</th></tr></thead><tbody><tr><td><strong>Tech-partner</strong></td><td>Så beskriver vi vår roll hos kunden: en partner som tar ansvar för tekniken tillsammans med kunden, inte bara levererar timmar</td><td><em>Magello är tech-partner till några av Sveriges mest kända varumärken.</em></td></tr><tr><td><strong>Lång</strong></td><td>I stället för <em>gedigen</em>. Enkelt och sant, och går att belägga</td><td><em>Vi har lång erfarenhet av integration.</em> <em>En lång relation med kunden.</em></td></tr></tbody></table></div><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Skriv <em>tech-partner</em> med bindestreck. Stor bokstav bara först i en mening eller rubrik</li><li>Visa vad partnerskapet betyder: vad vi tar ansvar för och hur länge</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Byta mot <em>leverantör</em>, <em>resurs</em> eller <em>techpartner</em> utan bindestreck</li></ul></div></div>
+</div>
+</section>
+<section class="mg-section--rose sg-block sg-block--rose" id="aldrig" aria-labelledby="h-aldrig">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Ord vi aldrig använder</p>
+    <h2 id="h-aldrig">Ord och uttryck vi undviker</h2>
+    <p>Vissa ord säger mindre än de låter. De gör texten tyngre och mindre trovärdig.</p>
+  </div>
+<div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Använd inte</th><th>Varför</th><th>Skriv i stället</th></tr></thead><tbody><tr><td><strong>gedigen</strong></td><td>Tomt och slitet. Säger inget om vad vi faktiskt kan</td><td>Skriv <em>lång</em>: <em>lång erfarenhet</em>, <em>lång relation med kunden</em>. Lägg gärna till fakta, som <em>över 30 år</em></td></tr><tr><td><strong>Överdrivet säljande text</strong></td><td>Läsaren slutar lyssna. Det låter som reklam, inte som en partner</td><td>Säg vad vi gör och vad det ger, och låt resultatet tala</td></tr></tbody></table></div><h3 class="sg-sub">Så känner du igen säljande text</h3><p class="sg-text">Superlativ, löften utan bevis och uppmaningar. Några exempel och hur de kan skrivas om.</p><div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Säljande</th><th>Rakt</th></tr></thead><tbody><tr><td>Vi förverkligar era digitala drömmar</td><td>Vi bygger och förvaltar webb, appar och integrationer</td></tr><tr><td>Lösningar i världsklass som överträffar alla förväntningar</td><td>Säg vad som blev bättre och med hur mycket: snabbare, enklare, billigare</td></tr><tr><td>Marknadens ledande experter</td><td>Säg vad konsulterna har gjort och hur länge</td></tr><tr><td>Tveka inte att kontakta oss</td><td>Hör av dig till oss på info@magello.se</td></tr><tr><td>Unik, innovativ, banbrytande</td><td>Beskriv vad som är nytt och för vem</td></tr></tbody></table></div><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Superlativ och förstärkningsord: <em>bästa</em>, <em>ledande</em>, <em>unik</em>, <em>otrolig</em></li><li>Utropstecken</li><li>Löften utan exempel eller siffror</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--loading">Tänk på</span><ul><li>Tveka? Läs meningen högt. Skulle du säga den till en kund över en kopp kaffe, då håller den</li></ul></div></div>
+</div>
+</section>
+<section class="sg-block" id="skriva" aria-labelledby="h-skriva">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Så skriver vi</p>
+    <h2 id="h-skriva">Regler för alla texter</h2>
+    <p>Gäller webb, presentationer, dokument, CV, LinkedIn och e-post.</p>
+  </div>
+<div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Regel</th><th>Så gör du</th></tr></thead><tbody><tr><td>Svenska</td><td>Engelska facktermer bara när det inte finns ett vedertaget svenskt ord</td></tr><tr><td>Det viktigaste först</td><td>Första meningen ska gå att läsa ensam</td></tr><tr><td>Korta meningar</td><td>En tanke per mening. Dela långa meningar</td></tr><tr><td>Aktiv form</td><td><em>Vi byggde appen</em>, inte <em>appen byggdes</em></td></tr><tr><td>Konkret</td><td>Siffror, namn och exempel i stället för adjektiv</td></tr><tr><td>Rubriker som säger något</td><td>Rubriken beskriver vad något är eller gör, inte hur bra det är</td></tr><tr><td>Inga utropstecken</td><td>Tonen bärs av innehållet, inte av skiljetecken</td></tr></tbody></table></div><h3 class="sg-sub">Före och efter</h3><div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Före</th><th>Efter</th></tr></thead><tbody><tr><td>Magello är en gedigen och ledande leverantör som erbjuder innovativa helhetslösningar i världsklass!</td><td>Magello är tech-partner till organisationer som vill bygga och förvalta digitala tjänster. Vi har lång erfarenhet av det, över 30 år.</td></tr></tbody></table></div>
+</div>
+</section>
+<section class="mg-section--rose sg-block sg-block--rose" id="ai" aria-labelledby="h-ai">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Med AI</p>
+    <h2 id="h-ai">Skriv med en AI-agent</h2>
+    <p>Låt en AI-agent skriva eller granska texten. Agenten följer orden och tonen på den här sidan.</p>
+  </div>
+<div class="mg-steps sg-start-steps" role="list"><div class="mg-step mg-step--blue" role="listitem"><span class="mg-step__num">Steg 1</span>Öppna din AI-agent</div><div class="mg-step mg-step--orange" role="listitem"><span class="mg-step__num">Steg 2</span>Kopiera texten nedan</div><div class="mg-step mg-step--green" role="listitem"><span class="mg-step__num">Steg 3</span>Beskriv vad du vill ha</div><div class="mg-step mg-step--magenta" role="listitem"><span class="mg-step__num">Steg 4</span>Granska och använd</div></div><h3 class="sg-sub">Texten att klistra in</h3><p class="sg-text">Kopiera texten och klistra in den i agenten. Skriv sedan vad du vill ha. Till exempel <em>en LinkedIn-post om att vi har fått en ny kund inom energi</em>.</p><pre class="sg-code sg-code--prompt"><code id="ai-prompt">Läs https://magello-group.github.io/design-guidelines/AGENTS.md och följ den. Läs filerna ordagrant, inte via en sammanfattning. Kan du inte det, be mig först om åtkomst till GitHub-repot https://github.com/magello-group/design-guidelines.
+Skriv eller granska en text enligt Magellos språk och ton. Texten handlar om: </code></pre><p class="sg-copy-row"><button type="button" class="mg-btn mg-btn--secondary" data-mg-copy="#ai-prompt">Kopiera texten</button></p>
+</div>
+</section>
+
+</main>
+
+
+<!-- ═══ FOOTER ═════════════════════════════════════════════════ -->
+<footer class="mg-footer">
+  <div class="mg-wrap">
+    <div class="mg-footer__inner">
+      <div class="mg-footer__col"><span class="sg-footer-name">Magello</span><br>Git commit: <a href="https://github.com/magello-group/design-guidelines/commit/a08a59f">a08a59f</a><br>Formspråk för webb, dokument<br>och sociala medier</div>
+      <div class="mg-footer__col">
+        <a href="../tokens/tokens.json">tokens.json</a><br>
+        <a href="../docs/design-language.md">design-language.md</a><br>
+        <a href="../docs/design-guidelines-web.md">design-guidelines-web.md</a>
+      </div>
+      <div class="mg-footer__col" style="text-align:right">Västgötagatan 2<br>118 27 Stockholm<br>info@magello.se</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/magello.js"></script>
+</body>
+</html>

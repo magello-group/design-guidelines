@@ -9,8 +9,9 @@ Styleguiden finns på **https://magello-group.github.io/design-guidelines/**: en
 | Sökväg | Vad |
 |---|---|
 | [`AGENTS.md`](AGENTS.md) | **Börja här om du är en AI-agent.** Läsordning, hårda regler, checklista, hur formspråket utvecklas (`CLAUDE.md` pekar hit) |
-| [`styleguide/`](styleguide/) | Statisk styleguide (13 sidor). Levande exempel, "Gör / Gör inte / Tänk på", markup att kopiera |
+| [`styleguide/`](styleguide/) | Statisk styleguide. Levande exempel, "Gör / Gör inte / Tänk på", markup att kopiera |
 | [`styleguide/css/magello.css`](styleguide/css/magello.css) + [`styleguide/js/magello.js`](styleguide/js/magello.js) | **Det delade biblioteket**: all CSS och JS. Kopiera oförändrade till andra webbprojekt |
+| [`styleguide/sprak.html`](styleguide/sprak.html) | Språk och ton: personligt men professionellt, ord vi använder och ord vi aldrig använder |
 | [`docs/design-language.md`](docs/design-language.md) | Designspråket i ord, utan webbdetaljer. Underlag för PowerPoint, Word, PDF, bilder |
 | [`docs/design-guidelines-web.md`](docs/design-guidelines-web.md) | Webbriktlinjer: frågor, nytt projekt eller omstyling, tokens, komponenter, navigation, Strapi med Markdown |
 | [`tokens/tokens.json`](tokens/tokens.json) | Färg, typografi (web, tryck, presentation), avstånd, layout, rörelse, former (polygoner) och regler som maskinläsbara värden |
