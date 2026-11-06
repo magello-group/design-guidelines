@@ -45,6 +45,7 @@ NAV = [
         ("Specialtypsnitt", "typsnitt.html"),
         ("Bilder &amp; ikoner", "bilder-ikoner.html"),
         ("Avstånd &amp; rörelse", "avstand-rorelse.html"),
+        ("Ljud", "ljud.html"),
     ]),
     ("Byggstenar", "komponenter.html", [
         ("Komponenter", "komponenter.html"),
@@ -66,7 +67,7 @@ NAV = [
 ]
 FEATURED = ("Tokens (JSON)", "../tokens/tokens.json")
 
-PAGES = ["index", "farg", "form", "typografi", "typsnitt", "bilder-ikoner", "bildbank", "kundlogotyper", "linkedin-banners", "avstand-rorelse",
+PAGES = ["index", "farg", "form", "typografi", "typsnitt", "bilder-ikoner", "bildbank", "kundlogotyper", "linkedin-banners", "avstand-rorelse", "ljud",
          "komponenter", "sektioner", "formular-feedback", "navigation", "markdown", "powerpoint", "word",
          "e-postsignatur"]
 

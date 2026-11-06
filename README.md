@@ -25,6 +25,7 @@ Styleguiden finns på **https://magello-group.github.io/design-guidelines/**: en
 | [`DECISIONS.md`](DECISIONS.md) | Beslutslogg med datum och motivering |
 | [`docs/presentation-webb.md`](docs/presentation-webb.md) + [`tools/presentation/`](tools/presentation/) | Presentationer som en agent konstruerar i webbens formspråk (PowerPoint för AI-framtagning, spår B): raster, typografi, bildtyper, logotyper och ett bibliotek med exempel |
 | [`styleguide/presentationer/`](styleguide/presentationer/) + [`magello-deck.css`](styleguide/css/magello-deck.css), [`magello-deck.js`](styleguide/js/magello-deck.js) | **Webbpresentationer i HTML (spår C)**: mall, exempel och talarvy som i PowerPoint. Öppnas direkt från disk, ingen server. [Exemplet](https://magello-group.github.io/design-guidelines/styleguide/presentationer/exempel/) |
+| [`assets/audio/`](assets/audio/) + [Ljud](https://magello-group.github.io/design-guidelines/styleguide/ljud.html) | Magellos ljud till video: intro, ljudlogotyp och bakgrundsmusik under tal. Källkoden i [`tools/audio/`](tools/audio/) |
 | [`tools/`](tools/) | Byggscript för styleguide, SVG-former, navigationsbilder och Pages-webbplatsen, |
 
 ## Kom igång

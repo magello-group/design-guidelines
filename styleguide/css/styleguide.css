@@ -213,3 +213,9 @@
 
 /* Sidfotens namn: magenta, i samma storlek och vikt som raderna under */
 .sg-footer-name { color: var(--mg-magenta); }
+
+/* ── Ljud ────────────────────────────────────────────────── */
+.sg-tracks { display: grid; gap: var(--mg-space-5); max-width: 720px; margin: var(--mg-space-4) 0 var(--mg-space-7); }
+.sg-track { display: flex; flex-direction: column; gap: var(--mg-space-2); }
+.sg-track .sg-photo__dl { padding-left: calc(56px + var(--mg-space-4)); }
+@media (max-width: 599px) { .sg-track .sg-photo__dl { padding-left: 0; } }

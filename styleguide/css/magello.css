@@ -2165,6 +2165,59 @@ img {
   margin-top: 4px;
 }
 
+/* ── LJUDSPELARE ──────────────────────────────────────────────── */
+/* <div class="mg-audio" data-mg-audio> med spelknapp, titel, tid och
+   .mg-progress som tidslinje. Beteendet finns i magello.js (data-mg-audio). */
+.mg-audio {
+  display: flex;
+  align-items: center;
+  gap: var(--mg-space-4);
+}
+.mg-audio__play {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  background: var(--mg-rose-200);
+  color: var(--mg-black);
+  clip-path: polygon(2% 5%, 99% 0%, 100% 88%, 97% 100%, 0% 95%);
+  transition: clip-path .35s ease, background .35s ease;
+}
+.mg-audio__play:hover {
+  background: var(--mg-rose-300);
+  clip-path: polygon(0% 2%, 100% 0%, 99% 93%, 96% 100%, 1% 98%);
+}
+.mg-audio__play:focus-visible { outline: none; background: var(--mg-black); color: #fff; }
+.mg-audio.is-playing .mg-audio__play { background: var(--mg-magenta); color: #fff; }
+.mg-audio__play svg { width: 20px; height: 20px; fill: currentColor; }
+.mg-audio__icon-pause,
+.mg-audio.is-playing .mg-audio__icon-play { display: none; }
+.mg-audio.is-playing .mg-audio__icon-pause { display: block; }
+.mg-audio__body { flex: 1; min-width: 0; }
+.mg-audio__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--mg-space-3);
+}
+.mg-audio__title { font: 700 1rem/1.3 var(--mg-font-head); color: var(--mg-black); }
+.mg-audio__time {
+  font: 500 .8125rem/1 var(--mg-font-head);
+  color: var(--mg-text-2);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.mg-audio__seek { padding: 10px 0; cursor: pointer; }
+.mg-audio__seek:focus-visible { outline: 2px solid var(--mg-black); outline-offset: 2px; }
+.mg-audio .mg-progress__fill { width: 0; transition: none; }
+@media (prefers-reduced-motion: reduce) {
+  .mg-audio__play { transition: none; }
+}
+
 /* ── FEEDBACK, STATES & LOADING ───────────────────────────────── */
 .mg-btn__spinner {
   display: inline-block;

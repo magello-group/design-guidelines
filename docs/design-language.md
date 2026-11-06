@@ -228,6 +228,18 @@ En agent kan hänvisa till verktyget och beskriva vilken tjänst som passar, men
 
 ---
 
+## Ljud
+
+Magello har ett eget ljud till video: intro, ljudlogotyp och bakgrundsmusik under tal. Filerna ligger i `assets/audio/` och visas på styleguidens [Ljud](https://magello-group.github.io/design-guidelines/styleguide/ljud.html).
+
+- **Använd de färdiga filerna.** Ingen annan musik i Magellos videor, och ingen musik med sång.
+- **Ordning:** intro (25 eller 15 s) under titeln, övergång till bakgrunden under introts sista ackord, ljudlogotypen sist.
+- **Bakgrunden ligger 8–12 dB under tal.** Den är gjord för att inte konkurrera med rösten.
+- **Ljudlogotypen är motivet A–G–E**, de tre bokstäverna i Magello som också är toner. Den ändras inte.
+- Tempo 110 BPM, en takt är 2,18 s. Klipp på hela takter om du kortar.
+
+---
+
 ## Ikoner och grafik
 
 - Ikoner är **platta vektorer**: solida fyllnader, inga gradienter, inga skuggor, ingen kantlinje.

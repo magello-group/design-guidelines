@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ljud — Magello styleguide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Condensed:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/magello.css">
+<link rel="stylesheet" href="css/styleguide.css">
+</head>
+<body>
+
+<!-- ═══ SIDOSPÅR ═══════════════════════════════════════════════ -->
+<div class="mg-side-nav" aria-label="Sidonavigering">
+  <a class="mg-side-nav__logo" href="index.html" aria-label="Magello">
+    <img src="../assets/logos/icon-logotype.svg" alt="Magello">
+  </a>
+  <ul class="mg-side-nav__links">
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="farg.html" class="is-active">Grunder</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li><li><a href="ljud.html" class="is-active">Ljud</a></li></ul>
+    </li>
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="komponenter.html">Byggstenar</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+    </li>
+    <li><a href="navigation.html">Navigation</a></li>
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="powerpoint.html">Mallar</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="powerpoint.html">PowerPoint</a></li><li><a href="word.html">Word</a></li><li><a href="e-postsignatur.html">E-postsignatur</a></li></ul>
+    </li>
+    <li class="mg-side-has-sub">
+      <div class="mg-side-parent">
+        <a href="bildbank.html">Bildbank</a>
+        <button class="mg-side-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-side-sub"><li><a href="bildbank.html">Foton</a></li><li><a href="kundlogotyper.html">Kundlogotyper</a></li><li><a href="linkedin-banners.html">LinkedIn-banners</a></li></ul>
+    </li>
+  </ul>
+  <a class="mg-side-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+</div>
+
+<!-- ═══ HEADER ═════════════════════════════════════════════════ -->
+<div class="mg-page-header mg-page-header--rotate">
+  <div class="mg-header-shape"></div>
+  <nav class="mg-nav">
+    <div class="mg-nav__inner">
+      <a class="mg-nav__logo" href="index.html" aria-label="Magello">
+        <svg viewBox="0 0 1298 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>Magello</title>
+          <rect x="114" y="41" width="1096" height="251" fill="white"/>
+          <path d="M383.475 127.758L378.345 171.487L398.438 170.63L397.583 126.043L383.475 127.758Z" fill="#EC008C"/>
+          <path d="M1040.56 171.916L1084.16 180.49L1096.99 227.221L1147.86 177.918L1151.28 131.616L1088.44 120.47L1040.56 171.916Z" fill="#EC008C"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M138.513 0L50.0185 22.7221L1.71003 95.1756L0 290.243L47.026 318.109L97.472 322.825L320.632 332.686L1226.09 325.826L1295.78 257.66L1297.06 24.8657L1267.56 6.43078L138.513 0ZM293.271 258.946L244.535 266.234L241.115 197.639L212.899 216.932L190.241 197.639L188.104 267.521H138.94L135.093 210.93L139.795 93.4607H176.989L218.884 152.195L255.65 93.8894H293.698L293.271 258.946ZM410.408 260.232L401.003 190.351H376.635L369.795 256.374H321.487L340.297 135.046C340.297 135.046 353.55 80.5992 356.115 81.4566C358.68 82.314 420.241 85.3151 420.241 85.3151L443.327 138.476L462.564 265.377L410.408 260.232ZM604.925 256.803L576.282 262.805L510.018 257.66L483.94 222.076L482.23 187.35L481.802 150.909L492.062 119.613L514.72 92.1746L558.754 85.3151L585.687 89.6022L613.047 93.4607L612.192 107.18L604.497 141.049L557.044 128.187L531.821 146.193L528.401 190.78L548.494 214.359L567.732 210.072V187.35C560.891 186.493 560.036 186.493 560.036 186.493C559.181 186.064 560.036 167.2 560.036 167.2L613.902 171.059V192.924L614.33 214.788L604.925 256.803ZM752.843 135.046L695.984 135.904V154.339L743.438 152.195L743.01 192.495L692.992 195.925L696.412 213.502L752.415 218.218L751.988 260.661L647.248 260.232L648.103 93.4607L752.843 96.4618V135.046ZM893.493 259.804L787.899 259.375L788.754 80.5992L834.497 81.0279L835.779 213.931L894.348 212.216L893.493 259.804ZM909.739 247.371L905.891 116.612L910.594 72.0248L952.917 74.5971L952.062 203.213L989.255 203.641L1008.92 205.356L1009.35 252.944L909.739 247.371ZM1180.35 225.935L1135.04 262.805L1040.98 242.655L1019.61 165.486L1034.14 96.8905C1034.14 96.8905 1091 79.7417 1099.98 78.8843L1140.59 84.4576L1187.19 133.76L1180.35 225.935Z" fill="#EC008C"/>
+        </svg>
+      </a>
+      <ul class="mg-nav__links">
+        <li class="mg-nav__has-sub">
+          <a href="farg.html" class="is-active">Grunder</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Grunder"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li><li><a href="ljud.html" class="is-active">Ljud</a></li></ul>
+        </li>
+        <li class="mg-nav__has-sub">
+          <a href="komponenter.html">Byggstenar</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Byggstenar"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+        </li>
+        <li><a href="navigation.html">Navigation</a></li>
+        <li class="mg-nav__has-sub">
+          <a href="powerpoint.html">Mallar</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Mallar"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="powerpoint.html">PowerPoint</a></li><li><a href="word.html">Word</a></li><li><a href="e-postsignatur.html">E-postsignatur</a></li></ul>
+        </li>
+        <li class="mg-nav__has-sub">
+          <a href="bildbank.html">Bildbank</a>
+          <button class="mg-nav__chevron-btn" aria-expanded="false" aria-label="Expandera Bildbank"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="mg-nav__sub"><li><a href="bildbank.html">Foton</a></li><li><a href="kundlogotyper.html">Kundlogotyper</a></li><li><a href="linkedin-banners.html">LinkedIn-banners</a></li></ul>
+        </li>
+      </ul>
+      <a class="mg-nav__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+      <button class="mg-nav__burger" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="24" height="18" viewBox="0 0 24 18" fill="none" aria-hidden="true">
+          <rect width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="8" width="24" height="2" rx="1" fill="currentColor"/>
+          <rect y="16" width="24" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<!-- ═══ MOBILMENY ══════════════════════════════════════════════ -->
+<div class="mg-mobile-menu" id="mobile-menu" aria-hidden="true" aria-label="Mobilnavigering">
+  <div class="mg-mobile-menu__head">
+    <a href="index.html" class="mg-nav__logo" aria-label="Magello">
+      <svg style="height:32px;width:auto" viewBox="0 0 1298 333" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <title>Magello</title>
+          <rect x="114" y="41" width="1096" height="251" fill="white"/>
+          <path d="M383.475 127.758L378.345 171.487L398.438 170.63L397.583 126.043L383.475 127.758Z" fill="#EC008C"/>
+          <path d="M1040.56 171.916L1084.16 180.49L1096.99 227.221L1147.86 177.918L1151.28 131.616L1088.44 120.47L1040.56 171.916Z" fill="#EC008C"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M138.513 0L50.0185 22.7221L1.71003 95.1756L0 290.243L47.026 318.109L97.472 322.825L320.632 332.686L1226.09 325.826L1295.78 257.66L1297.06 24.8657L1267.56 6.43078L138.513 0ZM293.271 258.946L244.535 266.234L241.115 197.639L212.899 216.932L190.241 197.639L188.104 267.521H138.94L135.093 210.93L139.795 93.4607H176.989L218.884 152.195L255.65 93.8894H293.698L293.271 258.946ZM410.408 260.232L401.003 190.351H376.635L369.795 256.374H321.487L340.297 135.046C340.297 135.046 353.55 80.5992 356.115 81.4566C358.68 82.314 420.241 85.3151 420.241 85.3151L443.327 138.476L462.564 265.377L410.408 260.232ZM604.925 256.803L576.282 262.805L510.018 257.66L483.94 222.076L482.23 187.35L481.802 150.909L492.062 119.613L514.72 92.1746L558.754 85.3151L585.687 89.6022L613.047 93.4607L612.192 107.18L604.497 141.049L557.044 128.187L531.821 146.193L528.401 190.78L548.494 214.359L567.732 210.072V187.35C560.891 186.493 560.036 186.493 560.036 186.493C559.181 186.064 560.036 167.2 560.036 167.2L613.902 171.059V192.924L614.33 214.788L604.925 256.803ZM752.843 135.046L695.984 135.904V154.339L743.438 152.195L743.01 192.495L692.992 195.925L696.412 213.502L752.415 218.218L751.988 260.661L647.248 260.232L648.103 93.4607L752.843 96.4618V135.046ZM893.493 259.804L787.899 259.375L788.754 80.5992L834.497 81.0279L835.779 213.931L894.348 212.216L893.493 259.804ZM909.739 247.371L905.891 116.612L910.594 72.0248L952.917 74.5971L952.062 203.213L989.255 203.641L1008.92 205.356L1009.35 252.944L909.739 247.371ZM1180.35 225.935L1135.04 262.805L1040.98 242.655L1019.61 165.486L1034.14 96.8905C1034.14 96.8905 1091 79.7417 1099.98 78.8843L1140.59 84.4576L1187.19 133.76L1180.35 225.935Z" fill="#EC008C"/>
+        </svg>
+    </a>
+    <button class="mg-mobile-menu__close" aria-label="Stäng meny">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M5 5L19 19M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <ul class="mg-mobile-menu__links">
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="farg.html" class="is-active">Grunder</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="farg.html">Färg</a></li><li><a href="form.html">Form</a></li><li><a href="typografi.html">Typografi</a></li><li><a href="typsnitt.html">Specialtypsnitt</a></li><li><a href="bilder-ikoner.html">Bilder &amp; ikoner</a></li><li><a href="avstand-rorelse.html">Avstånd &amp; rörelse</a></li><li><a href="ljud.html" class="is-active">Ljud</a></li></ul>
+    </li>
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="komponenter.html">Byggstenar</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="komponenter.html">Komponenter</a></li><li><a href="sektioner.html">Sektioner</a></li><li><a href="formular-feedback.html">Formulär &amp; feedback</a></li><li><a href="markdown.html">Markdown</a></li></ul>
+    </li>
+    <li><a href="navigation.html">Navigation</a></li>
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="powerpoint.html">Mallar</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="powerpoint.html">PowerPoint</a></li><li><a href="word.html">Word</a></li><li><a href="e-postsignatur.html">E-postsignatur</a></li></ul>
+    </li>
+    <li class="mg-mob-has-sub">
+      <div class="mg-mob-parent">
+        <a href="bildbank.html">Bildbank</a>
+        <button class="mg-mob-toggle" aria-expanded="false" aria-label="Visa undermeny"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+      <ul class="mg-mob-sub"><li><a href="bildbank.html">Foton</a></li><li><a href="kundlogotyper.html">Kundlogotyper</a></li><li><a href="linkedin-banners.html">LinkedIn-banners</a></li></ul>
+    </li>
+  </ul>
+  <a class="mg-mobile-menu__featured" href="../tokens/tokens.json">Tokens (JSON)</a>
+</div>
+
+<!-- ═══ SIDHUVUD ═══════════════════════════════════════════════ -->
+<div class="mg-ingang-hero">
+  <div class="mg-ingang-col">
+    <nav class="mg-breadcrumb" aria-label="Brödsmula">
+      <a href="index.html">Hem</a>
+      <span class="mg-breadcrumb__sep">/</span>
+      <span aria-current="page">Ljud</span>
+    </nav>
+    <p class="mg-kicker">Grunder</p>
+    <h1 class="mg-ingang-title">Ljud</h1>
+    <p class="mg-ingang-sub">Magellos ljud till video: ett intro, en ljudlogotyp och bakgrundsmusik till intervjuer. Allt har samma tempo, ackord och motiv, så delarna går att klippa ihop.</p>
+    <div class="mg-ingang-actions"><a href="../assets/audio/magello-intro.m4a" class="mg-btn mg-btn--primary">Ladda ned introt</a><a href="#bakgrund" class="mg-btn mg-btn--secondary">Bakgrundsmusik</a></div>
+  </div>
+</div>
+
+<main id="main-content">
+<section class="sg-block" id="intro" aria-labelledby="h-intro">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Intro</p>
+    <h2 id="h-intro">Intro och ljudlogotyp</h2>
+    <p>Introt börjar med ett svep och en trumvirvel, går över i ett groove på 110 BPM och slutar med motivet A–G–E på ett utklingande ackord. Ljudlogotypen är bara svepet och slutet.</p>
+  </div>
+<div class="sg-tracks"><div class="sg-track"><div class="mg-audio" data-mg-audio><button type="button" class="mg-audio__play" aria-pressed="false" aria-label="Spela intro"><svg class="mg-audio__icon-play" viewBox="0 0 20 20" aria-hidden="true"><polygon points="5,2 18,10 5,18"/></svg><svg class="mg-audio__icon-pause" viewBox="0 0 20 20" aria-hidden="true"><polygon points="4,2 8,2 8,18 4,18"/><polygon points="12,2 16,2 16,18 12,18"/></svg></button><div class="mg-audio__body"><div class="mg-audio__head"><span class="mg-audio__title">Intro</span><span class="mg-audio__time">0:25</span></div><div class="mg-audio__seek" role="slider" tabindex="0" aria-label="Spola i intro" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0"><div class="mg-progress"><div class="mg-progress__fill"></div></div></div></div><audio src="../assets/audio/magello-intro.m4a" preload="metadata"></audio></div><a class="sg-photo__dl" href="../assets/audio/magello-intro.m4a" download>Ladda ned · magello-intro.m4a · 815 kB</a></div><div class="sg-track"><div class="mg-audio" data-mg-audio><button type="button" class="mg-audio__play" aria-pressed="false" aria-label="Spela intro, kort"><svg class="mg-audio__icon-play" viewBox="0 0 20 20" aria-hidden="true"><polygon points="5,2 18,10 5,18"/></svg><svg class="mg-audio__icon-pause" viewBox="0 0 20 20" aria-hidden="true"><polygon points="4,2 8,2 8,18 4,18"/><polygon points="12,2 16,2 16,18 12,18"/></svg></button><div class="mg-audio__body"><div class="mg-audio__head"><span class="mg-audio__title">Intro, kort</span><span class="mg-audio__time">0:15</span></div><div class="mg-audio__seek" role="slider" tabindex="0" aria-label="Spola i intro, kort" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0"><div class="mg-progress"><div class="mg-progress__fill"></div></div></div></div><audio src="../assets/audio/magello-intro-15s.m4a" preload="metadata"></audio></div><a class="sg-photo__dl" href="../assets/audio/magello-intro-15s.m4a" download>Ladda ned · magello-intro-15s.m4a · 490 kB</a></div><div class="sg-track"><div class="mg-audio" data-mg-audio><button type="button" class="mg-audio__play" aria-pressed="false" aria-label="Spela ljudlogotyp"><svg class="mg-audio__icon-play" viewBox="0 0 20 20" aria-hidden="true"><polygon points="5,2 18,10 5,18"/></svg><svg class="mg-audio__icon-pause" viewBox="0 0 20 20" aria-hidden="true"><polygon points="4,2 8,2 8,18 4,18"/><polygon points="12,2 16,2 16,18 12,18"/></svg></button><div class="mg-audio__body"><div class="mg-audio__head"><span class="mg-audio__title">Ljudlogotyp</span><span class="mg-audio__time">0:07</span></div><div class="mg-audio__seek" role="slider" tabindex="0" aria-label="Spola i ljudlogotyp" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0"><div class="mg-progress"><div class="mg-progress__fill"></div></div></div></div><audio src="../assets/audio/magello-ljudlogotyp.m4a" preload="metadata"></audio></div><a class="sg-photo__dl" href="../assets/audio/magello-ljudlogotyp.m4a" download>Ladda ned · magello-ljudlogotyp.m4a · 248 kB</a></div></div><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Lägg introt eller ljudlogotypen först i videon, under logotyp eller titel</li><li>Använd ljudlogotypen i korta klipp, Shorts och logotypanimationer</li><li>Klipp på hela takter (2,18 s) om du kortar själv</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Lägga tal ovanpå introt. Det är gjort för att höras ensamt</li><li>Ändra tempo, tonhöjd eller lägga till effekter</li><li>Använda musiken i material som inte är Magellos</li></ul></div></div>
+</div>
+</section>
+<section class="mg-section--rose sg-block sg-block--rose" id="bakgrund" aria-labelledby="h-bakgrund">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Bakgrund</p>
+    <h2 id="h-bakgrund">Bakgrundsmusik under tal</h2>
+    <p>Samma ackord och ljud som introt, men glesare och utan melodi. Frekvenserna där rösten ligger är sänkta, så att tal hörs tydligt.</p>
+  </div>
+<div class="sg-tracks"><div class="sg-track"><div class="mg-audio" data-mg-audio><button type="button" class="mg-audio__play" aria-pressed="false" aria-label="Spela bakgrund, loop"><svg class="mg-audio__icon-play" viewBox="0 0 20 20" aria-hidden="true"><polygon points="5,2 18,10 5,18"/></svg><svg class="mg-audio__icon-pause" viewBox="0 0 20 20" aria-hidden="true"><polygon points="4,2 8,2 8,18 4,18"/><polygon points="12,2 16,2 16,18 12,18"/></svg></button><div class="mg-audio__body"><div class="mg-audio__head"><span class="mg-audio__title">Bakgrund, loop</span><span class="mg-audio__time">2:19</span></div><div class="mg-audio__seek" role="slider" tabindex="0" aria-label="Spola i bakgrund, loop" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0"><div class="mg-progress"><div class="mg-progress__fill"></div></div></div></div><audio src="../assets/audio/magello-bakgrund.m4a" preload="metadata" loop></audio></div><a class="sg-photo__dl" href="../assets/audio/magello-bakgrund.m4a" download>Ladda ned · magello-bakgrund.m4a · 4,6 MB</a></div><div class="sg-track"><div class="mg-audio" data-mg-audio><button type="button" class="mg-audio__play" aria-pressed="false" aria-label="Spela bakgrund, 45 minuter"><svg class="mg-audio__icon-play" viewBox="0 0 20 20" aria-hidden="true"><polygon points="5,2 18,10 5,18"/></svg><svg class="mg-audio__icon-pause" viewBox="0 0 20 20" aria-hidden="true"><polygon points="4,2 8,2 8,18 4,18"/><polygon points="12,2 16,2 16,18 12,18"/></svg></button><div class="mg-audio__body"><div class="mg-audio__head"><span class="mg-audio__title">Bakgrund, 45 minuter</span><span class="mg-audio__time">45:00</span></div><div class="mg-audio__seek" role="slider" tabindex="0" aria-label="Spola i bakgrund, 45 minuter" aria-valuemin="0" aria-valuemax="0" aria-valuenow="0"><div class="mg-progress"><div class="mg-progress__fill"></div></div></div></div><audio src="../assets/audio/magello-bakgrund-45min.m4a" preload="none"></audio></div><a class="sg-photo__dl" href="../assets/audio/magello-bakgrund-45min.m4a" download>Ladda ned · magello-bakgrund-45min.m4a · 44,2 MB</a></div></div><div class="sg-use"><div class="sg-use__card"><span class="mg-pill mg-pill--success">Gör</span><ul><li>Sänk bakgrunden 8–12 dB under tal</li><li>Tona över från introts sista ackord till bakgrunden. De hör ihop musikaliskt</li><li>Använd loopen och upprepa den om du behöver annan längd. Skarven hörs inte</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--error">Gör inte</span><ul><li>Lägga bakgrunden på full nivå under tal</li><li>Blanda med annan musik i samma video</li></ul></div><div class="sg-use__card"><span class="mg-pill mg-pill--loading">Tänk på</span><ul><li>Loopen är 2:20 och börjar om på ett taktslag, 45-minutersversionen tonar ut de sista 8 sekunderna</li><li>45-minutersversionen är 44 MB. Ladda ned den bara när du behöver den</li></ul></div></div>
+</div>
+</section>
+<section class="sg-block" id="anvanda" aria-labelledby="h-anvanda">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">I en video</p>
+    <h2 id="h-anvanda">Så sätter du ljudet i en video</h2>
+    <p>Ordningen nedan passar intervjuer och presentationer på YouTube och LinkedIn.</p>
+  </div>
+<div class="sg-demo">
+<div class="mg-steps" role="list"><div class="mg-step mg-step--blue" role="listitem"><span class="mg-step__num">Steg 1</span>Introt under titeln</div><div class="mg-step mg-step--orange" role="listitem"><span class="mg-step__num">Steg 2</span>Tona över till bakgrunden</div><div class="mg-step mg-step--green" role="listitem"><span class="mg-step__num">Steg 3</span>Sänk under tal</div><div class="mg-step mg-step--magenta" role="listitem"><span class="mg-step__num">Steg 4</span>Avsluta med ljudlogotypen</div></div>
+</div><div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Del</th><th>Fil</th><th>Nivå</th></tr></thead><tbody><tr><td>Inledning</td><td><code>magello-intro.m4a</code> eller <code>magello-intro-15s.m4a</code></td><td>Full nivå (−14 LUFS)</td></tr><tr><td>Övergång</td><td>Tona över under introts sista ackord, cirka 3 sekunder</td><td>—</td></tr><tr><td>Tal</td><td><code>magello-bakgrund.m4a</code> eller 45-minutersversionen</td><td>8–12 dB under talet</td></tr><tr><td>Slut</td><td><code>magello-ljudlogotyp.m4a</code></td><td>Full nivå</td></tr></tbody></table></div>
+</div>
+</section>
+<section class="mg-section--rose sg-block sg-block--rose" id="motiv" aria-labelledby="h-motiv">
+<div class="mg-wrap">
+  <div class="mg-section-head">
+    <p class="mg-label">Ljudidentitet</p>
+    <h2 id="h-motiv">Ljudlogotypen A–G–E</h2>
+    <p>Motivet är de tre bokstäverna i Magello som också är toner: A, G och E. Det spelas på glockenspiel och landar alltid på slutackordet.</p>
+  </div>
+<div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Egenskap</th><th>Värde</th></tr></thead><tbody><tr><td>Tempo</td><td>110 BPM, en takt är 2,18 s, raka sextondelar</td></tr><tr><td>Ackord</td><td>Dm9 – G13 – Cmaj9 – A7b13, slutackord C6/9</td></tr><tr><td>Motiv</td><td>A – G – E, sista tonen på slutackordets första slag</td></tr><tr><td>Instrument</td><td>Knäppande syntar, elpiano, glockenspiel, djup bas, handklapp och hi-hat</td></tr><tr><td>Ljudnivå</td><td>Intro och ljudlogotyp −14 LUFS, bakgrund −18 LUFS, högst −1 dBTP</td></tr><tr><td>Format</td><td>AAC (M4A), 48 kHz stereo, 256 kbit/s (45 minuter: 128 kbit/s)</td></tr></tbody></table></div><h3 class="sg-sub">Från formspråk till ljud</h3><div class="mg-table-wrap"><table class="mg-table "><thead><tr><th>Formspråket</th><th>Ljudet</th></tr></thead><tbody><tr><td>Roboto Condensed: täta, exakta former</td><td>Raka sextondelar, korta knäppande toner och tydliga trumslag</td></tr><tr><td>Spärrade etiketter och luftig brödtext</td><td>Tystnad mellan tonerna och klar diskant, med ekon och rumsklang som fyller ut</td></tr><tr><td>Magenta används sparsamt och med avsikt</td><td>Motivet A–G–E är ljudets magenta och bär slutet</td></tr><tr><td>Rosagrått är kärnan</td><td>En mjuk bas och ackordmatta under allt</td></tr></tbody></table></div><p class="sg-text">Musiken är syntetiserad från grunden för Magello, utan samplingar eller sång. Källkoden finns i <code>tools/audio/</code>, så att nya versioner kan göras med samma ljud.</p>
+</div>
+</section>
+
+</main>
+
+
+<!-- ═══ FOOTER ═════════════════════════════════════════════════ -->
+<footer class="mg-footer">
+  <div class="mg-wrap">
+    <div class="mg-footer__inner">
+      <div class="mg-footer__col"><span class="sg-footer-name">Magello</span><br>Git commit: <a href="https://github.com/magello-group/design-guidelines/commit/8cd02c6">8cd02c6</a><br>Formspråk för webb, dokument<br>och sociala medier</div>
+      <div class="mg-footer__col">
+        <a href="../tokens/tokens.json">tokens.json</a><br>
+        <a href="../docs/design-language.md">design-language.md</a><br>
+        <a href="../docs/design-guidelines-web.md">design-guidelines-web.md</a>
+      </div>
+      <div class="mg-footer__col" style="text-align:right">Västgötagatan 2<br>118 27 Stockholm<br>info@magello.se</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/magello.js"></script>
+</body>
+</html>

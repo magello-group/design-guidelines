@@ -15,7 +15,7 @@ out = root / "_site"
 # Kopieras alltid, i sin helhet
 dirs = ["styleguide", "tokens", "docs", "assets/graphics", "assets/logos", "assets/shapes",
         "assets/images/black-and-white", "assets/assignments-logos",
-        "assets/linkedin-banners", "tools/presentation"]
+        "assets/linkedin-banners", "assets/audio", "tools/presentation"]
 # Enskilda filer: agentinstruktionerna och Office-mallarna med howto-dokument
 files = [# Instruktionerna som ren text, så att agenter kan läsa dem utan github.com
          "AGENTS.md", "CLAUDE.md", "README.md", "DECISIONS.md",

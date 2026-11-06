@@ -1,6 +1,7 @@
 /* ==========================================================================
    Magello designsystem — delad JavaScript (magello.js)
-   Header-scroll, sidospår, mobilmeny, dropdown och undermenyer.
+   Header-scroll, sidospår, mobilmeny, dropdown, undermenyer, kopiera-knapp,
+   listfilter och ljudspelare.
    Ingen build, inga beroenden. Se design-guidelines-web.md (avsnitt 12–15).
    ========================================================================== */
 (function () {
@@ -186,6 +187,63 @@
       });
       if (empty) empty.hidden = shown > 0;
     });
+  });
+
+  /* ── Ljudspelare ────────────────────────────────────────────────────
+     <div class="mg-audio" data-mg-audio> med <audio>, .mg-audio__play,
+     .mg-audio__time och .mg-audio__seek (role="slider") runt .mg-progress.
+     Bara en spelare låter åt gången. Pilar spolar 5 s, Home och End. */
+  var fmtTime = function (s) {
+    s = Math.max(0, Math.floor(s || 0));
+    var m = Math.floor(s / 60), x = s % 60;
+    return m + ':' + (x < 10 ? '0' : '') + x;
+  };
+  var players = $$('[data-mg-audio]');
+  players.forEach(function (el) {
+    var audio = $('audio', el), btn = $('.mg-audio__play', el);
+    var fill = $('.mg-progress__fill', el), seek = $('.mg-audio__seek', el), time = $('.mg-audio__time', el);
+    if (!audio || !btn) return;
+    var render = function () {
+      var d = isFinite(audio.duration) ? audio.duration : 0, t = audio.currentTime;
+      if (fill) fill.style.width = d ? (t / d * 100) + '%' : '0';
+      if (time && d) time.textContent = fmtTime(t) + ' / ' + fmtTime(d);
+      if (seek) {
+        seek.setAttribute('aria-valuemax', Math.round(d));
+        seek.setAttribute('aria-valuenow', Math.round(t));
+        seek.setAttribute('aria-valuetext', fmtTime(t) + ' av ' + fmtTime(d));
+      }
+    };
+    var state = function () {
+      el.classList.toggle('is-playing', !audio.paused);
+      btn.setAttribute('aria-pressed', audio.paused ? 'false' : 'true');
+    };
+    btn.addEventListener('click', function () {
+      if (!audio.paused) { audio.pause(); return; }
+      players.forEach(function (o) { var a = $('audio', o); if (a && a !== audio) a.pause(); });
+      audio.play();
+    });
+    ['timeupdate', 'loadedmetadata', 'durationchange', 'seeked'].forEach(function (ev) { audio.addEventListener(ev, render); });
+    ['play', 'pause', 'ended'].forEach(function (ev) { audio.addEventListener(ev, state); });
+    if (seek) {
+      var jump = function (t) {
+        if (!isFinite(audio.duration)) return;
+        audio.currentTime = Math.min(Math.max(t, 0), audio.duration);
+        render();
+      };
+      seek.addEventListener('click', function (e) {
+        var r = seek.getBoundingClientRect();
+        jump((e.clientX - r.left) / r.width * audio.duration);
+      });
+      seek.addEventListener('keydown', function (e) {
+        var k = { ArrowRight: 5, ArrowUp: 5, ArrowLeft: -5, ArrowDown: -5 }[e.key];
+        if (k) jump(audio.currentTime + k);
+        else if (e.key === 'Home') jump(0);
+        else if (e.key === 'End') jump(audio.duration);
+        else return;
+        e.preventDefault();
+      });
+    }
+    render();
   });
 
   /* ── Escape stänger meny och dropdown ──────────────────────────────── */
