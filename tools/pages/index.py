@@ -5,7 +5,7 @@ PAGE = dict(
 )
 
 PRINCIPLES = [
-    ("1. Inga linjer som avgränsare", "Struktur skapas av luft, bakgrundsskiften och former. En linje säger att något slutar, en form säger att något börjar."),
+    ("1. Inga linjer som avgränsare", "Struktur skapas av luft, bakgrundsskiften och former. En linje säger att något slutar, en form säger att något börjar. Undantag: tabeller, formulärfält och diagram, där linjer bär data."),
     ("2. Accentfärger är fyllnad", "Magenta, blå, orange, grön, röd och gul fyller former, ikoner, knappar och text. De ritas aldrig som streck eller kant."),
     ("3. Former har rörelse", "Ingen synlig kant är exakt vågrät eller lodrät. Hörnen avviker 2–7 % från ett rätblock, så det ser handgjort ut."),
     ("4. Svartvitt utom varumärket", "Foton är alltid svartvita. Då får magenta och ikonernas färger hela scenen."),

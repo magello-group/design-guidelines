@@ -219,3 +219,25 @@
 .sg-track { display: flex; flex-direction: column; gap: var(--mg-space-2); }
 .sg-track .sg-photo__dl { padding-left: calc(56px + var(--mg-space-4)); }
 @media (max-width: 599px) { .sg-track .sg-photo__dl { padding-left: 0; } }
+
+/* Diagram på Komponenter: linjer får bära data (D-72) */
+.sg-chart-card { margin: 0; }
+.sg-chart-card__title { font: 700 1rem/1.2 var(--mg-font-head); margin: 0; }
+.sg-chart-card figcaption { font-size: .8125rem; color: var(--mg-text-2); line-height: 1.5; }
+.sg-chart { display: block; width: 100%; height: auto; }
+.sg-chart text { font-family: var(--mg-font-body); font-size: 10px; fill: var(--mg-text-2); }
+.sg-chart__axis { stroke: var(--mg-rose-200); stroke-width: 1; }
+.sg-chart__grid { stroke: var(--mg-rose-100); stroke-width: 1; }
+.sg-chart__ref { stroke: var(--mg-text-2); stroke-width: 1.5; }
+.sg-chart__ref--dashed { stroke: var(--mg-grey-300); stroke-dasharray: 5 4; }
+.sg-chart .sg-chart__note { font-weight: 500; }
+.sg-chart__series { fill: none; stroke: var(--mg-magenta); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+.sg-chart__series--orange { stroke: var(--mg-orange); }
+.sg-chart__dot { fill: var(--mg-magenta); }
+.sg-chart__bar { fill: var(--mg-rose-200); }
+.sg-chart__bar--hi { fill: var(--mg-magenta); }
+.sg-chart__vals text { font-size: 11px; font-weight: 500; fill: var(--mg-black); }
+.sg-chart__vals .sg-chart__val--hi { fill: var(--mg-white); }
+.sg-chart__bad-frame { fill: none; stroke: var(--mg-magenta); stroke-width: 2; }
+.sg-chart__bad-grid { stroke: var(--mg-blue); stroke-width: 1; }
+.sg-chart__bad-ref { stroke: var(--mg-magenta); stroke-width: 2; stroke-dasharray: 5 4; }

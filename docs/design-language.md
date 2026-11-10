@@ -68,6 +68,7 @@ Tillgångar (logotyper, ikoner, svartvita foton) ligger i `assets/logos/`, `asse
 ### 1. Inga linjer som avgränsare
 Vi delar inte upp innehåll med streck. Struktur skapas av luft, bakgrundsskiftningar och former. En linje säger "här slutar något", en form säger "här börjar något".
 - Undantag som får finnas: ljusa linjer inne i tabeller där läsbarheten kräver det, och ramen runt ett inmatningsfält. Aldrig som dekoration.
+- **Diagram och datavisualiseringar** får ha linjer, eftersom de bär data: axlar, stödlinjer och referenslinjer, till exempel ett mål eller ett snitt, i grått eller rosagrått. Dataserier i linjediagram får ha accentfärg, som ett undantag från princip 2. Exempel, rätt och fel, finns i avsnittet Diagram i `styleguide/komponenter.html`.
 
 ### 2. Accentfärger är fyllnad, aldrig kant
 Magenta, blå, orange, grön, röd och gul fyller former, ikoner, knappar och text. De ritas aldrig som streck, understrykningar eller kantlinjer.

@@ -43,7 +43,7 @@ Texten räcker inte för att få rätt utseende. **Facit är `styleguide/` (leva
 
 ## 3. Hårda regler (bryt aldrig utan att fråga)
 
-1. **Inga linjer som avgränsare.** Struktur skapas av luft, bakgrundsskiften och former. Undantag: hårlinjer i tabellceller, ramen runt formulärfält och mobilmenyns listor, i rosagrått.
+1. **Inga linjer som avgränsare.** Struktur skapas av luft, bakgrundsskiften och former. Undantag: hårlinjer i tabellceller, ramen runt formulärfält och mobilmenyns listor, i rosagrått. I diagram och datavisualiseringar får linjer användas: axlar, stödlinjer och referenslinjer (till exempel mål eller snitt) i grått eller rosagrått, och dataserier i linjediagram, som får ha accentfärg. Exempel och mått: avsnittet Diagram i `styleguide/komponenter.html`.
 2. **Accentfärger är fyllnad, aldrig kant, streck eller understrykning.** Magenta, blå, orange, grön, röd, gul fyller former, ikoner, knappar och text.
 3. **Alla synliga former är polygoner.** Ingen kant är exakt vågrät eller lodrät. Hörnen avviker 2–7 %. Inga rundade hörn (personbilder är enda cirkeln).
 4. **Foton är alltid svartvita** (`grayscale(1) contrast(1.05)`) och beskurna i polygonform. Ikoner är alltid i full färg.

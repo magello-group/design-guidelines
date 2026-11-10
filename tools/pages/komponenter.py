@@ -1,6 +1,6 @@
 PAGE = dict(
     title="Komponenter", kicker="Byggstenar",
-    lead="Knappar, kort, processteg, citat, tabeller och mer. Varje komponent visas levande, med när den ska användas, när den inte ska det och markupen att kopiera.",
+    lead="Knappar, kort, processteg, citat, tabeller, diagram och mer. Varje komponent visas levande, med när den ska användas, när den inte ska det och markupen att kopiera.",
 )
 
 IMG = "../assets/images/black-and-white/"
@@ -116,4 +116,57 @@ def body(sg):
         sg.demo('<section class="mg-cta" style="padding-block:0"><div class="mg-cta__inner" style="padding-inline:0"><h2 class="mg-cta__heading">Redo att ta nästa steg?</h2><p class="mg-cta__text">Oavsett om ni vill utforska ett specifikt område eller diskutera en bredare utmaning — vi lyssnar gärna.</p><a class="mg-btn mg-btn--primary" href="#kontakt">Kontakta oss</a></div></section>', "plain") +
         sg.use(do=["Kontaktkort: namn, titel, e-post, telefon. Foto svartvitt", "Uppmaning: rubrik, en kort text och en primär knapp", "Placera uppmaningen sist på sidan, före sidfoten"],
                dont=["Mer än en primär handling i uppmaningen", "Färgfoto i kontaktkortet"]))
-    return buttons + cards + steps + quote + table + timeline + contact
+    # ---------------------------------------------------------- diagram
+    months = "".join(f'<text x="{x}" y="166">{m}</text>' for x, m in zip(range(45, 281, 47), ["jan", "feb", "mar", "apr", "maj", "jun"]))
+    series = '<polyline class="sg-chart__series" points="45,111 92,98 139,78.5 186,91.5 233,65.5 280,52.5"/>'
+    line_ok = ('<svg class="sg-chart" viewBox="0 0 300 180" role="img" aria-label="Linjediagram i magenta med grå streckad referenslinje för målet 90 procent">'
+               '<line class="sg-chart__axis" x1="40" y1="150" x2="285" y2="150"/>'
+               '<line class="sg-chart__grid" x1="40" y1="117.5" x2="285" y2="117.5"/><line class="sg-chart__grid" x1="40" y1="52.5" x2="285" y2="52.5"/>'
+               '<line class="sg-chart__ref sg-chart__ref--dashed" x1="40" y1="85" x2="285" y2="85"/>'
+               '<text class="sg-chart__note" x="283" y="80" text-anchor="end">Mål 90 %</text>'
+               + series + '<circle class="sg-chart__dot" cx="280" cy="52.5" r="4"/>'
+               '<g class="sg-chart__ticks" text-anchor="end"><text x="34" y="153">80</text><text x="34" y="88">90</text><text x="34" y="56">95</text></g>'
+               f'<g class="sg-chart__ticks" text-anchor="middle">{months}</g></svg>')
+    bars_ok = ('<svg class="sg-chart" viewBox="0 0 300 180" role="img" aria-label="Stapeldiagram där fjärde kvartalet är magenta och övriga rosagrå, med en grå linje för snittet">'
+               '<polygon class="sg-chart__bar" points="57,150 93,150 92,88 58,86"/>'
+               '<polygon class="sg-chart__bar" points="117,150 153,150 152,57 118,55"/>'
+               '<polygon class="sg-chart__bar" points="177,150 213,150 212,73 178,71"/>'
+               '<polygon class="sg-chart__bar sg-chart__bar--hi" points="237,150 273,150 272,36 238,34"/>'
+               '<line class="sg-chart__axis" x1="40" y1="150" x2="285" y2="150"/>'
+               '<line class="sg-chart__ref" x1="40" y1="63" x2="285" y2="63"/>'
+               '<text class="sg-chart__note" x="42" y="58">Snitt 16,8</text>'
+               '<g class="sg-chart__vals" text-anchor="middle"><text x="75" y="105">12</text><text x="135" y="74">18</text><text x="195" y="90">15</text>'
+               '<text class="sg-chart__val--hi" x="255" y="53">22</text></g>'
+               '<g class="sg-chart__ticks" text-anchor="middle"><text x="75" y="166">Q1</text><text x="135" y="166">Q2</text><text x="195" y="166">Q3</text><text x="255" y="166">Q4</text></g></svg>')
+    line_bad = ('<svg class="sg-chart" viewBox="0 0 300 180" role="img" aria-label="Felaktigt diagram med magenta referenslinje, blå stödlinjer och en ram i magenta">'
+                '<rect class="sg-chart__bad-frame" x="36" y="20" width="252" height="132"/>'
+                '<line class="sg-chart__bad-grid" x1="40" y1="117.5" x2="285" y2="117.5"/><line class="sg-chart__bad-grid" x1="40" y1="52.5" x2="285" y2="52.5"/>'
+                '<line class="sg-chart__bad-ref" x1="40" y1="85" x2="285" y2="85"/>'
+                '<polyline class="sg-chart__series sg-chart__series--orange" points="45,111 92,98 139,78.5 186,91.5 233,65.5 280,52.5"/>'
+                f'<g class="sg-chart__ticks" text-anchor="middle">{months}</g></svg>')
+    fig = lambda ok, title, svg, text: (f'<figure class="sg-chart-card"><span class="sg-demo-label">{"Rätt" if ok else "Fel"}</span>'
+                                        f'<p class="sg-chart-card__title">{title}</p>{svg}<figcaption>{text}</figcaption></figure>')
+    charts = sg.block("diagram", "Komponent", "Diagram och datavisualiseringar",
+        "I diagram får linjer bära data. Dataserien har accentfärg, eftersom den är det läsaren ska se. "
+        "Axlar, stödlinjer och referenslinjer, som ett mål eller ett snitt, är grå eller rosagrå och ger sammanhang.",
+        sg.demo('<div class="sg-three">' +
+                fig(True, "Tillgänglighet per månad", line_ok, "Dataserien i magenta. Målet som streckad referenslinje i grått. Stödlinjer i rosagrått.") +
+                fig(True, "Leveranser per kvartal", bars_ok, "Staplarna är polygoner. Magenta lyfter det viktiga kvartalet. Snittet är en heldragen grå linje.") +
+                fig(False, "Tillgänglighet per månad", line_bad, "Referenslinjen i magenta konkurrerar med datan. Ram i accentfärg och blå stödlinjer är dekoration.") +
+                '</div>', "white") +
+        sg.spec(["Del", "Färg", "Linje"], [
+            ["Dataserie (linjediagram)", "Accentfärg, magenta först", "2–2,5 px, rundade fogar"],
+            ["Staplar", "Rosagrå 200, magenta för det som ska lyftas", "Ingen. Fyllda polygoner, inga rundade hörn"],
+            ["Referenslinje (mål, snitt, gräns)", "Grå 300 eller text-2, med etikett", "1,5 px, heldragen eller streckad"],
+            ["Axel", "Rosagrå 200", "1 px, bara baslinjen"],
+            ["Stödlinjer", "Rosagrå 100", "1 px, få och vågräta"],
+            ["Etiketter och värden", "Text-2. Värden i staplarna, vita i en magenta stapel", "Roboto, minst 10 px"],
+        ]) +
+        sg.use(do=["Låt en dataserie bära accentfärgen och resten vara rosagrå",
+                   "Skriv ut vad referenslinjen betyder direkt vid linjen, till exempel <em>Mål 90 %</em>",
+                   "Rita staplar som polygoner med lite liv i topparna, som andra former"],
+               dont=["Referenslinjer eller stödlinjer i accentfärg",
+                     "Ramar runt diagrammet eller understrukna diagramrubriker",
+                     "Fler än fyra accentfärger i samma diagram"],
+               note=["Undantaget från regel 1 och 2 gäller bara linjer som bär data. Allt runt diagrammet följer de vanliga reglerna"]))
+    return buttons + cards + steps + quote + table + charts + timeline + contact

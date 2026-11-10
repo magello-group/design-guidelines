@@ -69,7 +69,8 @@ def body(sg):
         ) +
         sg.use(do=["Fyll knappar, etiketter, ikoner och former", "Använd magenta som textfärg för H2, länkar och enstaka ord", "Behöver du en understrykning: gör den som en skev polygon (som i ”Lediga jobb”)"],
                dont=["<code>border-left: 3px solid magenta</code> som accentlinje", "Färgade streck som avgränsare mellan sektioner", "Understrukna rubriker i accentfärg"]) +
-        sg.text("Undantag: ett fokus- och statusmarkerat formulärfält byter kantfärg (blå, röd, grön). Det är funktionellt och beskrivs under <a href=\"formular-feedback.html\">Formulär &amp; feedback</a>."))
+        sg.text("Undantag: ett fokus- och statusmarkerat formulärfält byter kantfärg (blå, röd, grön). Det är funktionellt och beskrivs under <a href=\"formular-feedback.html\">Formulär &amp; feedback</a>. "
+                "I diagram och datavisualiseringar får dataserier i linjediagram ha accentfärg. Axlar, stödlinjer och referenslinjer, som ett mål eller ett snitt, ritas i grått eller rosagrått."))
 
     # kontrast
     pairs = [

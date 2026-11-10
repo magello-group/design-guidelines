@@ -291,7 +291,7 @@ Beslut som tagits under bygget av referenssajten (styleguiden i `styleguide/`). 
 
 | # | Beslut | Varför |
 |---|---|---|
-| 1 | Inga linjer som avgränsare. Funktionella hårlinjer i `--mg-rose-200` tillåts i tabeller, formulärfält och mobilmenyns listor | En linje säger "här slutar något", en form säger "här börjar något" |
+| 1 | Inga linjer som avgränsare. Funktionella hårlinjer i `--mg-rose-200` tillåts i tabeller, formulärfält och mobilmenyns listor. I diagram och datavisualiseringar får axlar, stödlinjer, referenslinjer och dataserier vara linjer | En linje säger "här slutar något", en form säger "här börjar något" |
 | 2 | Accentfärger används aldrig som kant, understrykning eller linje. Bara som fyllnad och textfärg | Accentfärger tillhör former och ikoner |
 | 3 | Alla synliga former är polygoner. Ingen kant är exakt horisontell eller vertikal | Formerna ska kännas handgjorda och rörliga |
 | 4 | Foton är alltid svartvita (`grayscale(1) contrast(1.05)`). Ikoner aldrig | Svartvitt låter magenta och ikonerna bära färgen |
@@ -375,7 +375,7 @@ Samma principer, formulerade för alla medier, finns i `design-language.md`. Lä
 ### De sju grundprinciperna
 
 **1. Inga linjer som avgränsare.**
-Struktur skapas av luft, bakgrundsskiften och polygonformer. Funktionella hårlinjer i `--mg-rose-200` får finnas i tabeller, formulärfält och mobilmenyns listor, aldrig som dekoration.
+Struktur skapas av luft, bakgrundsskiften och polygonformer. Funktionella hårlinjer i `--mg-rose-200` får finnas i tabeller, formulärfält och mobilmenyns listor, aldrig som dekoration. I diagram och datavisualiseringar får linjer bära data: axlar, stödlinjer och referenslinjer (mål, snitt) i grått eller rosagrått, och dataserier i linjediagram i accentfärg.
 
 > ✗ `border-bottom: 1px solid #E3D6D6` under en rubrik
 > ✓ Nästa sektions bakgrundsfärg skapar uppdelningen
