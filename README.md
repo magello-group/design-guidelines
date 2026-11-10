@@ -41,11 +41,18 @@ Styleguiden finns på **https://magello-group.github.io/design-guidelines/**: en
 4. Profilbilder, LinkedIn-bilder och kundlogotyper: gör dem i [bildverktyget](https://linkedin-profile-image.magello.se).
 5. Be en agent läsa `AGENTS.md` först. Den vet vilken fil som gäller för vilket uppdrag.
 
-## Ändra och publicera
+## Uppdatera sajten
 
-Ändra i källfilerna och pusha till `main`. GitHub Pages bygger och publicerar resten, och ingen behöver bygga något eller starta en server på sin egen dator.
+Sajten byggs och underhålls bara med [Claude Code](https://claude.com/claude-code). Ingen skriver HTML eller kör byggscript för hand.
 
-| Vad du ändrar | Var |
+1. Öppna repot i Claude Code.
+2. Be om ändringen med egna ord, till exempel *Lägg till kundlogotypen för Bolagsverket* eller *Lägg till ordet uppdrag på sidan Språk och ton*.
+3. Granska resultatet. Claude Code bygger om sidorna och kan visa dem i en förhandsvisning.
+4. Pusha till `main`. GitHub Pages bygger och publicerar sajten.
+
+Claude Code läser `CLAUDE.md` och `AGENTS.md` och vet var allt ligger. Tabellen visar var källorna finns, om du vill veta.
+
+| Vad som ändras | Var |
 |---|---|
 | Styleguidens sidor | `tools/pages/<sida>.py` (header, sidospår, mobilmeny och footer i `tools/build_styleguide.py`) |
 | Färger, typografi, avstånd, former | `tokens/tokens.json` |
@@ -57,7 +64,3 @@ Vid varje push till `main` kör [`.github/workflows/pages.yml`](.github/workflow
 ## Utveckla formspråket
 
 Följ avsnitt 6 i [`AGENTS.md`](AGENTS.md): härled från principerna, lägg nya komponenter som modifier, uppdatera tokens, CSS, styleguide, docs och beslutsloggen i den ordningen, och fråga innan du ändrar en hård regel.
-
-## Ursprung
-
-Katalogen bygger på `magello-design` (referenssajten, riktlinjerna och mallarna) och är gjord för att kunna lyftas ut och utvecklas vidare på egen hand. Hela fotobiblioteket finns i `assets/images/black-and-white/` och visas i Bildbanken.

@@ -92,7 +92,7 @@ html[class*="mode-"] .step:not(.is-shown) { opacity: 0; }
 }
 
 /* ── TYPOGRAFI ───────────────────────────────────────────────────────── */
-/* Rubriker är vanlig Roboto, inte Condensed (avsteg från magello-design).
+/* Rubriker är vanlig Roboto, inte Condensed (avsteg från webbens rubriker).
    Etiketter, underrubriker och siffror är fortfarande Condensed. */
 .slide h1, .slide h2, .slide h3 {
   font-family: var(--mg-font-body);
